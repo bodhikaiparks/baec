@@ -1,0 +1,88 @@
+# BAEC HTTPS boundary (V0.4 Phase 5; IMPLEMENTATION). nginx terminates TLS; the BAEC web container is reachable only
+# from this proxy on a private Docker network and is never published on the host.
+#
+# The official nginx image renders this template at start (envsubst; only the variables below are replaced):
+#   BAEC_PUBLIC_HOST     the public host name, e.g. baec.example.com (server_name; no port)
+#   BAEC_PUBLIC_ORIGIN   host[:port] browsers use for HTTPS, e.g. baec.example.com (redirect target; fixed, so a
+#                        forged Host header can never choose where a redirect goes)
+#   BAEC_HSTS_MAX_AGE    Strict-Transport-Security max-age in seconds (conservative start: 86400; see the runbook)
+#
+# Guarantees, each checked by deploy/tests/test_https_boundary.py against this file running in the real image:
+#   * plain HTTP serves no BAEC content: the only answer for the BAEC host is a 308 redirect to HTTPS (no proxying,
+#     no cookie); any other host gets no answer at all (444), and an HTTPS handshake for another name is rejected;
+#   * every HTTPS response carries HSTS (no includeSubDomains, no preload: see docs/PRODUCTION_RUNBOOK.md);
+#   * every cookie the application sets reaches the browser with Secure added (proxy_cookie_flags). Streamlit sets
+#     its sign-in cookies HttpOnly and SameSite=Lax itself but never Secure behind a proxy; HttpOnly is not forced
+#     here because Streamlit's XSRF cookie must stay readable by its own page script;
+#   * forwarded headers are set, never passed through: X-Forwarded-For is the peer address, X-Forwarded-Proto is
+#     always https, and any client-sent Forwarded header is dropped. (The application does not derive any URL from
+#     them: the sign-in callback is the fixed https redirect_uri in its configuration.)
+#   * access logs record the path without the query string, so the sign-in callback's authorization code and
+#     state are never logged; cookies and Authorization headers are never logged.
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''      close;
+}
+
+log_format baec_safe '$remote_addr [$time_iso8601] "$request_method $uri $server_protocol" $status '
+                     '$body_bytes_sent $request_time';
+
+server_tokens off;
+
+# Any other host name: no answer, no content.
+server {
+    listen 80 default_server;
+    access_log /var/log/nginx/access.log baec_safe;
+    return 444;
+}
+
+server {
+    listen 443 ssl default_server;
+    ssl_reject_handshake on;
+}
+
+# Plain HTTP for the BAEC host: a redirect to HTTPS and nothing else. Never proxied to the application.
+server {
+    listen 80;
+    server_name ${BAEC_PUBLIC_HOST};
+    access_log /var/log/nginx/access.log baec_safe;
+    location / {
+        return 308 https://${BAEC_PUBLIC_ORIGIN}$uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    http2 on;
+    server_name ${BAEC_PUBLIC_HOST};
+    access_log /var/log/nginx/access.log baec_safe;
+
+    ssl_certificate /etc/nginx/tls/fullchain.pem;
+    ssl_certificate_key /etc/nginx/tls/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_tickets off;
+
+    add_header Strict-Transport-Security "max-age=${BAEC_HSTS_MAX_AGE}" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "no-referrer" always;
+    add_header Content-Security-Policy "frame-ancestors 'self'" always;
+
+    client_max_body_size 16m;
+
+    location / {
+        proxy_pass http://web:8501;
+        proxy_http_version 1.1;
+        # The browser's own Host (with its port): Streamlit accepts a WebSocket only when Origin matches it.
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Forwarded "";
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_read_timeout 1h;
+        proxy_send_timeout 1h;
+        proxy_cookie_flags ~ secure;
+    }
+}

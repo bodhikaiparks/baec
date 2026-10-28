@@ -1,0 +1,459 @@
+{
+  "case_count": 64,
+  "cases": [
+    {
+      "case_id": "E3B-A01",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-A02",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-001",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-A03",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-001",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-A04",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-002",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-A05",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-003",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-A06",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-004",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-A07",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-005",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-A08",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-006",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-A09",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-007",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-A10",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_PREPARATION_INPUT",
+      "stage_c_primary_reason_code": "E3C-IN-008",
+      "stage_c_primary_validator": "INPUT"
+    },
+    {
+      "case_id": "E3B-B01",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-B02",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-B03",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-DISC-001",
+      "stage_c_primary_validator": "DISCLOSURE"
+    },
+    {
+      "case_id": "E3B-B04",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-DISC-002",
+      "stage_c_primary_validator": "DISCLOSURE"
+    },
+    {
+      "case_id": "E3B-B05",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-DISC-003",
+      "stage_c_primary_validator": "DISCLOSURE"
+    },
+    {
+      "case_id": "E3B-B06",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-B07",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-DISC-004",
+      "stage_c_primary_validator": "DISCLOSURE"
+    },
+    {
+      "case_id": "E3B-B08",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-B09",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-DISC-005",
+      "stage_c_primary_validator": "DISCLOSURE"
+    },
+    {
+      "case_id": "E3B-B10",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-DISC-007",
+      "stage_c_primary_validator": "DISCLOSURE"
+    },
+    {
+      "case_id": "E3B-B11",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-B12",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-DISC-002",
+      "stage_c_primary_validator": "DISCLOSURE"
+    },
+    {
+      "case_id": "E3B-B13",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-DISC-006",
+      "stage_c_primary_validator": "DISCLOSURE"
+    },
+    {
+      "case_id": "E3B-B14",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-C01",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-C02",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-002",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C03",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-003",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C04",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-004",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C05",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-005",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C06",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-005",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C07",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-006",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C08",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-C09",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-007",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C10",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-C11",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-008",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C12",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-C13",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-009",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-C14",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-CLM-010",
+      "stage_c_primary_validator": "CLAIM"
+    },
+    {
+      "case_id": "E3B-D01",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-D02",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-STATE-001",
+      "stage_c_primary_validator": "STATE"
+    },
+    {
+      "case_id": "E3B-D03",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-STATE-002",
+      "stage_c_primary_validator": "STATE"
+    },
+    {
+      "case_id": "E3B-D04",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-STATE-002",
+      "stage_c_primary_validator": "STATE"
+    },
+    {
+      "case_id": "E3B-D05",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-STATE-003",
+      "stage_c_primary_validator": "STATE"
+    },
+    {
+      "case_id": "E3B-D06",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-STATE-004",
+      "stage_c_primary_validator": "STATE"
+    },
+    {
+      "case_id": "E3B-D07",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-D08",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-STATE-005",
+      "stage_c_primary_validator": "STATE"
+    },
+    {
+      "case_id": "E3B-D09",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-D10",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-STATE-006",
+      "stage_c_primary_validator": "STATE"
+    },
+    {
+      "case_id": "E3B-E01",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REBUILD_STALE_CONTEXT",
+      "stage_c_primary_reason_code": "E3C-CTX-001",
+      "stage_c_primary_validator": "CONTEXT"
+    },
+    {
+      "case_id": "E3B-E02",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REBUILD_STALE_CONTEXT",
+      "stage_c_primary_reason_code": "E3C-CTX-002",
+      "stage_c_primary_validator": "CONTEXT"
+    },
+    {
+      "case_id": "E3B-E03",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REBUILD_STALE_CONTEXT",
+      "stage_c_primary_reason_code": "E3C-CTX-003",
+      "stage_c_primary_validator": "CONTEXT"
+    },
+    {
+      "case_id": "E3B-E04",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REBUILD_STALE_CONTEXT",
+      "stage_c_primary_reason_code": "E3C-CTX-004",
+      "stage_c_primary_validator": "CONTEXT"
+    },
+    {
+      "case_id": "E3B-E05",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REBUILD_STALE_CONTEXT",
+      "stage_c_primary_reason_code": "E3C-CTX-005",
+      "stage_c_primary_validator": "CONTEXT"
+    },
+    {
+      "case_id": "E3B-E06",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-E07",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-E08",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REBUILD_STALE_CONTEXT",
+      "stage_c_primary_reason_code": "E3C-CTX-006",
+      "stage_c_primary_validator": "CONTEXT"
+    },
+    {
+      "case_id": "E3B-F01",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-F02",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-HUM-002",
+      "stage_c_primary_validator": "HUMAN"
+    },
+    {
+      "case_id": "E3B-F03",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-F04",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-ACT-001",
+      "stage_c_primary_validator": "ACTION"
+    },
+    {
+      "case_id": "E3B-F05",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-ACT-002",
+      "stage_c_primary_validator": "ACTION"
+    },
+    {
+      "case_id": "E3B-F06",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-ACT-003",
+      "stage_c_primary_validator": "ACTION"
+    },
+    {
+      "case_id": "E3B-F07",
+      "expected_pass": true,
+      "stage_b_expected_verdict": "ALLOW_TO_HUMAN_REVIEW",
+      "stage_c_primary_reason_code": null,
+      "stage_c_primary_validator": "PASS"
+    },
+    {
+      "case_id": "E3B-F08",
+      "expected_pass": false,
+      "stage_b_expected_verdict": "REFUSE_BUYER_FACING_DRAFT",
+      "stage_c_primary_reason_code": "E3C-RES-001",
+      "stage_c_primary_validator": "RESEARCH"
+    }
+  ],
+  "locked_date": "2026-10-14",
+  "purpose": "Maps the locked Stage B 64-case oracle to Stage C deterministic validator expectations. It is not production data.",
+  "stage_a_sha256": "890870e0af12bbbc35d26ef825544f12f8589198fddf6507d680036d21212b3a",
+  "stage_b_json_sha256": "362dc5df456acd03246cdf4a44b1b16306d9901ad82774e33f52e2cb22ef087a",
+  "stage_c_validator_spec_sha256": "f6023ed8592a7ccedd4a29e10c613b10111302145b1d0e56eb4db4baf5654aa0",
+  "status": "LOCKED"
+}

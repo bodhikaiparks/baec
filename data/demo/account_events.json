@@ -1,0 +1,47 @@
+{
+  "events": [
+    {"type": "save_baec", "baec_id": "BAEC-HARBOR-001"},
+    {
+      "type": "dormancy_judgment",
+      "key": "JUDGMENT-HARBOR-001",
+      "baec_id": "BAEC-HARBOR-001",
+      "plausibility": "YES",
+      "addressability": "YES",
+      "notes": null,
+      "authorization": {"authorized_by": "synthetic-seed-fixture", "authorized_at": "2026-03-10T15:40:00+00:00"}
+    },
+    {
+      "type": "transition",
+      "account_id": "ACC-HARBOR",
+      "to_state": "CONDITIONALLY_DORMANT",
+      "baec_id": "BAEC-HARBOR-001",
+      "judgment_key": "JUDGMENT-HARBOR-001",
+      "authorization": {"authorized_by": "synthetic-seed-fixture", "authorized_at": "2026-03-10T15:45:00+00:00"},
+      "recorded_at": "2026-03-10T15:45:00+00:00"
+    },
+    {
+      "type": "transition",
+      "account_id": "ACC-SUMMIT",
+      "to_state": "NO_PLAUSIBLE_PATH",
+      "ground": "NO_PLAUSIBLE_BAEC",
+      "reason": "After a CEE question, the buyer identified no prospective condition that would make evaluation worthwhile.",
+      "basis_interaction_id": "INT-SUMMIT-001",
+      "authorization": {"authorized_by": "synthetic-seed-fixture", "authorized_at": "2026-03-12T14:20:00+00:00"},
+      "recorded_at": "2026-03-12T14:20:00+00:00"
+    },
+    {"type": "save_baec", "baec_id": "BAEC-MERIDIAN-001"},
+    {
+      "type": "transition",
+      "account_id": "ACC-MERIDIAN",
+      "to_state": "ACTIVE_OPPORTUNITY",
+      "evaluation_evidence": {
+        "interaction_id": "INT-MERIDIAN-001",
+        "provenance": "BUYER_FACT",
+        "text": "We opened a formal supplier review last month and are comparing three vendors.",
+        "observed_at": "2026-03-14T16:00:00+00:00"
+      },
+      "authorization": {"authorized_by": "synthetic-seed-fixture", "authorized_at": "2026-03-14T16:20:00+00:00"},
+      "recorded_at": "2026-03-14T16:20:00+00:00"
+    }
+  ]
+}

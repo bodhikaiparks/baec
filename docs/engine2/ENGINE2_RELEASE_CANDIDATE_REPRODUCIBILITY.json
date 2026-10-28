@@ -1,0 +1,89 @@
+{
+  "project": "BAEC Trigger Intelligence",
+  "component": "BAEC Engine 2: Monitoring + Correspondence",
+  "status": "Release candidate of an offline research prototype. Not tagged. Software verification on synthetic data only.",
+  "recorded_on": "2026-10-13",
+  "baseline": {
+    "starting_commit": "69175621d49a7c194a50810fcbe2c3a28867ecfc",
+    "starting_commit_parent": "3665b95fb0fca4eb5754509ccd7480541b036ffe",
+    "note": "Stage L adds documentation, a demonstration script, a verification script, and tests on top of the starting commit. No release tag exists."
+  },
+  "environment": {
+    "python": "3.14.3",
+    "sqlite_library": "3.50.4",
+    "packages": {
+      "streamlit": "1.65.0",
+      "pydantic": "2.13.5",
+      "pytest": "9.1.1",
+      "mcp": "2.2.0",
+      "anthropic": "1.9.0",
+      "httpx2": "2.13.1"
+    },
+    "note": "Packages are pinned in requirements.txt and requirements-dev.txt; Stage L changed neither. httpx2 is installed as an SDK dependency."
+  },
+  "schemas": {
+    "engine1_schema_version": 7,
+    "BAEC_ENGINE_2": {"engine": "BAEC_ENGINE_2", "schema_version": 1, "tables": 30},
+    "BAEC_ENGINE_2_AI": {"engine": "BAEC_ENGINE_2_AI", "schema_version": 1, "tables": 7}
+  },
+  "integrity_files": {
+    "Research Contract": {"path": "docs/RESEARCH_CONTRACT.md", "sha256": "c66929ff07dd19913d12420b6ba4f59f56541e25e602da80ee0a399ab2e756c9"},
+    "Stage A domain contract": {"path": "docs/engine2/ENGINE2_MONITORING_CORRESPONDENCE_DOMAIN_CONTRACT.md", "sha256": "c4bcf1d0673faf266a70793f7c5693a45a4828999bf63d4b54aed8a5154016b7"},
+    "Stage B corpus (Markdown)": {"path": "docs/engine2/corpus/ENGINE2_STAGE_B_SYNTHETIC_CORPUS.md", "sha256": "177848a45ccfb7ad0716c01f7f350bdb813c90e6b0265eb79544b0007a93d801"},
+    "Stage B corpus (JSON)": {"path": "docs/engine2/corpus/HARBOR_CORRESPONDENCE_CORPUS.json", "sha256": "fb96e3d17ba82b3b8877d1c1f7499919c549af05eed8902a754ad31c76ff7bf3"}
+  },
+  "engine1_dev_database": {
+    "path": "var/baec_dev.sqlite3",
+    "sha256": "add117f8452adbcf96368ae5fd57bc71be3b83493fb4136d96aea84834e1ef06",
+    "note": "Generated and git-ignored; checked only where present. Engine 2 never opens it."
+  },
+  "corpus_distribution": {
+    "cases": 64,
+    "NO_CORRESPONDENCE": 20,
+    "POSSIBLE_CORRESPONDENCE": 32,
+    "HUMAN_VERIFIED_CORRESPONDENCE": 9,
+    "blocked_before_classification": 3
+  },
+  "tests": {
+    "stage_l_release": 17,
+    "stage_k_handoff": 32,
+    "stage_j_operator_ui": 45,
+    "stage_i_review_application": 112,
+    "stage_h_a_offline_harness": 84,
+    "stage_f_ai_boundary_and_evaluation": 153,
+    "stage_g_ai_persistence": 106,
+    "all_engine2": 945,
+    "full_repository_passed": 6763,
+    "full_repository_deselected": 2,
+    "deselected_live_tests": ["tests/live/test_live_extraction.py", "tests/live_engine2/test_live_engine2_stage_h.py"],
+    "note": "Collected counts from the verification run at this record. Tests are software verification, not empirical evidence."
+  },
+  "stage_h_b": {
+    "status": "not executed (paused)",
+    "note": "No live model call has been made for Engine 2. The Stage H-A harness is committed and opt-in; its gates were absent."
+  },
+  "release_demo": {
+    "script": "scripts/engine2_release_demo.py",
+    "summary_version": "baec-engine2-release-demo-summary/v1",
+    "release_demo_digest": "310f570874c1efb73eea33ff3830844375389fc8f08a5069554c06952cc4f45e",
+    "outcome": "HUMAN_VERIFIED_CORRESPONDENCE",
+    "engine1_baec_id": "BAEC-RC-001",
+    "handoff_digest": "168cdc8894cd67a6590f160f46a27af55392c2f2f855a693586216129e7de255",
+    "context_digest": "e78f571a170679fc37845d81f05ff146c69c849a5ac48dbc2eac5ad55e184c7d",
+    "store_images": {
+      "engine1_sha256": "3cc50c54bfa4db87e5e0e57c4f34781debe2e94dda9e28031189ca7851e7e944",
+      "engine2_sha256": "b941b66ce0bd5bcafa01e2e6c6999d2a47a21bc9dc7ec17a0873e7b93bad9490",
+      "note": "Raw in-memory SQLite images under the recorded SQLite library; outside the release digest because image bytes may differ between SQLite builds."
+    }
+  },
+  "reproduction_files": [
+    "scripts/engine2_release_demo.py",
+    "scripts/verify_engine2_release.py",
+    "baec_app/engine2/integration/engine1_handoff.py",
+    "baec_app/engine2/review.py",
+    "baec_app/engine2/operator_ui/demo.py",
+    "tests/engine2/test_engine2_release.py",
+    "docs/engine2/ENGINE2_RELEASE_CANDIDATE_RECORD.md",
+    "docs/engine2/ENGINE2_TECHNICAL_RESEARCH_BRIEF.md"
+  ]
+}

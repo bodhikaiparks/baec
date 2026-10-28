@@ -1,0 +1,23 @@
+# BAEC Console: local, offline configuration. No secrets belong here.
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
+
+[server]
+# Listen on this machine only. A specific address also stops Streamlit's startup banner from looking up the
+# machine's public IP address (a network request).
+address = "localhost"
+headless = true
+fileWatcherType = "none"
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+base = "light"
+primaryColor = "#1B2A41"
+backgroundColor = "#FAFAF8"
+secondaryBackgroundColor = "#F2F2EE"
+textColor = "#111418"
+borderColor = "#E4E4E0"

@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily BAEC logical backup (before the RDS backup window)
+
+[Timer]
+OnCalendar=*-*-* 06:00:00 UTC
+RandomizedDelaySec=10min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

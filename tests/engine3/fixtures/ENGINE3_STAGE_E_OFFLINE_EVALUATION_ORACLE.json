@@ -1,0 +1,547 @@
+{
+ "description": "Fixed expected Stage D validation results for Stage E prerecorded synthetic proposals. Software conformance expectations only; not evidence about buyers, sales, or BAEC theory.",
+ "human_edit_count": 2,
+ "human_edits": [
+  {
+   "edit_id": "E3E-H01",
+   "expected_allowed": false,
+   "expected_origin": "HUMAN_EDITED",
+   "expected_primary_reason_code": "E3C-HUM-002"
+  },
+  {
+   "edit_id": "E3E-H02",
+   "expected_allowed": true,
+   "expected_origin": "HUMAN_EDITED",
+   "expected_primary_reason_code": null
+  }
+ ],
+ "recording_count": 49,
+ "recordings": [
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": true,
+   "recording_id": "E3E-P01"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-CALL",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": true,
+   "recording_id": "E3E-P02"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-QUESTIONS",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": true,
+   "recording_id": "E3E-P03"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-SUMMARY",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": true,
+   "recording_id": "E3E-P04"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-SUMMARY",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    },
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    },
+    {
+     "artifact_id": "A-CALL",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    },
+    {
+     "artifact_id": "A-QUESTIONS",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": true,
+   "recording_id": "E3E-P05"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": true,
+   "recording_id": "E3E-P06"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-DISC-001"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N01"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-DISC-003"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N02"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-DISC-005"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N03"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-DISC-006"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N04"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-DISC-001"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N05"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-002"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N06"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-003"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N07"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-004"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N08"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-005"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N09"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-005"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N10"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-006"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N11"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-QUESTIONS",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-007"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N12"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-008"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N13"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-STATE-001"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N14"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-SUMMARY",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-STATE-003"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N15"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-STATE-004"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N16"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-STATE-006"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N17"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-STATE-005"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-N18"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-DISC-006"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-AR1"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-STATE-002"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-AR2"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-STATE-004"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-AR3"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    },
+    {
+     "artifact_id": "A-SUMMARY",
+     "expected_allowed": true,
+     "expected_primary_reason_code": null
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": true,
+   "recording_id": "E3E-I01"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CLM-009"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-I02"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-ACT-001"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-I03"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CTX-006"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-X01"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-CTX-006"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-X02"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-ACT-001"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-A01"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-ACT-002"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-A02"
+  },
+  {
+   "expected_artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "expected_allowed": false,
+     "expected_primary_reason_code": "E3C-ACT-003"
+    }
+   ],
+   "expected_outcome": "EVALUATED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-A03"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S01"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S02"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S03"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S04"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S05"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S06"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S07"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S08"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S09"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S10"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S11"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S12"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S13"
+  },
+  {
+   "expected_artifacts": [],
+   "expected_outcome": "STRUCTURALLY_REJECTED",
+   "expected_reaches_human_preparation_review": false,
+   "recording_id": "E3E-S14"
+  }
+ ],
+ "stage": "E",
+ "status": "TEST_ORACLE"
+}

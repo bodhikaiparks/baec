@@ -1,0 +1,169 @@
+{
+  "project": "BAEC Trigger Intelligence",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "stage": "F",
+  "component": "Arm A fixed-prose supplement freeze (O-6)",
+  "status": "O6_RESOLVED_FROZEN",
+  "freeze_date": "2026-10-14",
+  "rule_label": "IMPLEMENTATION",
+  "base_commit": "090030e83a17929580140f23ed02bcaaff1b785f",
+  "owner_approved": true,
+  "owner_approval_date": "2026-10-14",
+  "artifact_count": 16,
+  "arm_a_total_artifact_count": 48,
+  "arm_a_stage_e_seed_count": 32,
+  "arm_a_supplement_frozen_count": 16,
+  "stage_e_seed_source": {
+    "file": "tests/engine3/fixtures/ENGINE3_STAGE_E_PRERECORDED_PROPOSALS.json",
+    "sha256": "d9c42583f40a71dd053c402f175654eff1da10e8f808d639755dc510999f43e9",
+    "modified": false
+  },
+  "stage_f_experiment_spec_sha256": "321c19c598575ec111ff241714820dea64ff93515bd4b9b055efa613b502c829",
+  "frozen_file": "docs/engine3/ENGINE3_STAGE_F_ARM_A_ADDITIONAL_ARTIFACTS_FROZEN.json",
+  "frozen_file_sha256": "9211996f730a575a1e393eb52065740fbf824095f4c9afd7c1032cbe9242876f",
+  "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+  "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+  "freeze_identity_rule": "Each artifact freeze SHA-256 is SHA-256 over the canonical JSON (baec_app.engine3.canonical: sorted keys, separators ',' and ':', UTF-8, ensure_ascii false) of exactly: freeze_identity_version, output_schema_version, artifact_id, context_id, context_digest (Stage E EvaluationContext.digest of the context built from the locked Stage E fixture context, plus the locked Stage F spec delta for variants), fixed_prose_artifact_id, artifact_type, ordered [segment_id, text] pairs, segment_separator, and rendered_text. Authoring and approval metadata are excluded. Prose is never hashed alone, so identical prose under different contexts has distinct identities.",
+  "corpus_freeze_rule": "SHA-256 over the canonical JSON of {freeze_identity_version, artifacts: ordered [artifact_id, artifact_freeze_sha256] pairs in E3F-AS-01..16 order}.",
+  "corpus_freeze_sha256": "c7ff8233173046b248d5548e06fab336b2d697ee6c67a1317525bd065d1b0961",
+  "artifact_freeze_sha256": {
+    "E3F-AS-01": "06b09896024e83422f1d499c74390d00b64fdb5d8cb30ee17329cec1f78aa89c",
+    "E3F-AS-02": "bf37d60dac242c46338a0e8018c4bcaa961d969f6cd59e6d630bcd2c7c182df3",
+    "E3F-AS-03": "38d32726a1edcabb3b4a8672d13364511b2a970b40cd90bbe3985c9d1c542fd4",
+    "E3F-AS-04": "c4c22700fc97b3f649e5c1aab461f2eb60c39133e9150ba148c70faabea8992d",
+    "E3F-AS-05": "ed1153d9c351bfaaec9d2b9d706a64dd1f9e36d9086b21b567c74718f3f6ffac",
+    "E3F-AS-06": "9bc3e760cf69b4cc3776ce517f49ed8a14fc51568a11c79e8941aa9c1162fd53",
+    "E3F-AS-07": "24fa929e0a207176c27a7500ceaf07dde18ca9ec608699f5ca999119708d72c6",
+    "E3F-AS-08": "4bd6c1a9c39a161ddcce9e12f1d34c554d9383ed4f78286de0d2ef4253bcb0ed",
+    "E3F-AS-09": "c5f07c7090dcb82d19f55dbc07d805842dd688e203ff74cd8668139a119f1196",
+    "E3F-AS-10": "d07db5342d3ba5e78d851a576d01adde6acba8267828c49b5a1a667070f7a9a9",
+    "E3F-AS-11": "a68e72389f965f60d313af2c8835b72842044164c622bbb49ad1c76159f5c7de",
+    "E3F-AS-12": "8409e21e21e3a43a3f2a8d1791d7c9c2a79e411b3b0a3816e474bd8af27779bc",
+    "E3F-AS-13": "b26f3672c00ac7a3322d9ac34887f0bd910439bb61dd3abe3feb0edfc9795e0a",
+    "E3F-AS-14": "0a5c8ad8ae82313d1c2954755bf6578781e4529fea07589c1defc3546c3b40ee",
+    "E3F-AS-15": "87235b782981e1b870b6619254c111d54b9d1c70ba2b09a3628aa1f6bbee7556",
+    "E3F-AS-16": "6f68afe2d3f8e1d4e283ace5eacd860118914bb67348782ade49ddce5f73ea07"
+  },
+  "artifact_context_binding": {
+    "E3F-AS-01": {
+      "context_id": "CTX-AR-9PCT-DIRECT",
+      "context_digest": "15e794bded27836a609f7efe206d303566e92abb189a496156e3e0d6f495b96f",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-02": {
+      "context_id": "CTX-AR-CURRENT",
+      "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-03": {
+      "context_id": "CTX-AR-CURRENT",
+      "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-04": {
+      "context_id": "CTX-AR-CURRENT",
+      "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-05": {
+      "context_id": "CTX-AR-CURRENT",
+      "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-06": {
+      "context_id": "CTX-AR-CURRENT",
+      "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-07": {
+      "context_id": "CTX-AR-CURRENT",
+      "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-08": {
+      "context_id": "CTX-AR-CURRENT",
+      "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-09": {
+      "context_id": "CTX-F-SOURCE-ALLOWED",
+      "context_digest": "b77181770d1a8e69174ac937fdabdccbbd599fa3b36ac3d9a11df1c43aa3253a",
+      "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+    },
+    "E3F-AS-10": {
+      "context_id": "CTX-F-SOURCE-NOT-ALLOWED",
+      "context_digest": "677dcb314d3dd29a3fead510106f862e286b02848fadbb5c1172c07ae81bd7bb",
+      "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+    },
+    "E3F-AS-11": {
+      "context_id": "CTX-F-MEASUREMENT-UNKNOWN",
+      "context_digest": "0d4fa8483521df2ef8a58e3ab0f674c3b4c098624e9ad465fea51d6c69ea315b",
+      "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+    },
+    "E3F-AS-12": {
+      "context_id": "CTX-F-ROLE-INTERNAL",
+      "context_digest": "4028b27187032070dc06ea85fd630df71fa369e8bab6742982d35a72b1f2b0c8",
+      "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+    },
+    "E3F-AS-13": {
+      "context_id": "CTX-F-COMPETITOR-INTERNAL",
+      "context_digest": "014023d9889d67ce240cb713e6fcedec44d0f208383aaafa67d70f40df94d72e",
+      "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+    },
+    "E3F-AS-14": {
+      "context_id": "CTX-F-SELLER-NOTE-INTERNAL",
+      "context_digest": "e500bb39a0a59b0995ab9789cf486cab8ade0abf2320f860057662c9c99e6f30",
+      "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+    },
+    "E3F-AS-15": {
+      "context_id": "CTX-AR-INJECTED-SOURCE",
+      "context_digest": "c8adbf5a599fc3655591c1d8cbee057c0dfccdd1da7f51dfae44b23efb4cf419",
+      "context_source": "Stage E fixture context (unchanged)"
+    },
+    "E3F-AS-16": {
+      "context_id": "CTX-AR-CURRENT",
+      "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+      "context_source": "Stage E fixture context (unchanged)"
+    }
+  },
+  "authoring_provenance": "The 16 supplemental artifacts were initially drafted with Claude Code assistance and then reviewed and approved by the human project owner. They are not independently human-authored. They are not live model output and were not produced by any Stage F run, prompt, or experimental configuration.",
+  "independently_human_authored": false,
+  "research_limitations": [
+    "If O-5 later selects a Claude-family model, the shared stylistic origin of these artifacts may create model-family familiarity or style-coupling in Arm A. This does not invalidate the arm, but it must be disclosed and considered when interpreting Arm A diagnostic results."
+  ],
+  "pre_run_required": [
+    {
+      "id": "O-3",
+      "status": "PRE_RUN_REQUIRED",
+      "resolve_before": "any pilot"
+    },
+    {
+      "id": "O-5",
+      "status": "PRE_RUN_REQUIRED",
+      "resolve_before": "any pilot (frozen)"
+    },
+    {
+      "id": "O-6",
+      "status": "RESOLVED_FROZEN",
+      "resolve_before": "any live evaluation"
+    }
+  ],
+  "pilot_readiness": false,
+  "owner_approval_still_required_for_any_pilot": true,
+  "readiness_check_note": "Checked with the unchanged experiments/engine3_stage_f/readiness.py. The frozen record passes every O-6 record check (16 artifacts, unique ids, unique context-bound SHA-256 values, human_approved, frozen, authors recorded). The locked O-6 check also enforces D-9 author independence, which needs O-3 staffing; until O-3 is supplied it reports 'author independence cannot be checked without O-3' for each artifact. Overall pilot readiness is false, and owner approval of any pilot remains required even after O-3 and O-5 are satisfied.",
+  "live_model_executed": false,
+  "api_key_used": false,
+  "network_calls": 0,
+  "pilot_executed": false,
+  "main_experiment_executed": false,
+  "experiment_results_exist": false,
+  "locked_stage_a_to_f_files_modified": false,
+  "governing_limitation": {
+    "id": "E3-E-SEM-001",
+    "name": "MODEL_SEMANTIC_ANNOTATION_NOT_AUTHORITATIVE",
+    "resolved": false
+  },
+  "manifest_self_hash": null,
+  "manifest_self_hash_note": "This manifest does not contain its own SHA-256; a file cannot hash itself. Its SHA-256 is computed externally and reported outside this file.",
+  "claim_boundary": "Freezing fixes synthetic Arm A input prose only. It produces no result, resolves neither O-3 nor O-5, authorizes no pilot or live run, and does not resolve E3-E-SEM-001. Not evidence of semantic validation, purchase prediction, sales lift, production security, or BAEC theory."
+}

@@ -1,0 +1,276 @@
+{
+  "document": "ENGINE3_STAGE_F_HUMAN_CALIBRATION_FREEZE_MANIFEST",
+  "project": "BAEC Trigger Intelligence",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "stage": "F",
+  "status": "CALIBRATION_CORPUS_FROZEN",
+  "freeze_date": "2026-10-15",
+  "rule_label": "IMPLEMENTATION",
+  "owner_instruction": "Owner instruction of 2026-10-15: build and freeze an offline calibration corpus in a novel domain, audit it against every prohibited corpus class, and set the blocker RESOLVED_FROZEN only if every check passes; O-3 stays PRE_RUN_REQUIRED and pilot readiness stays false. Final owner approval granted 2026-10-15.",
+  "blocker": "CALIBRATION_CORPUS_CONTAMINATION_AUDIT_REQUIRED",
+  "blocker_status_before": "OPEN",
+  "blocker_status": "RESOLVED_FROZEN",
+  "blocker_origin": "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_CONTAMINATION_RESOLUTION_001.md section 4.2 (unchanged; it records the blocker OPEN as of its date)",
+  "corpus": "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_CORPUS.json",
+  "corpus_sha256": "83e5843d10a575792379fc4f1e6b3f0570ff8f951d272889478380b03a317c46",
+  "guide": "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_GUIDE.md",
+  "guide_sha256": "5a1d83cbc0082b0a29c2f042854135efb6a8e0d0d2e8877f2d1a5d9a8a591584",
+  "verifier": "scripts/verify_engine3_stage_f_calibration.py",
+  "verifier_sha256": "24994e7b956267802995d26a32ae6cf66ca29ed17d34e2b0c782a3788f7e4934",
+  "operational_guide": "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_OPERATIONAL_GUIDE.md",
+  "operational_guide_sha256": "fb4f0510254649dadfc68c06bb76bd1dfab73e2d33bc0db325faf791e61b9011",
+  "locked_protocol": "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_ANNOTATION_PROTOCOL.md",
+  "locked_protocol_sha256": "cba979c91cdcc96f419b0f3758cadd651f3427064a7f66ebebd23929c623b5a4",
+  "prohibited_corpus_classes": {
+    "arm_a_artifacts_48": "the 32 Stage E seed artifacts of Arm A and the 16 frozen O-6 artifacts (segments and rendered text)",
+    "arm_g_scenario_and_evaluation_material": "Stage F spec scenario strings, Stage F variant grounding items, and Stage E context grounding items",
+    "stage_e_prerecorded_prose": "every Stage E recording artifact and human edit",
+    "stage_f_dry_run_prose": "every prose string in the dry-run inputs (raw model output parsed) and the dry-run oracle",
+    "operational_guide_worked_examples": "every worked-example fragment of the frozen operational guide, including its fictional account",
+    "o5_prompt_worked_examples": "the frozen O-5 prompt's 23 worked examples"
+  },
+  "comparison_rule": "O-5 rule unchanged (casefolded tokens; exact token match; near = Jaccard >= 0.5 or any shared 5-token sequence; minimum 4 tokens) plus shared distinctive 4-token sequences (at least two non-function tokens) plus banned terms: the O-5 list and calibration-specific terms for the evaluation domain's vocabulary and the operational guide's fictional account. No allowlist.",
+  "label_validation": {
+    "segments_parsed": 50,
+    "problems": 0,
+    "passed": true
+  },
+  "coverage": {
+    "corpus_size": {
+      "accounts": 2,
+      "grounding_items": 17,
+      "items": 14,
+      "segments": 50,
+      "scorable_segments": 46,
+      "unscorable_segments": 4,
+      "boundary_case_segments": 5,
+      "question_segments": 11
+    },
+    "domains": [
+      "rowing club hull repairs (boatyard services)",
+      "bakery co-operative rye flour supply (grain milling)"
+    ],
+    "field_coverage": {
+      "claim_type": [
+        "COURTESY_OR_TRANSITION",
+        "FACTUAL_ASSERTION",
+        "PRIOR_BUYER_STATEMENT_REFERENCE",
+        "QUESTION"
+      ],
+      "semantic_class": [
+        "BUYER_CURRENT_EVALUATION_STATE",
+        "BUYER_PURCHASE_OR_SWITCH_INTENT",
+        "COMPETITOR_CLAIM",
+        "CONDITION_REFERENCE",
+        "COURTESY",
+        "DEADLINE_OR_URGENCY",
+        "EXTERNAL_EVENT_FACT",
+        "NEUTRAL_QUESTION",
+        "OPPORTUNITY_STATUS",
+        "OTHER_FACT",
+        "RELATIONSHIP_OR_ROLE",
+        "SELLER_CAPABILITY"
+      ],
+      "grounding_refs": [
+        "cited",
+        "empty"
+      ],
+      "reference_use_mode": [
+        "DIRECT",
+        "INTERNAL",
+        "PARAPHRASE"
+      ],
+      "source_identity_refs": [
+        "cited",
+        "empty"
+      ],
+      "claim_field": [
+        "COMPETITOR",
+        "DATE",
+        "EVENT_MAGNITUDE",
+        "NONE",
+        "OTHER",
+        "ROLE_OR_RELATIONSHIP",
+        "SELLER_CAPABILITY",
+        "THRESHOLD"
+      ],
+      "declared_value": [
+        "null",
+        "set"
+      ],
+      "specificity": [
+        0,
+        10,
+        90
+      ],
+      "question_has_premise": [
+        false,
+        true
+      ],
+      "source_instruction_ref": [
+        "null",
+        "set"
+      ],
+      "prescribes_buyer_choice": [
+        false,
+        true
+      ],
+      "status": [
+        "SCORABLE",
+        "UNSCORABLE_SEGMENT_STRUCTURE"
+      ],
+      "formatting_variant": [
+        false,
+        true
+      ],
+      "mixed_reference_modes": [
+        false,
+        true
+      ],
+      "artifact_type": [
+        "CALL_OPENING",
+        "DISCOVERY_QUESTION_SET",
+        "FOLLOW_UP_EMAIL",
+        "INTERNAL_WHY_NOW_SUMMARY"
+      ],
+      "source_identity_disclosure": [
+        "ALLOWED",
+        "NOT_ALLOWED"
+      ],
+      "disposition": [
+        "DIRECT_REFERENCE_ALLOWED",
+        "INTERNAL_ONLY",
+        "PARAPHRASE_ALLOWED"
+      ],
+      "attestation.condition_fidelity": [
+        false,
+        true
+      ],
+      "attestation.factual_accuracy": [
+        false,
+        true
+      ],
+      "attestation.disclosure_compliance": [
+        false,
+        true
+      ],
+      "attestation.buyer_state_intent_boundary": [
+        false,
+        true
+      ],
+      "attestation.contextual_appropriateness": [
+        false,
+        true
+      ],
+      "eleven_model_controlled_fields_covered": true
+    },
+    "passed": true
+  },
+  "contamination_audit": {
+    "calibration_sentences": 391,
+    "classes": {
+      "arm_a_artifacts_48": {
+        "sentences": 135,
+        "exact": 0,
+        "near": 0,
+        "distinctive_4_grams": 0
+      },
+      "arm_g_scenario_and_evaluation_material": {
+        "sentences": 84,
+        "exact": 0,
+        "near": 0,
+        "distinctive_4_grams": 0
+      },
+      "stage_e_prerecorded_prose": {
+        "sentences": 164,
+        "exact": 0,
+        "near": 0,
+        "distinctive_4_grams": 0
+      },
+      "stage_f_dry_run_prose": {
+        "sentences": 40,
+        "exact": 0,
+        "near": 0,
+        "distinctive_4_grams": 0
+      },
+      "operational_guide_worked_examples": {
+        "sentences": 34,
+        "exact": 0,
+        "near": 0,
+        "distinctive_4_grams": 0
+      },
+      "o5_prompt_worked_examples": {
+        "sentences": 23,
+        "exact": 0,
+        "near": 0,
+        "distinctive_4_grams": 0
+      }
+    },
+    "totals": {
+      "exact": 0,
+      "near": 0,
+      "distinctive_4_grams": 0
+    },
+    "banned_term_findings": 0,
+    "unexplained_findings": 0,
+    "allowlisted": 0,
+    "passed": true
+  },
+  "label_authority": "HUMAN_REFERENCE_TRAINING_LABELS_ONLY",
+  "model_generated_labels_used_as_authority": false,
+  "label_provenance_note": "The calibration key was model-drafted and subsequently reviewed and approved by the human project owner with model-assisted review. This approval is not an independent human annotation or independent adjudication. The key follows the frozen operational guide. It was not produced by the Stage F experiment model configuration (O-5) or by any experiment pipeline.",
+  "owner_label_review": {
+    "date": "2026-10-15",
+    "scope": "all 50 calibration segments and all 14 artifact attestation records",
+    "all_segments_owner_reviewed_and_approved": true,
+    "segments_reviewed": 50,
+    "decisions": {
+      "CAL-02-S2": "keep as written",
+      "CAL-03-S4": "semantic_class BUYER_PURCHASE_OR_SWITCH_INTENT -> COURTESY; the prescription is recorded by prescribes_buyer_choice",
+      "CAL-08-S3": "grounding_refs [M-BULLETIN] -> [M-BULLETIN, M-LEADTIME]; reference_use_mode DIRECT -> PARAPHRASE; mixed_reference_modes false -> true (operational guide 7.4, consequential)",
+      "CAL-13-S2": "grounding_refs [R-LIMIT, R-TURNAROUND] -> [R-TURNAROUND], following the guide's closest worked example",
+      "CAL-14-S2": "grounding_refs [] -> [M-STATEMENT]; reference_use_mode DIRECT -> PARAPHRASE; M-LIMIT not cited",
+      "CAL-13-S1": "grounding_refs [R-LIMIT] -> [R-LIMIT, R-STATEMENT]; \"you said\" attributes and rewords the buyer's condition (correction after the boundary-case review)"
+    },
+    "approved_without_change": "the other 44 segments, the CAL-02-S2 key as written, and mixed_reference_modes true for CAL-08-S3",
+    "attestations_changed": false,
+    "final_owner_approval_of_all_labels": "APPROVED by the human project owner on 2026-10-15",
+    "approval_provenance": "The calibration key was model-drafted and subsequently reviewed and approved by the human project owner with model-assisted review. This approval is not an independent human annotation or independent adjudication."
+  },
+  "calibration_responses_collected": false,
+  "pre_run_status": {
+    "O-3": "PRE_RUN_REQUIRED",
+    "O-5": "RESOLVED_FROZEN",
+    "O-6": "RESOLVED_FROZEN"
+  },
+  "pilot_readiness": false,
+  "pilot_readiness_blockers": {
+    "O-3": "PRE_RUN_REQUIRED"
+  },
+  "execution_record": {
+    "live_model_executed": false,
+    "model_called": false,
+    "api_key_used": false,
+    "credential_read": false,
+    "network_calls": 0,
+    "pilot_executed": false,
+    "main_experiment_executed": false,
+    "human_annotation_collected": false
+  },
+  "governing_limitation": {
+    "id": "E3-E-SEM-001",
+    "name": "MODEL_SEMANTIC_ANNOTATION_NOT_AUTHORITATIVE",
+    "resolved": false
+  },
+  "records_unchanged_by_this_freeze_sha256": {
+    "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_CONTAMINATION_RESOLUTION_001.md": "552c82a69df407730e5f5b7f445abe2e2bd58b9d45c07c27e6b62c72b0b4380f",
+    "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_ELIGIBILITY_ADDENDUM.md": "b66e57b5c546346c031913981091cce21c6b00863b633b62143cdedfad43632f",
+    "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_ELIGIBILITY_ADDENDUM_002.md": "9490a7213625a3e2e13cae1b98b57c47223ac60e56e69ff8f51af4f1ce72f5bd",
+    "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_OPERATIONAL_GUIDE_FREEZE_MANIFEST.json": "56952f30343a8844883e20b4d60bef1e3e07af8a4dafebd5a937870505cd2029",
+    "docs/engine3/ENGINE3_STAGE_F_O5_FREEZE_MANIFEST.json": "4a28ed081ab4b5a9899ad3888cb695f7e366491302ff37a66134897f912355e3",
+    "docs/engine3/ENGINE3_STAGE_F_O5_MODEL_CONFIGURATION_FROZEN.json": "e74c4a46fd771c12e48ab78f492026f97250a2d0a90ee49158ee544fb6c86237",
+    "docs/engine3/ENGINE3_STAGE_F_ARM_A_FREEZE_MANIFEST.json": "2d477ff6b05433b64e76aeb7efd3695146cf92fc347b2bf40f6f1a677d402967",
+    "docs/engine3/ENGINE3_STAGE_F_ARM_A_ADDITIONAL_ARTIFACTS_FROZEN.json": "9211996f730a575a1e393eb52065740fbf824095f4c9afd7c1032cbe9242876f"
+  },
+  "claim_boundary": "A contamination audit and freeze of synthetic calibration material. It collects no annotation, reports no agreement figure, and authorizes no pilot or live run. Not evidence of annotation reliability, model quality, semantic validation, purchase prediction, sales lift, production security, or BAEC theory."
+}

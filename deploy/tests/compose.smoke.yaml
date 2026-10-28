@@ -1,0 +1,60 @@
+# Smoke-test overlay for deploy/compose.yaml (V0.4 Phase 5). Local only; never a deployment.
+#
+#   * the proxy publishes on 127.0.0.1 only (18080 plain HTTP, 18443 HTTPS);
+#   * web and migrate also join the disposable test PostgreSQL's network (infra/postgres-test), reached by name over
+#     verified TLS;
+#   * a synthetic OIDC provider (deploy/tests/oidc_provider.py) runs as oidc.baec-smoke.test; web trusts the smoke
+#     test's CA for it (SSL_CERT_FILE, a bundle of the public roots plus that CA). Nothing here is used in production.
+services:
+  proxy:
+    ports: !override
+      - "127.0.0.1:${SMOKE_HTTP_PORT:-18080}:80"
+      - "127.0.0.1:${SMOKE_HTTPS_PORT:-18443}:443"
+
+  web:
+    environment:
+      SSL_CERT_FILE: /run/secrets/smoke_ca_bundle.pem
+    secrets:
+      - smoke_ca_bundle.pem
+    networks: [frontend, egress, testdb]
+    healthcheck:
+      interval: 5s
+      start_period: 60s
+      start_interval: 2s
+
+  migrate:
+    networks: [egress, testdb]
+
+  provision:
+    networks: [egress, testdb]
+
+  oidc:
+    image: baec-web:${BAEC_RELEASE:?set BAEC_RELEASE}
+    command: ["python", "/smoke/oidc_provider.py"]
+    environment:
+      SMOKE_ISSUER: ${BAEC_AUTH_ISSUER:?set BAEC_AUTH_ISSUER}
+      SMOKE_CLIENT_ID: ${SMOKE_CLIENT_ID:?}
+      SMOKE_CLIENT_SECRET: ${SMOKE_CLIENT_SECRET:?}
+      SMOKE_REDIRECT_URI: https://${BAEC_PUBLIC_ORIGIN}/oauth2callback
+      SMOKE_SUBJECT: ${SMOKE_SUBJECT:?}
+    volumes:
+      - ./tests/oidc_provider.py:/smoke/oidc_provider.py:ro
+      - ${SMOKE_OIDC_TLS_DIR:?}:/smoke/tls:ro
+    healthcheck:  # not the web image's Streamlit check: this container serves only the provider
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1', 9443), 2).close()"]
+      interval: 2s
+      start_period: 20s
+    ports:
+      - "127.0.0.1:${SMOKE_OIDC_PORT:-19443}:9443"
+    networks:
+      egress:
+        aliases: [oidc.baec-smoke.test]
+
+networks:
+  testdb:
+    external: true
+    name: baec-postgres-test_default
+
+secrets:
+  smoke_ca_bundle.pem:
+    file: ${BAEC_SECRETS_DIR:?}/smoke_ca_bundle.pem

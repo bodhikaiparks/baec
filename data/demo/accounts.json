@@ -1,0 +1,9 @@
+{
+  "seed_version": "1",
+  "data_policy": "SYNTHETIC_ONLY: every account, person, statement, supplier, and date in these files is fictional.",
+  "accounts": [
+    {"account_id": "ACC-HARBOR", "name": "Harbor Surgical Center", "expected_final_state": "CONDITIONALLY_DORMANT"},
+    {"account_id": "ACC-SUMMIT", "name": "Summit Manufacturing", "expected_final_state": "NO_PLAUSIBLE_PATH"},
+    {"account_id": "ACC-MERIDIAN", "name": "Meridian Clinical Systems", "expected_final_state": "ACTIVE_OPPORTUNITY"}
+  ]
+}

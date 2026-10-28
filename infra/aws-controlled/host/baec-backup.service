@@ -1,0 +1,14 @@
+# BAEC daily logical dump to encrypted S3 (V0.4 Phase 6; runbook §12). RDS PITR is the primary recovery layer.
+# Success and failure are logged as BACKUP_OK / BACKUP_FAILED: journalctl -t baec-backup. A failure fails the unit
+# (systemctl --failed) and never claims success.
+[Unit]
+Description=BAEC logical backup to S3
+After=docker.service network-online.target
+Requires=docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/baecctl backup
+SyslogIdentifier=baec-backup
+TimeoutStartSec=3600

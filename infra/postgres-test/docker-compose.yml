@@ -1,0 +1,51 @@
+# Local, disposable PostgreSQL for BAEC integration tests. Never a production database.
+#
+# Start, test, and tear down with scripts/postgres_test_db.sh (see docs/V04_PHASE3_POSTGRES_RLS_REPORT.md).
+# Passwords are generated per machine into infra/postgres-test/.env (gitignored); none are stored in this file.
+# Data lives on tmpfs, so `down` discards everything and the next `up` starts from an empty cluster.
+#
+# V0.4 Phase 5: TLS only, as production requires. The script generates a per-machine test CA and server certificate
+# into infra/postgres-test/certs/ (gitignored); clients connect with sslmode=verify-full against that CA. pg_hba.conf
+# accepts TCP connections only over TLS (hostssl) and rejects plaintext ones, so a plaintext client is refused by the
+# server as well as by BAEC.
+name: baec-postgres-test
+
+services:
+  postgres:
+    image: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab  # as deploy/ops
+    container_name: baec-postgres-test
+    # The key must be owned by the server user with mode 0600, which a bind mount from the host cannot guarantee, so
+    # the certificate and key are copied into the container before the server starts.
+    entrypoint:
+      - /bin/sh
+      - -c
+      - >-
+        install -d -o postgres -g postgres -m 700 /var/lib/postgresql/certs &&
+        install -o postgres -g postgres -m 600 /certs-source/server.key /var/lib/postgresql/certs/server.key &&
+        install -o postgres -g postgres -m 644 /certs-source/server.crt /var/lib/postgresql/certs/server.crt &&
+        install -o postgres -g postgres -m 644 /certs-source/ca.crt /var/lib/postgresql/certs/ca.crt &&
+        exec docker-entrypoint.sh postgres -c ssl=on -c ssl_min_protocol_version=TLSv1.2
+        -c ssl_cert_file=/var/lib/postgresql/certs/server.crt -c ssl_key_file=/var/lib/postgresql/certs/server.key
+        -c hba_file=/etc/baec/pg_hba.conf
+    environment:
+      POSTGRES_USER: baec_bootstrap
+      POSTGRES_PASSWORD: ${BAEC_TEST_BOOTSTRAP_PASSWORD:?run scripts/postgres_test_db.sh up}
+      POSTGRES_DB: baec_test
+      BAEC_TEST_MIGRATOR_PASSWORD: ${BAEC_TEST_MIGRATOR_PASSWORD:?run scripts/postgres_test_db.sh up}
+      BAEC_TEST_APP_PASSWORD: ${BAEC_TEST_APP_PASSWORD:?run scripts/postgres_test_db.sh up}
+      BAEC_TEST_AUTH_PASSWORD: ${BAEC_TEST_AUTH_PASSWORD:?run scripts/postgres_test_db.sh up}
+      BAEC_TEST_PROVISIONER_PASSWORD: ${BAEC_TEST_PROVISIONER_PASSWORD:?run scripts/postgres_test_db.sh up}
+      BAEC_TEST_BACKUP_PASSWORD: ${BAEC_TEST_BACKUP_PASSWORD:?run scripts/postgres_test_db.sh up}
+    ports:
+      - "127.0.0.1:${BAEC_TEST_POSTGRES_PORT:-55439}:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+      - ./certs:/certs-source:ro
+      - ./pg_hba.conf:/etc/baec/pg_hba.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U baec_bootstrap -d baec_test"]
+      interval: 1s
+      timeout: 3s
+      retries: 30

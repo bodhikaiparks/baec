@@ -1,0 +1,169 @@
+# BAEC production deployment: one host, Docker Compose, a managed PostgreSQL 16 server. (V0.4 Phase 5; IMPLEMENTATION)
+# A reference configuration: it has been validated and exercised locally (deploy/tests), never deployed to a real host.
+# See docs/PRODUCTION_RUNBOOK.md for every step and docs/V04_PHASE5_DEPLOYMENT_HARDENING_REPORT.md for the reasons.
+#
+#   internet ──443/80──▶ proxy (nginx: TLS, HSTS, Secure cookies, HTTP→HTTPS only) ──frontend (internal)──▶ web:8501
+#                                                                                       web ──egress──▶ PostgreSQL (TLS)
+#                                                                                       web ──egress──▶ OIDC provider
+#
+# Services and the only credentials each one receives (each as a mounted secret file, never an image layer):
+#   proxy      TLS certificate and key                         always running; the only published ports
+#   web        app + sign-in lookup database URLs, [auth]      always running; no published port
+#   migrate    migration database URL                          profile "release": run once per release, then exits
+#   provision  provisioning database URL                       profile "ops": run by an administrator, per command
+#   backup     backup database URL                             profile "ops": run on a schedule
+#   restore    restore (administrator) database URL            profile "restore": recovery only
+# The web service never receives the migration, provisioning, backup, or restore credential, and refuses to start if
+# it does (baec_console/deployment.py). Claude credentials are never configured here: each person enters their own
+# in their browser session.
+#
+# Required environment (a non-secret .env next to this file, or the shell): BAEC_RELEASE, BAEC_PUBLIC_HOST,
+# BAEC_PUBLIC_ORIGIN, BAEC_AUTH_ISSUER, BAEC_TLS_DIR, BAEC_SECRETS_DIR, BAEC_BACKUP_STAGING_DIR. Secret files live in
+# BAEC_SECRETS_DIR (outside the repository; deploy/secrets/ is gitignored), one value per file, each readable only by
+# the container user that needs it (uid 10001 for web/migrate/provision, uid 70 for backup/restore).
+name: baec
+
+x-hardened: &hardened
+  read_only: true
+  tmpfs:
+    - /tmp
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+
+services:
+  proxy:
+    image: baec-proxy:${BAEC_RELEASE:?set BAEC_RELEASE}
+    build: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      BAEC_PUBLIC_HOST: ${BAEC_PUBLIC_HOST:?set BAEC_PUBLIC_HOST}
+      BAEC_PUBLIC_ORIGIN: ${BAEC_PUBLIC_ORIGIN:?set BAEC_PUBLIC_ORIGIN}
+      BAEC_HSTS_MAX_AGE: ${BAEC_HSTS_MAX_AGE:-86400}
+    volumes:
+      - ${BAEC_TLS_DIR:?set BAEC_TLS_DIR (fullchain.pem, privkey.pem)}:/etc/nginx/tls:ro
+    networks: [edge, frontend]
+    depends_on:
+      web:
+        condition: service_healthy
+    restart: unless-stopped
+
+  web:
+    <<: *hardened
+    image: baec-web:${BAEC_RELEASE:?set BAEC_RELEASE}
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    environment:
+      BAEC_DEPLOYMENT_MODE: production
+      BAEC_AUTH_ISSUER: ${BAEC_AUTH_ISSUER:?set BAEC_AUTH_ISSUER}
+      BAEC_DATABASE_URL_FILE: /run/secrets/baec_app_database_url
+      BAEC_AUTH_DATABASE_URL_FILE: /run/secrets/baec_auth_database_url
+      BAEC_DB_POOL_MAX_SIZE: ${BAEC_DB_POOL_MAX_SIZE:-4}
+      BAEC_AUTH_DB_POOL_MAX_SIZE: ${BAEC_AUTH_DB_POOL_MAX_SIZE:-2}
+      STREAMLIT_BROWSER_SERVER_ADDRESS: ${BAEC_PUBLIC_HOST:?set BAEC_PUBLIC_HOST}
+    secrets:
+      - baec_app_database_url
+      - baec_auth_database_url
+      - source: baec_streamlit_auth
+        target: baec_streamlit_auth.toml
+      - source: baec_postgres_ca
+        target: baec_postgres_ca.crt
+    expose: ["8501"]
+    networks: [frontend, egress]
+    healthcheck:
+      # Ready = the process answers AND every production startup check passes now (python -m baec_console.readiness).
+      test: ["CMD-SHELL", "python -m baec_console.readiness && python -c \"import sys, urllib.request; sys.exit(urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=4).read() != b'ok')\""]
+      interval: 60s
+      timeout: 30s
+      start_period: 30s
+      retries: 2
+    stop_grace_period: 30s
+    restart: unless-stopped
+
+  migrate:
+    <<: *hardened
+    profiles: [release]
+    image: baec-web:${BAEC_RELEASE:?set BAEC_RELEASE}
+    command: ["python", "-m", "baec_console.postgres.migrate"]
+    environment:
+      BAEC_MIGRATION_DATABASE_URL_FILE: /run/secrets/baec_migration_database_url
+    secrets:
+      - baec_migration_database_url
+      - source: baec_postgres_ca
+        target: baec_postgres_ca.crt
+    networks: [egress]
+    restart: "no"
+
+  provision:
+    <<: *hardened
+    profiles: [ops]
+    image: baec-web:${BAEC_RELEASE:?set BAEC_RELEASE}
+    entrypoint: ["python", "-m", "baec_console.postgres.provision"]
+    environment:
+      BAEC_PROVISIONING_DATABASE_URL_FILE: /run/secrets/baec_provisioning_database_url
+    secrets:
+      - baec_provisioning_database_url
+      - source: baec_postgres_ca
+        target: baec_postgres_ca.crt
+    networks: [egress]
+    restart: "no"
+
+  backup:
+    <<: *hardened
+    profiles: [ops]
+    image: baec-ops:${BAEC_RELEASE:?set BAEC_RELEASE}
+    build: ./ops
+    command: ["backup", "--out", "/backups"]
+    environment:
+      BAEC_BACKUP_DATABASE_URL_FILE: /run/secrets/baec_backup_database_url
+    secrets:
+      - baec_backup_database_url
+      - source: baec_postgres_ca
+        target: baec_postgres_ca.crt
+    volumes:
+      # Staging only: each dump is copied off this host to encrypted backup storage, then removed (runbook).
+      - ${BAEC_BACKUP_STAGING_DIR:?set BAEC_BACKUP_STAGING_DIR}:/backups
+    networks: [egress]
+    restart: "no"
+
+  restore:
+    <<: *hardened
+    profiles: [restore]
+    image: baec-ops:${BAEC_RELEASE:?set BAEC_RELEASE}
+    entrypoint: ["python3", "/usr/local/bin/baec_backup.py", "restore"]
+    environment:
+      BAEC_RESTORE_DATABASE_URL_FILE: /run/secrets/baec_restore_database_url
+    secrets:
+      - baec_restore_database_url
+      - source: baec_postgres_ca
+        target: baec_postgres_ca.crt
+    volumes:
+      - ${BAEC_BACKUP_STAGING_DIR:?set BAEC_BACKUP_STAGING_DIR}:/backups:ro
+    networks: [egress]
+    restart: "no"
+
+networks:
+  edge: {}
+  frontend:
+    internal: true  # no route out, no published port: only the proxy reaches web
+  egress: {}
+
+secrets:
+  baec_app_database_url:
+    file: ${BAEC_SECRETS_DIR:?set BAEC_SECRETS_DIR}/baec_app_database_url
+  baec_auth_database_url:
+    file: ${BAEC_SECRETS_DIR:?set BAEC_SECRETS_DIR}/baec_auth_database_url
+  baec_streamlit_auth:
+    file: ${BAEC_SECRETS_DIR:?set BAEC_SECRETS_DIR}/baec_streamlit_auth.toml
+  baec_postgres_ca:
+    file: ${BAEC_SECRETS_DIR:?set BAEC_SECRETS_DIR}/baec_postgres_ca.crt
+  baec_migration_database_url:
+    file: ${BAEC_SECRETS_DIR:?set BAEC_SECRETS_DIR}/baec_migration_database_url
+  baec_provisioning_database_url:
+    file: ${BAEC_SECRETS_DIR:?set BAEC_SECRETS_DIR}/baec_provisioning_database_url
+  baec_backup_database_url:
+    file: ${BAEC_SECRETS_DIR:?set BAEC_SECRETS_DIR}/baec_backup_database_url
+  baec_restore_database_url:
+    file: ${BAEC_SECRETS_DIR:?set BAEC_SECRETS_DIR}/baec_restore_database_url

@@ -1,0 +1,69 @@
+{
+  "corpus": {
+    "context_count": 4,
+    "human_edit_count": 2,
+    "prerecorded_proposal_count": 49,
+    "reaches_human_preparation_review": 7,
+    "refused_by_stage_d": 28,
+    "structurally_rejected": 14
+  },
+  "documented_limits": [
+    "Legacy Stage D static-boundary regex test has a double-escaping defect; it remains untouched and unrepaired.",
+    "E3C-CTX-006 is the Stage E digest-mismatch result; E3C-CTX-001 to E3C-CTX-005 remain authoritative ContextState inputs.",
+    "Stage E does not establish EMAIL or CALL authorization.",
+    "Prompt-injection protection is structural (no action capability), not proof that Stage D semantically recognizes hostile instructions."
+  ],
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "engine1_modified": false,
+  "engine2_modified": false,
+  "governing_claim": "Stage E demonstrates that prerecorded synthetic AI proposals can be constrained to a strict structural envelope and routed through the unchanged Stage D validator. The proposal cannot create or modify upstream eligibility, disclosure decisions, context, artifact audience, origin, or action authority. Stage E does not independently verify the semantic accuracy of model-supplied DraftSegment annotations. Inaccurate annotations can affect Stage D validation outcomes, so Human Preparation Review remains the semantic control over the prose. Stage E does not authorize live-model execution or outreach.",
+  "limitations": [
+    {
+      "id": "E3-E-SEM-001",
+      "kind": "DISCOVERED_ARCHITECTURAL_LIMITATION",
+      "meaning": "Model-supplied DraftSegment semantic annotations are not independent evidence about what the prose means. Identical rendered text can receive a different Stage D result when those annotations differ. Stage E therefore does not establish deterministic semantic validation of arbitrary free-form model text.",
+      "name": "MODEL_SEMANTIC_ANNOTATION_NOT_AUTHORITATIVE",
+      "resolved": false
+    }
+  ],
+  "live_model_authorized": false,
+  "live_model_executed": false,
+  "lock_date": "2026-10-14",
+  "network_calls": 0,
+  "outreach_authorized": false,
+  "owner_accepted_date": "2026-10-14",
+  "prerecorded_proposals_only": true,
+  "project": "BAEC Trigger Intelligence",
+  "semantic_annotation_authority_resolved": false,
+  "stage": "E",
+  "stage_a_to_d_files_modified": false,
+  "stage_d_base_commit": "45a72d80f643240137d2d10c8b772e52fb664c43",
+  "stage_d_manifest_sha256": "559418edfd75f2dbe4fc818858ff9c8c2d3aa0943d15124e927d4ac6d1a858e1",
+  "stage_e_file_count": 12,
+  "stage_e_files": {
+    "baec_app/engine3/offline_evaluation.py": "d27b37329d32f994f41edccdafab92922654bcef58548d1b56319aa9b313f7dd",
+    "baec_app/engine3/proposal_contract.py": "f6c80a7ac8a6b68229cb1cebea3c6e8fd997e2fedb3fb6fc6d36f34a81044a45",
+    "docs/engine3/ENGINE3_STAGE_E_AI_PROPOSAL_CONTRACT.md": "9c76f5547909b9dfc7da09f148586fdc8603d15b220d18b07be4ca3b93d5b8d8",
+    "docs/engine3/ENGINE3_STAGE_E_OFFLINE_EVALUATION_REPORT.md": "0b0236e7d4f2ae366e294c961356f3aa65197b489ffda0d3021dce9f5a79b86b",
+    "scripts/verify_engine3_stage_e.py": "14f8b51e0de0f5fa13c5e98f4282a33b69333dc5bf489d993eaec0f8d39ddba4",
+    "tests/engine3/fixtures/ENGINE3_STAGE_E_OFFLINE_EVALUATION_ORACLE.json": "7c2af8b28f3c864599a6a4a127c8ea5bec327e0ff82a3e32b23471eb6e9d6c75",
+    "tests/engine3/fixtures/ENGINE3_STAGE_E_PRERECORDED_PROPOSALS.json": "d9c42583f40a71dd053c402f175654eff1da10e8f808d639755dc510999f43e9",
+    "tests/engine3/stage_e_adapter.py": "11fc9f473aeb0cf3cb81b0b2363845c2a372d6a2b41e299506e0cb21724380a4",
+    "tests/engine3/test_engine3_stage_e_manifest.py": "319c15c35ad1c0a5c11ab78631243125ece537c8fa3cff918b56c7126440b575",
+    "tests/engine3/test_engine3_stage_e_offline_evaluation.py": "62ad570fb4d706e1a5ab38e4722b2abd0b927c9bb347faef91bce97c55381114",
+    "tests/engine3/test_engine3_stage_e_proposal_contract.py": "fa7e36049ef708f5322cb248ae46ce9f7f1bc2d381cb0a6f16b8f8c36e4f4929",
+    "tests/engine3/test_engine3_stage_e_static_boundary.py": "729a91b6037bb25a13095b8056147b2798c278c25805720bbe914f46cd45e706"
+  },
+  "status": "LOCKED_LIMITED_CLAIM",
+  "synthetic_data_only": true,
+  "test_result": {
+    "full_repository": {
+      "deselected": 2,
+      "failed": 0,
+      "passed": 7031
+    },
+    "locked_engine1_engine2_public_tests_passed": 183,
+    "stage_e_tests_passed": 147,
+    "tests_engine3_passed": 234
+  }
+}

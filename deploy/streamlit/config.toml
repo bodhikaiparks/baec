@@ -1,0 +1,33 @@
+# Streamlit configuration for the BAEC production web image (V0.4 Phase 5). Copied to /app/.streamlit/config.toml.
+# No secret belongs here. The sign-in settings ([auth]) are a separate secret file, mounted at run time.
+
+[server]
+headless = true
+# Inside the container only: the port is never published; the HTTPS proxy reaches it on a private network.
+address = "0.0.0.0"
+port = 8501
+enableCORS = true
+enableXsrfProtection = true
+fileWatcherType = "none"
+runOnSave = false
+maxUploadSize = 16
+
+[browser]
+gatherUsageStats = false
+# browser.serverAddress is set per deployment (STREAMLIT_BROWSER_SERVER_ADDRESS = the public host), so Streamlit never
+# looks up this machine's external address.
+
+[client]
+# Exceptions are never shown to the browser (they could carry internal detail); BAEC shows its own fixed messages.
+showErrorDetails = "none"
+toolbarMode = "viewer"
+
+[global]
+developmentMode = false
+
+[logger]
+level = "info"
+
+[secrets]
+# Streamlit's [auth] section: client_id, client_secret, cookie_secret, redirect_uri, server_metadata_url.
+files = ["/run/secrets/baec_streamlit_auth.toml"]

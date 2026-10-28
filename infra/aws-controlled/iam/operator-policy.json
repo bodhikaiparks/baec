@@ -1,0 +1,130 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Identity",
+      "Effect": "Allow",
+      "Action": [
+        "sts:GetCallerIdentity"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "WriteSecretValues",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:DescribeSecret"
+      ],
+      "Resource": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:baec-controlled/*"
+    },
+    {
+      "Sid": "ReadOperatorSecretsForOneJob",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:baec-controlled/operator/*",
+        "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:rds!*"
+      ]
+    },
+    {
+      "Sid": "SessionManagerToTheBaecHostOnly",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartSession"
+      ],
+      "Resource": "arn:aws:ec2:REGION:ACCOUNT_ID:instance/*",
+      "Condition": {
+        "StringEquals": {
+          "ssm:resourceTag/Project": "baec"
+        }
+      }
+    },
+    {
+      "Sid": "SessionManagerDocument",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartSession"
+      ],
+      "Resource": "arn:aws:ssm:REGION::document/SSM-SessionManagerRunShell"
+    },
+    {
+      "Sid": "OwnSessions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:TerminateSession",
+        "ssm:ResumeSession"
+      ],
+      "Resource": "arn:aws:ssm:*:*:session/${aws:userid}-*"
+    },
+    {
+      "Sid": "UploadReleases",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::baec-controlled-releases-*/releases/*"
+    },
+    {
+      "Sid": "ReadBackupsForRestoreDrill",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:ListBucket",
+        "s3:ListBucketVersions"
+      ],
+      "Resource": [
+        "arn:aws:s3:::baec-controlled-backups-*",
+        "arn:aws:s3:::baec-controlled-backups-*/*"
+      ]
+    },
+    {
+      "Sid": "DecryptBackupsViaS3",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:REGION:ACCOUNT_ID:key/*",
+      "Condition": {
+        "StringEquals": {
+          "kms:ViaService": "s3.REGION.amazonaws.com",
+          "aws:ResourceTag/Project": "baec"
+        }
+      }
+    },
+    {
+      "Sid": "RestoreDrillDatabase",
+      "Effect": "Allow",
+      "Action": [
+        "rds:RestoreDBInstanceToPointInTime",
+        "rds:CreateDBInstance",
+        "rds:DeleteDBInstance",
+        "rds:AddTagsToResource",
+        "rds:DescribeDBInstances"
+      ],
+      "Resource": [
+        "arn:aws:rds:REGION:ACCOUNT_ID:db:baec-controlled*",
+        "arn:aws:rds:REGION:ACCOUNT_ID:subgrp:baec-controlled",
+        "arn:aws:rds:REGION:ACCOUNT_ID:pg:baec-controlled-*"
+      ]
+    },
+    {
+      "Sid": "NeverDeleteBackups",
+      "Effect": "Deny",
+      "Action": [
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion",
+        "s3:BypassGovernanceRetention",
+        "s3:PutBucketObjectLockConfiguration"
+      ],
+      "Resource": [
+        "arn:aws:s3:::baec-controlled-backups-*",
+        "arn:aws:s3:::baec-controlled-backups-*/*"
+      ]
+    }
+  ]
+}

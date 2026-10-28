@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-14",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "engine1_modified": false,
+  "engine2_modified": false,
+  "live_ai_calls": 0,
+  "locked_artifact_hashes": {
+    "docs/engine3/ENGINE3_REENGAGEMENT_PREPARATION_DOMAIN_CONTRACT.md": "890870e0af12bbbc35d26ef825544f12f8589198fddf6507d680036d21212b3a",
+    "docs/engine3/ENGINE3_STAGE_C_CORPUS_VALIDATION_ORACLE.json": "4ec28457f27a11e60c699a6dd467425451339ee2bd6a2ea6f2f9e1a2004dd800",
+    "docs/engine3/ENGINE3_STAGE_C_DOMAIN_VALIDATOR_DESIGN.md": "322d8dc7f8b1c86013631a994fb05adf232bda33817c4c51148d14930f0cdbdc",
+    "docs/engine3/ENGINE3_STAGE_C_VALIDATOR_SPEC.json": "f6023ed8592a7ccedd4a29e10c613b10111302145b1d0e56eb4db4baf5654aa0",
+    "docs/engine3/corpus/ENGINE3_STAGE_B_SYNTHETIC_CORPUS.json": "362dc5df456acd03246cdf4a44b1b16306d9901ad82774e33f52e2cb22ef087a",
+    "docs/engine3/corpus/ENGINE3_STAGE_B_SYNTHETIC_CORPUS.md": "6f64b037b25165cc2512d9d2342954f8ba316fc2176f594c8a8542dfabf574d2",
+    "tests/engine3/fixtures/ENGINE3_STAGE_C_CORPUS_VALIDATION_ORACLE_LOCKED.json": "4ec28457f27a11e60c699a6dd467425451339ee2bd6a2ea6f2f9e1a2004dd800",
+    "tests/engine3/fixtures/ENGINE3_STAGE_D_CONFORMANCE_INPUTS.json": "6bb38796b59ee510968646eaeb81d498155617bcb5c7cc2882a1d3c35ffa8cf8"
+  },
+  "network_calls": 0,
+  "outreach_execution_added": false,
+  "owner_approved_date": "2026-10-14",
+  "persistence_added": false,
+  "production_file_count": 11,
+  "production_files": {
+    "baec_app/engine3/__init__.py": "5100f38718bcc9d5f0bbb696598c2c3abab4ee800cf68da71bb413335138e713",
+    "baec_app/engine3/canonical.py": "611f168a6947173d1b76e4100c239633b762305e3f210fbb3a52364d592ceb39",
+    "baec_app/engine3/claims.py": "38bf4604438bd2a81cfced96077d6ab21864c93394eca05fffc8d989c0e8c376",
+    "baec_app/engine3/context.py": "ede7d1848b93e1fd5ac07552792769a65ec50cb5f9c83564dd12eb18ca5a4cf5",
+    "baec_app/engine3/disclosure.py": "5490bfef11594b36959d7a6a295c749d36029edd61d7f4748365f3779759ffed",
+    "baec_app/engine3/eligibility.py": "d6b0bf765b77a047965ee16446f6155f484e88c8119f98873567249a24ade873",
+    "baec_app/engine3/enums.py": "d5a27ecd74b1b87231990c68f03399e6f972732433c6f30cfca95606bb1eb2c2",
+    "baec_app/engine3/errors.py": "1da9854e12778bb21a9671495390be2c335159fed3e5570730be8e45c1379dd6",
+    "baec_app/engine3/models.py": "a3ca8fb2764c4207633611351237dc1c413c9a18bd9218b8f9a889275936e892",
+    "baec_app/engine3/reason_codes.py": "73ec8348b51119c684898ee394c0e125c17dcef906d8daa8dc8263ae6bd8b3d8",
+    "baec_app/engine3/validator.py": "7478547f5fb325540295eb7ab1155d6adfb94d2e48c188dcd7ad12208a07b002"
+  },
+  "project": "BAEC Trigger Intelligence",
+  "stage": "D",
+  "stage_c_locked_sha256": "322d8dc7f8b1c86013631a994fb05adf232bda33817c4c51148d14930f0cdbdc",
+  "status": "OWNER_APPROVED_PENDING_REPOSITORY_INTEGRATION_VERIFICATION",
+  "test_file_count": 5,
+  "test_files": {
+    "tests/engine3/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/engine3/conformance_adapter.py": "e0318b0d557ff14b48ee70993c992cded2e29e0556cb4a564e65dd707e19ac0d",
+    "tests/engine3/test_engine3_domain.py": "ca948c8f09dccd21fd82547985d2c4c14c5db04ca722c1ad7f2eaa4054cb74d9",
+    "tests/engine3/test_engine3_stage_d_conformance.py": "e1a3cb6adf11c5f4bb0e851316cf19d861d9f21013bb32bd58b6e4ce2af61ea5",
+    "tests/engine3/test_engine3_static_boundary.py": "560e19b56b8ad74d223ecdbbc989d9407d5381f402a928c4dca51f81755fbbeb"
+  },
+  "test_result": {
+    "corpus_cases": 64,
+    "failed": 0,
+    "passed": 87,
+    "supporting_tests": 23
+  },
+  "ui_added": false
+}

@@ -1,0 +1,221 @@
+{
+  "document": "ENGINE3_STAGE_F_O3_ANNOTATOR_STAFFING_CANDIDATE",
+  "project": "BAEC Trigger Intelligence",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "stage": "F",
+  "pre_run_item": "O-3",
+  "component": "Human reference annotation staffing (candidate record, no identities supplied)",
+  "status": "O3_CANDIDATE_STAFFING_REQUIRED",
+  "o3_resolved": false,
+  "rule_label": "IMPLEMENTATION",
+  "date": "2026-10-15",
+  "base_commit": "3be674300c322a0a43aac670fa93c529b853b7df",
+  "owner_review_document": "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_STAFFING_REVIEW.md",
+  "governing_sources": {
+    "protocol": "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_ANNOTATION_PROTOCOL.md (sections 2, 3, 4, 5, 8, 10)",
+    "design": "docs/engine3/ENGINE3_STAGE_F_SEMANTIC_RELIABILITY_EXPERIMENT_DESIGN.md (D-9, O-3)",
+    "spec": "docs/engine3/ENGINE3_STAGE_F_EXPERIMENT_SPEC.json (human_reference_protocol.staffing_required_for_reliability_claims, arm_a_supplement_authors_may_be_sole_annotators)",
+    "arm_a_freeze": "docs/engine3/ENGINE3_STAGE_F_ARM_A_FREEZE_MANIFEST.json (author_role_aliases via the frozen file)"
+  },
+  "staffing_mode": "DUAL_PRIMARY_WITH_ADJUDICATION",
+  "staffing_mode_note": "Required by the locked protocol for any reliability claim: two independent primary annotators plus a separate adjudicator. SINGLE_ANNOTATOR mode is not proposed here.",
+  "identities_supplied": false,
+  "identities_supplied_note": "No annotator has been named. Every identity and acknowledgement slot below is null until the owner supplies it. Nothing in this record may be filled by a model or by Claude Code.",
+  "personal_data_policy": {
+    "record_contains": "stable reviewer aliases and yes/no acknowledgements only",
+    "record_must_not_contain": [
+      "legal or full names (unless the owner deliberately chooses a name as the alias)",
+      "email addresses",
+      "phone numbers",
+      "employer or organization information",
+      "any other sensitive personal data"
+    ],
+    "alias_to_person_mapping_location": "kept by the owner outside the repository"
+  },
+  "reserved_author_role_aliases": [
+    "PROJECT_OWNER",
+    "CLAUDE_CODE_ASSISTED_DRAFTING"
+  ],
+  "reserved_author_role_aliases_source": "author_role_aliases in docs/engine3/ENGINE3_STAGE_F_ARM_A_ADDITIONAL_ARTIFACTS_FROZEN.json (O-6, RESOLVED_FROZEN, unchanged)",
+  "alias_rules": [
+    "Each alias is a stable, non-empty string used unchanged in every staffing, annotation, and adjudication record.",
+    "The three aliases are pairwise distinct after strip and casefold (for example R1 and r1 are the same reviewer). Normalization is for comparison only; the alias is stored as given.",
+    "A primary alias must not equal, or be a case or spacing variant of, PROJECT_OWNER or CLAUDE_CODE_ASSISTED_DRAFTING.",
+    "If the project owner serves in any role, that role's alias is exactly PROJECT_OWNER, so the readiness check compares the same string recorded as an Arm A author. No other alias (for example 'owner', 'PROJECT-OWNER', or a personal name) may stand in for the owner.",
+    "relationship_to_project is declared truthfully. A role whose relationship_to_project is PROJECT_OWNER has the alias exactly PROJECT_OWNER, and only that role may use it. The readiness code does not infer real-world identity.",
+    "CLAUDE_CODE_ASSISTED_DRAFTING is not a human and may not fill any role."
+  ],
+  "roles": {
+    "primary_a": {
+      "role": "PRIMARY_A",
+      "requirements": {
+        "human": true,
+        "may_be_project_owner": false,
+        "may_be_claude_code_assisted_drafting": false,
+        "may_author_or_approve_arm_a_supplement": false,
+        "distinct_from": ["primary_b", "adjudicator"]
+      },
+      "stable_reviewer_alias": null,
+      "human_confirmed": null,
+      "relationship_to_project": null,
+      "arm_a_supplement_author_or_approver": null,
+      "authored_stage_b_e_f_corpus_or_protocol": null,
+      "seen_stage_e_fixture_annotations": null,
+      "prior_access_to_model_annotations_or_results": null,
+      "conflict_disclosure": null,
+      "protocol_acknowledged": null,
+      "calibration_requirement_acknowledged": null,
+      "blinding_acknowledged": null,
+      "no_coordination_acknowledged": null,
+      "no_automated_labelling_acknowledged": null,
+      "acknowledgement_date": null
+    },
+    "primary_b": {
+      "role": "PRIMARY_B",
+      "requirements": {
+        "human": true,
+        "may_be_project_owner": false,
+        "may_be_claude_code_assisted_drafting": false,
+        "may_author_or_approve_arm_a_supplement": false,
+        "distinct_from": ["primary_a", "adjudicator"]
+      },
+      "stable_reviewer_alias": null,
+      "human_confirmed": null,
+      "relationship_to_project": null,
+      "arm_a_supplement_author_or_approver": null,
+      "authored_stage_b_e_f_corpus_or_protocol": null,
+      "seen_stage_e_fixture_annotations": null,
+      "prior_access_to_model_annotations_or_results": null,
+      "conflict_disclosure": null,
+      "protocol_acknowledged": null,
+      "calibration_requirement_acknowledged": null,
+      "blinding_acknowledged": null,
+      "no_coordination_acknowledged": null,
+      "no_automated_labelling_acknowledged": null,
+      "acknowledgement_date": null
+    },
+    "adjudicator": {
+      "role": "ADJUDICATOR",
+      "requirements": {
+        "human": true,
+        "may_be_claude_code_assisted_drafting": false,
+        "distinct_from": ["primary_a", "primary_b"]
+      },
+      "intended_research_configuration": {
+        "independent_of_project_owner": true,
+        "independent_of_corpus_drafting": true,
+        "label": "PREFERRED, not a locked requirement. If the owner adjudicates, the alias is PROJECT_OWNER and the departure is disclosed in every report."
+      },
+      "stable_reviewer_alias": null,
+      "human_confirmed": null,
+      "relationship_to_project": null,
+      "arm_a_supplement_author_or_approver": null,
+      "authored_stage_b_e_f_corpus_or_protocol": null,
+      "seen_stage_e_fixture_annotations": null,
+      "prior_access_to_model_annotations_or_results": null,
+      "conflict_disclosure": null,
+      "protocol_acknowledged": null,
+      "calibration_requirement_acknowledged": null,
+      "blinding_acknowledged": null,
+      "no_automated_labelling_acknowledged": null,
+      "acknowledgement_date": null
+    }
+  },
+  "field_values": {
+    "relationship_to_project": "One of: NONE, PROJECT_OWNER, OTHER_DISCLOSED (with a short description in conflict_disclosure). No employer or organization names.",
+    "conflict_disclosure": "Short text, or the string NONE. Never null at freeze.",
+    "booleans": "true or false as stated by the reviewer and confirmed by the owner. Null means not yet obtained.",
+    "acknowledgement_date": "YYYY-MM-DD"
+  },
+  "freeze_conditions": [
+    "All three stable_reviewer_alias values are filled, pairwise distinct after strip and casefold, and follow alias_rules.",
+    "human_confirmed is true for all three roles.",
+    "relationship_to_project is declared truthfully for all three roles, and any role declared PROJECT_OWNER uses exactly the alias PROJECT_OWNER.",
+    "For primary_a and primary_b: relationship_to_project is not PROJECT_OWNER, arm_a_supplement_author_or_approver is false, prior_access_to_model_annotations_or_results is false, and no_coordination_acknowledged is true.",
+    "For all three roles: protocol_acknowledged, calibration_requirement_acknowledged, blinding_acknowledged, and no_automated_labelling_acknowledged are true; conflict_disclosure is filled; acknowledgement_date is filled.",
+    "authored_stage_b_e_f_corpus_or_protocol and seen_stage_e_fixture_annotations are recorded as given. They are reported, not hidden (protocol section 2), and are not by themselves disqualifying under the locked protocol.",
+    "The owner approves the filled record and it is frozen before any pilot and before any main experimental result is viewed."
+  ],
+  "no_qualification_threshold": true,
+  "no_qualification_threshold_note": "The locked design defines no annotator qualification score, certification, or statistical entry threshold. Calibration (protocol section 5) is completed after staffing and before evaluation packets; its labels and agreement are not reported as reliability results and are not a pass/fail gate created here.",
+  "blinding": {
+    "primary_annotators_must_not_access": [
+      "each other's annotations",
+      "model-supplied annotations",
+      "model-labelled Stage D outcomes (D_model) or any Stage D reason code",
+      "adjudicated reference labels",
+      "scenario id or scenario family",
+      "Arm G / Arm A designation",
+      "repeat number",
+      "run id or context id",
+      "model identity, prompt, or sampling settings",
+      "expected reason codes",
+      "false-pass / false-refusal expectations or classifications",
+      "Stage E fixture annotations or oracle outcomes",
+      "Arm A supplement authoring metadata"
+    ],
+    "adjudicator_may_receive": [
+      "the blinded source packet produced by the unchanged packet builder",
+      "both primary annotation records (H attestations, statuses, field values, notes)"
+    ],
+    "adjudicator_must_not_receive": [
+      "model-supplied annotations",
+      "model-labelled Stage D result (D_model) or any Stage D reason code",
+      "false-pass / false-refusal classification",
+      "expected outcome",
+      "model identity"
+    ],
+    "enforcement": {
+      "packet_contents": "Enforced by the locked build_annotation_packet (unchanged): it takes only an artifact and its context, drops model annotations, and replaces model segment ids with opaque ids.",
+      "everything_else": "Operational. The packet operator and owner must keep the other materials away from annotators; no code in this repository enforces access to files, results, or conversations.",
+      "packet_builder_modified": false
+    }
+  },
+  "author_independence_mapping": {
+    "readiness_function": "experiments/engine3_stage_f/readiness.py check_pilot_readiness, as amended by HARNESS_AMENDMENT_001 (docs/engine3/ENGINE3_STAGE_F_HARNESS_AMENDMENT_001.md)",
+    "staffing_input": "AnnotatorStaffing(primary_a_alias, primary_b_alias, adjudicator_alias, frozen=True) from the frozen O-3 record",
+    "supplement_input": "16 SupplementArtifact values from the O-6 frozen file and manifest, author_aliases = (CLAUDE_CODE_ASSISTED_DRAFTING, PROJECT_OWNER)",
+    "alias_normalization": "strip surrounding whitespace, then casefold; exact equality after normalization; no substring or fuzzy matching",
+    "rule": "an artifact fails author independence if either normalized primary alias equals any of its normalized author aliases",
+    "code_enforces": [
+      "all three aliases non-empty",
+      "three pairwise distinct aliases after strip and casefold (HARNESS_AMENDMENT_001)",
+      "staffing frozen",
+      "neither primary alias equals an author alias of any supplement artifact, after strip and casefold",
+      "author independence is reported as not checkable when either primary alias is empty"
+    ],
+    "code_does_not_enforce": [
+      "that any alias belongs to a human",
+      "real-world identity behind an alias: the owner is detected only if recorded under PROJECT_OWNER (or a case or spacing variant)",
+      "adjudicator independence from authors (preferred research configuration, not a hard rule)",
+      "any acknowledgement, disclosure, or blinding condition"
+    ],
+    "record_governance": "If the project owner serves in any reviewer role, the alias is exactly PROJECT_OWNER. This is a declared-record condition checked at owner review; the code does not infer identity from an arbitrary alias.",
+    "can_readiness_code_establish_neither_primary_is_an_author": true,
+    "status": "CLOSED_BY_HARNESS_AMENDMENT_001",
+    "previous_gap": "Before HARNESS_AMENDMENT_001 the locked check failed an artifact only when both primaries were authors, so one author as one primary, and case or spacing variants, passed."
+  },
+  "pre_run_required": [
+    {"id": "O-3", "status": "PRE_RUN_REQUIRED", "o3_record_status": "O3_CANDIDATE_STAFFING_REQUIRED", "resolve_before": "any pilot"},
+    {"id": "O-5", "status": "PRE_RUN_REQUIRED", "resolve_before": "any pilot (frozen)"},
+    {"id": "O-6", "status": "RESOLVED_FROZEN", "resolve_before": "any live evaluation"}
+  ],
+  "o5_untouched": true,
+  "o5_note": "No model family, model version, prompt, sampling configuration, or experiment configuration is chosen or implied by this record.",
+  "pilot_readiness": false,
+  "owner_approval_still_required_for_any_pilot": true,
+  "live_model_executed": false,
+  "api_key_used": false,
+  "network_calls": 0,
+  "pilot_executed": false,
+  "main_experiment_executed": false,
+  "annotation_performed": false,
+  "experiment_results_exist": false,
+  "locked_stage_a_to_f_files_modified": false,
+  "governing_limitation": {
+    "id": "E3-E-SEM-001",
+    "name": "MODEL_SEMANTIC_ANNOTATION_NOT_AUTHORITATIVE",
+    "resolved": false
+  },
+  "claim_boundary": "A staffing candidate record only. It names no one, resolves no pre-run item, authorizes no pilot or live run, and is not evidence of annotation reliability, semantic validation, purchase prediction, sales lift, production security, or BAEC theory."
+}

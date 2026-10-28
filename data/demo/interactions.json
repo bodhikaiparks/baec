@@ -1,0 +1,22 @@
+{
+  "interactions": [
+    {
+      "interaction_id": "INT-HARBOR-001",
+      "account_id": "ACC-HARBOR",
+      "occurred_at": "2026-03-10T15:00:00+00:00",
+      "text": "Seller: Are you looking at any alternatives for procedure packs right now?\nBuyer (Materials Manager): No. We're not looking at other suppliers right now. NorthStar has been fine for us.\nSeller: It sounds like there isn't a reason to evaluate alternatives right now. What, if anything, would have to change for that to become worthwhile?\nBuyer (Materials Manager): If our supplier raises pricing by more than 10% when our agreement renews, we'd evaluate other options."
+    },
+    {
+      "interaction_id": "INT-SUMMIT-001",
+      "account_id": "ACC-SUMMIT",
+      "occurred_at": "2026-03-12T14:00:00+00:00",
+      "text": "Seller: Is the team evaluating any alternatives for fastening components at the moment?\nBuyer (Purchasing Lead): No. We're under a long-term agreement and it's working.\nSeller: What, if anything, would have to change for looking at another option to become worthwhile?\nBuyer (Purchasing Lead): Honestly, I can't think of anything. Nothing on the horizon would change that."
+    },
+    {
+      "interaction_id": "INT-MERIDIAN-001",
+      "account_id": "ACC-MERIDIAN",
+      "occurred_at": "2026-03-14T16:00:00+00:00",
+      "text": "Seller: Are you currently looking at alternatives?\nBuyer (Director of Supply Chain): Yes. We opened a formal supplier review last month and are comparing three vendors.\nBuyer (Director of Supply Chain): If our current supplier can't hold pricing, we'd move even faster on this."
+    }
+  ]
+}

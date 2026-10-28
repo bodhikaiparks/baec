@@ -1,0 +1,485 @@
+{
+ "description": "Hand-derived expected Stage F dry-run results, kept separate from the inputs. Software expectations for synthetic stand-ins only; not experiment results and not evidence about any model, buyer, sales outcome, or BAEC theory.",
+ "stage": "F",
+ "case_count": 12,
+ "expected_packet_count": 12,
+ "cases": [
+  {
+   "case_id": "F-DRY-01",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": true,
+     "d_model_primary_reason_code": null,
+     "d_ref_allowed": true,
+     "d_ref_primary_reason_code": null,
+     "category": "CONCORDANT_PASS",
+     "disagreements": [],
+     "individually_sufficient_fields": null,
+     "joint_only": null,
+     "contributing_fields": null,
+     "human_safe": true,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": true,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": false
+  },
+  {
+   "case_id": "F-DRY-02",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-CALL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": false,
+     "d_model_primary_reason_code": "E3C-CLM-001",
+     "d_ref_allowed": false,
+     "d_ref_primary_reason_code": "E3C-CLM-001",
+     "category": "CONCORDANT_REFUSAL_SAME_PRIMARY",
+     "disagreements": [],
+     "individually_sufficient_fields": null,
+     "joint_only": null,
+     "contributing_fields": null,
+     "human_safe": false,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": false,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": false
+  },
+  {
+   "case_id": "F-DRY-03",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": true,
+     "d_model_primary_reason_code": null,
+     "d_ref_allowed": true,
+     "d_ref_primary_reason_code": null,
+     "category": "CONCORDANT_PASS",
+     "disagreements": [
+      {
+       "ordinal": 1,
+       "field": "semantic_class",
+       "direction": "NEUTRAL"
+      },
+      {
+       "ordinal": 1,
+       "field": "grounding_refs",
+       "direction": "PERMISSIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "specificity",
+       "direction": "PERMISSIVE"
+      }
+     ],
+     "individually_sufficient_fields": null,
+     "joint_only": null,
+     "contributing_fields": null,
+     "human_safe": true,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": true,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": false
+  },
+  {
+   "case_id": "F-DRY-04",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": true,
+     "d_model_primary_reason_code": null,
+     "d_ref_allowed": false,
+     "d_ref_primary_reason_code": "E3C-CLM-001",
+     "category": "FALSE_PASS",
+     "disagreements": [
+      {
+       "ordinal": 1,
+       "field": "claim_type",
+       "direction": "PERMISSIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "semantic_class",
+       "direction": "PERMISSIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "claim_field",
+       "direction": "PERMISSIVE"
+      }
+     ],
+     "individually_sufficient_fields": [
+      "claim_type",
+      "semantic_class"
+     ],
+     "joint_only": false,
+     "contributing_fields": [
+      "claim_type",
+      "semantic_class"
+     ],
+     "human_safe": false,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": true,
+   "proposal_false_pass": true,
+   "proposal_false_refusal": false
+  },
+  {
+   "case_id": "F-DRY-05",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": false,
+     "d_model_primary_reason_code": "E3C-CLM-001",
+     "d_ref_allowed": true,
+     "d_ref_primary_reason_code": null,
+     "category": "FALSE_REFUSAL",
+     "disagreements": [
+      {
+       "ordinal": 1,
+       "field": "claim_type",
+       "direction": "RESTRICTIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "semantic_class",
+       "direction": "NEUTRAL"
+      },
+      {
+       "ordinal": 1,
+       "field": "claim_field",
+       "direction": "RESTRICTIVE"
+      }
+     ],
+     "individually_sufficient_fields": [
+      "claim_type"
+     ],
+     "joint_only": false,
+     "contributing_fields": [
+      "claim_type"
+     ],
+     "human_safe": true,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": false,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": true
+  },
+  {
+   "case_id": "F-DRY-06",
+   "structural_outcome": "REJECTED",
+   "rejection_class": "INVALID_STRUCTURE",
+   "artifacts": [],
+   "reaches_review_under_model": null,
+   "proposal_false_pass": null,
+   "proposal_false_refusal": null
+  },
+  {
+   "case_id": "F-DRY-07",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": true,
+     "reference_complete": false,
+     "d_model_allowed": true,
+     "d_model_primary_reason_code": null,
+     "d_ref_allowed": null,
+     "d_ref_primary_reason_code": null,
+     "category": null,
+     "disagreements": [],
+     "individually_sufficient_fields": null,
+     "joint_only": null,
+     "contributing_fields": null,
+     "human_safe": true,
+     "unscorable_ordinals": [
+      1
+     ],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": true,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": false
+  },
+  {
+   "case_id": "F-DRY-08",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": false,
+     "d_model_primary_reason_code": "E3C-CLM-008",
+     "d_ref_allowed": false,
+     "d_ref_primary_reason_code": "E3C-CLM-008",
+     "category": "CONCORDANT_REFUSAL_SAME_PRIMARY",
+     "disagreements": [],
+     "individually_sufficient_fields": null,
+     "joint_only": null,
+     "contributing_fields": null,
+     "human_safe": true,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [
+      1
+     ],
+     "mixed_reference_mode_ordinals": [
+      2
+     ],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": false,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": false
+  },
+  {
+   "case_id": "F-DRY-09",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-CALL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": false,
+     "d_model_primary_reason_code": "E3C-DISC-005",
+     "d_ref_allowed": true,
+     "d_ref_primary_reason_code": null,
+     "category": "FALSE_REFUSAL",
+     "disagreements": [
+      {
+       "ordinal": 1,
+       "field": "reference_use_mode",
+       "direction": "RESTRICTIVE"
+      }
+     ],
+     "individually_sufficient_fields": [
+      "reference_use_mode"
+     ],
+     "joint_only": false,
+     "contributing_fields": [
+      "reference_use_mode"
+     ],
+     "human_safe": true,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": false,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": true
+  },
+  {
+   "case_id": "F-DRY-10",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-SUMMARY",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": true,
+     "d_model_primary_reason_code": null,
+     "d_ref_allowed": true,
+     "d_ref_primary_reason_code": null,
+     "category": "CONCORDANT_PASS",
+     "disagreements": [],
+     "individually_sufficient_fields": null,
+     "joint_only": null,
+     "contributing_fields": null,
+     "human_safe": true,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    },
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": true,
+     "d_model_primary_reason_code": null,
+     "d_ref_allowed": false,
+     "d_ref_primary_reason_code": "E3C-DISC-001",
+     "category": "FALSE_PASS",
+     "disagreements": [
+      {
+       "ordinal": 1,
+       "field": "claim_type",
+       "direction": "PERMISSIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "semantic_class",
+       "direction": "NEUTRAL"
+      },
+      {
+       "ordinal": 1,
+       "field": "grounding_refs",
+       "direction": "PERMISSIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "reference_use_mode",
+       "direction": "RESTRICTIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "claim_field",
+       "direction": "PERMISSIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "specificity",
+       "direction": "PERMISSIVE"
+      },
+      {
+       "ordinal": 1,
+       "field": "source_instruction_ref",
+       "direction": "PERMISSIVE"
+      }
+     ],
+     "individually_sufficient_fields": [
+      "claim_type",
+      "grounding_refs",
+      "source_instruction_ref"
+     ],
+     "joint_only": false,
+     "contributing_fields": [
+      "claim_type",
+      "grounding_refs",
+      "source_instruction_ref"
+     ],
+     "human_safe": false,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": true,
+   "proposal_false_pass": true,
+   "proposal_false_refusal": false
+  },
+  {
+   "case_id": "F-DRY-11",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": false,
+     "reference_complete": true,
+     "d_model_allowed": false,
+     "d_model_primary_reason_code": "E3C-CTX-006",
+     "d_ref_allowed": false,
+     "d_ref_primary_reason_code": "E3C-CTX-006",
+     "category": null,
+     "disagreements": [],
+     "individually_sufficient_fields": null,
+     "joint_only": null,
+     "contributing_fields": null,
+     "human_safe": true,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": false,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": false
+  },
+  {
+   "case_id": "F-DRY-12",
+   "structural_outcome": "VALID",
+   "rejection_class": null,
+   "artifacts": [
+    {
+     "artifact_id": "A-EMAIL",
+     "annotation_sensitive": true,
+     "reference_complete": true,
+     "d_model_allowed": true,
+     "d_model_primary_reason_code": null,
+     "d_ref_allowed": true,
+     "d_ref_primary_reason_code": null,
+     "category": "CONCORDANT_PASS",
+     "disagreements": [],
+     "individually_sufficient_fields": null,
+     "joint_only": null,
+     "contributing_fields": null,
+     "human_safe": true,
+     "unscorable_ordinals": [],
+     "unfinalized_ordinals": [],
+     "formatting_variant_ordinals": [],
+     "mixed_reference_mode_ordinals": [],
+     "nonexistent_citation_count": 0
+    }
+   ],
+   "reaches_review_under_model": true,
+   "proposal_false_pass": false,
+   "proposal_false_refusal": false
+  }
+ ]
+}

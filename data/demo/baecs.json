@@ -1,0 +1,62 @@
+{
+  "baecs": [
+    {
+      "baec_id": "BAEC-HARBOR-001",
+      "account_id": "ACC-HARBOR",
+      "source_interaction_id": "INT-HARBOR-001",
+      "captured_at": "2026-03-10T15:30:00+00:00",
+      "buyer_role": "Materials Manager",
+      "buyer_exact_statement": "If our supplier raises pricing by more than 10% when our agreement renews, we'd evaluate other options.",
+      "source_excerpt": {"provenance": "BUYER_FACT", "text": "If our supplier raises pricing by more than 10% when our agreement renews, we'd evaluate other options."},
+      "articulation_origin": "BUYER_GENERATED",
+      "elicitation_mode": "CEE_ELICITED",
+      "assessments": [
+        {"criterion": "PRESENT_NON_EVALUATION", "finding": "MET", "evidence": [
+          {"provenance": "BUYER_FACT", "text": "We're not looking at other suppliers right now."}]},
+        {"criterion": "PROSPECTIVE_CONDITION", "finding": "MET", "evidence": [
+          {"provenance": "BUYER_FACT", "text": "If our supplier raises pricing by more than 10% when our agreement renews, we'd evaluate other options."}]},
+        {"criterion": "BUYER_ARTICULATION", "finding": "MET", "evidence": [
+          {"provenance": "BUYER_FACT", "text": "If our supplier raises pricing by more than 10% when our agreement renews, we'd evaluate other options."}]},
+        {"criterion": "EVALUATION_LINKAGE", "finding": "MET", "evidence": [
+          {"provenance": "BUYER_FACT", "text": "If our supplier raises pricing by more than 10% when our agreement renews, we'd evaluate other options."}]}
+      ],
+      "stringency": {
+        "verbatim_text": "more than 10% when our agreement renews",
+        "comparator": "GREATER_THAN",
+        "numeric_value": "10",
+        "unit": "%",
+        "qualitative_term": null,
+        "recurrence_text": null,
+        "timing_text": "when our agreement renews"
+      },
+      "confirmation": {"authorized_by": "synthetic-seed-fixture", "authorized_at": "2026-03-10T15:35:00+00:00"},
+      "expected_classification": "CONFIRMED_BAEC",
+      "expected_reason": null
+    },
+    {
+      "baec_id": "BAEC-MERIDIAN-001",
+      "account_id": "ACC-MERIDIAN",
+      "source_interaction_id": "INT-MERIDIAN-001",
+      "captured_at": "2026-03-14T16:15:00+00:00",
+      "buyer_role": "Director of Supply Chain",
+      "buyer_exact_statement": "If our current supplier can't hold pricing, we'd move even faster on this.",
+      "source_excerpt": {"provenance": "BUYER_FACT", "text": "If our current supplier can't hold pricing, we'd move even faster on this."},
+      "articulation_origin": "BUYER_GENERATED",
+      "elicitation_mode": "SPONTANEOUS",
+      "assessments": [
+        {"criterion": "PRESENT_NON_EVALUATION", "finding": "NOT_MET", "evidence": [
+          {"provenance": "BUYER_FACT", "text": "We opened a formal supplier review last month and are comparing three vendors."}]},
+        {"criterion": "PROSPECTIVE_CONDITION", "finding": "MET", "evidence": [
+          {"provenance": "BUYER_FACT", "text": "If our current supplier can't hold pricing, we'd move even faster on this."}]},
+        {"criterion": "BUYER_ARTICULATION", "finding": "MET", "evidence": [
+          {"provenance": "BUYER_FACT", "text": "If our current supplier can't hold pricing, we'd move even faster on this."}]},
+        {"criterion": "EVALUATION_LINKAGE", "finding": "NOT_MET", "evidence": [
+          {"provenance": "BUYER_FACT", "text": "If our current supplier can't hold pricing, we'd move even faster on this."}]}
+      ],
+      "stringency": null,
+      "confirmation": null,
+      "expected_classification": "NOT_BAEC",
+      "expected_reason": "NOT_BAEC: criterion not met: PRESENT_NON_EVALUATION; criterion not met: EVALUATION_LINKAGE."
+    }
+  ]
+}

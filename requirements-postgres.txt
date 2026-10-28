@@ -1,0 +1,9 @@
+# Optional: PostgreSQL product persistence (V0.4 Phase 3) and its integration tests. Not needed for development
+# on SQLite. Install alongside requirements-dev.txt; see docs/V04_PHASE3_POSTGRES_RLS_REPORT.md.
+psycopg[binary]==3.2.10
+psycopg-pool==3.2.6
+# Production sign-in (V0.4 Phase 4): Streamlit's st.login runs OpenID Connect through Authlib.
+authlib==1.9.1
+# Deployment HTTPS-boundary tests (deploy/tests/test_https_boundary.py); without them that module is skipped.
+httpx==0.28.1
+certifi==2026.10.23

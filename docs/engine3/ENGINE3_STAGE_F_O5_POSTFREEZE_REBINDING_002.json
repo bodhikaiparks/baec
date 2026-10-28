@@ -1,0 +1,145 @@
+{
+  "document": "ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_002",
+  "rebinding_id": "O5_POSTFREEZE_REBINDING_002",
+  "project": "BAEC Trigger Intelligence",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "stage": "F",
+  "pre_run_item": "O-5",
+  "o5_status": "RESOLVED_FROZEN",
+  "amendment": "HARNESS_AMENDMENT_003",
+  "date": "2026-10-15",
+  "owner_approved": true,
+  "rule_label": "IMPLEMENTATION",
+  "base_commit": "20513e03e9e04cdee95b21f7e72ef609694b5ec0",
+  "purpose": "Governance amendment only. HARNESS_AMENDMENT_003 added three provenance hashes to human annotation records and recorded O-5's current status and a broader O-3 exposure rule in the harness manifest. Several files it changed are locked inputs of the O-5 freeze. This record binds their new hashes after O5_POSTFREEZE_REBINDING_001, without modifying the original O-5 records or that rebinding. Nothing the model receives or any run setting changed.",
+  "original_o5_records_modified": false,
+  "previous_rebinding_modified": false,
+  "original_o5_freeze_manifest": {
+    "path": "docs/engine3/ENGINE3_STAGE_F_O5_FREEZE_MANIFEST.json",
+    "sha256": "4a28ed081ab4b5a9899ad3888cb695f7e366491302ff37a66134897f912355e3"
+  },
+  "original_o5_frozen_configuration": {
+    "path": "docs/engine3/ENGINE3_STAGE_F_O5_MODEL_CONFIGURATION_FROZEN.json",
+    "sha256": "e74c4a46fd771c12e48ab78f492026f97250a2d0a90ee49158ee544fb6c86237"
+  },
+  "previous_rebinding": {
+    "path": "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_001.json",
+    "sha256": "76119f1bcfc0096c2abf595d2e21002ab7bcbb5aa2a1d1efee7161cb6e0f9ba4"
+  },
+  "rebound_locked_inputs": {
+    "experiments/engine3_stage_f/annotation.py": {
+      "freeze_sha256": "07f169b72d35872bf06bb1a06eb486974b5807bfbff66f61be62b1ef2a53e2fd",
+      "previous_sha256": "951b4fb34a5bdfd01a3e8966db457e23296014b5f8e0791b280958798b1a5a01",
+      "post_sha256": "247ee4b00787393fbb47dbd7f564d6667bc398db669a93a73906b2b2bd926210"
+    },
+    "tests/engine3/stage_f_adapter.py": {
+      "freeze_sha256": "a030631228755de648671bc9d45b47df7d33479d07c111ec581bc169ea7623d7",
+      "previous_sha256": "a030631228755de648671bc9d45b47df7d33479d07c111ec581bc169ea7623d7",
+      "post_sha256": "76a84c2bad3f2be8ebc58be8e73050fcd3c4f6f4a763603ca97e63d332953bff"
+    },
+    "tests/engine3/test_engine3_stage_f_annotation.py": {
+      "freeze_sha256": "8966bef36c84113ac77b7be148c6ab76eba85ac9350c67c3819aa05a84ac79b3",
+      "previous_sha256": "c63a3aa14a760775d5a658eb368a1879ca2994bb6e8c358b417ea74714728b32",
+      "post_sha256": "d40e31d4ce37755496903ed2c1d3bf772bdd8476fa96307aea7e3b78424eb79d"
+    },
+    "tests/engine3/test_engine3_stage_f_harness_manifest.py": {
+      "freeze_sha256": "9e7d62503eca140804dc5d2a835810abe1c48a3d3a89881803fef3b1b4a30efd",
+      "previous_sha256": "69e9d8bec729324ca28be2023a6e6e0b140733fc361b3f6341adc03d3eaf4864",
+      "post_sha256": "b87ac85f55866ac17702e6bd0ec18e6483551c73b81507da2f28acbbfcc63872"
+    },
+    "scripts/verify_engine3_stage_f_harness.py": {
+      "freeze_sha256": "ff8dd103084fbf7e260cb798e3865b4b4a29d6da340b045730e04e9a08847220",
+      "previous_sha256": "cc6d57e7351ba3d15c5919843fc7fa0ae810511445ef70959fc73855c3f84e61",
+      "post_sha256": "2c0123fb46cbf71cc5295d6720c24dc84d5de4cf02b8082bd3e69f59a36c084d"
+    },
+    "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md": {
+      "freeze_sha256": "d95d628948c9ff9468a5c9b677eddee987af24e49fe055f33bffd2c0dd440786",
+      "previous_sha256": "b1d7445aeb0c5e2a15f7cac873e49780afda00e1b4a339a3eab6be5ce8bff6a6",
+      "post_sha256": "270c82fb9a523c598e6b0d9c5394aba8f2f3e221d674787fc6818e2d80e15441"
+    },
+    "docs/engine3/ENGINE3_STAGE_F_HARNESS_MANIFEST.json": {
+      "freeze_sha256": "c16de526b2ddaa6160ed79f0140cf71e35519dabec45d2d196d47e4331233800",
+      "previous_sha256": "c19780e7adf7464e6f8ee9c5cd96e9f06f551e4e395bf4fb495e7aadcac4a934",
+      "post_sha256": "245f2cabd2ad22e847e937cc089c0ecb2f19086aa1e1b6788cfaec3e232868d1"
+    }
+  },
+  "bound_records": {
+    "harness_amendment_003": {
+      "path": "docs/engine3/ENGINE3_STAGE_F_HARNESS_AMENDMENT_003.md",
+      "sha256": "48060bf60e323964a61fe1d012edc562dd0b67e2c934dbef8db1864c12c4991e"
+    },
+    "o3_eligibility_addendum_002": {
+      "path": "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_ELIGIBILITY_ADDENDUM_002.md",
+      "sha256": "9490a7213625a3e2e13cae1b98b57c47223ac60e56e69ff8f51af4f1ce72f5bd"
+    },
+    "operational_guide_freeze_manifest": {
+      "path": "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_OPERATIONAL_GUIDE_FREEZE_MANIFEST.json",
+      "sha256": "56952f30343a8844883e20b4d60bef1e3e07af8a4dafebd5a937870505cd2029"
+    }
+  },
+  "o5_verifier": {
+    "path": "scripts/verify_engine3_stage_f_o5_freeze.py",
+    "previous_sha256": "86c744658835edf4297b7c2368b955a113fc9bb3ad9fb3dfaebc32a26732b3fd",
+    "post_sha256": "bd8f8add185dd1bb6ba299541d26866c3ed7e444ecce53c42b4a4711b2184472"
+  },
+  "o5_verifier_change": "Recognises exactly O5_POSTFREEZE_REBINDING_001 and then this rebinding: fixed ids, amendments, permitted locked inputs with their hash chain (freeze -> 001 -> 002), bound records, the original O-5 record hashes, the exact bytes of O5_POSTFREEZE_REBINDING_001, and this record's unchanged-configuration block. Any other divergence from the original freeze fails. The original hashes are still verified and reported. There is no generic amendment bypass.",
+  "unchanged_o5_configuration": {
+    "model_id": "claude-sonnet-5-5",
+    "prompt_version": "engine3.stage_f.o5_prompt.v3",
+    "prompt_bundle_sha256": "e01b570a3cca047e18d84f05c09ecc43ffa3b15705e9bd269bb2621834a98959",
+    "system_prompt_sha256": "71a0b864c6a1aef763856a692292202083c8410137f6c4e164f4e332687919e5",
+    "arm_g_user_template_sha256": "d8569846502dc0fdd5d729c86a4c6dcdf7b4d30ad75235a1ecc9633868cd3a8c",
+    "arm_a_user_template_sha256": "422ff54d89f95c0acecd842bbbb76c8df7efc7695a89c58dc9c3036dc0b2e105",
+    "schema_sha256": "d438ac896dbdec3503ccc960868d9d36f118c87a76d2b6657e7c60db473f8093",
+    "configuration_sha256": "5ec4f582d2a05e8fe2768e9030e8eadf1315c1cced89d5acc0de1916e28e7f21",
+    "generation": {
+      "max_tokens": 20000,
+      "thinking": "adaptive",
+      "effort": "high",
+      "temperature": "OMITTED",
+      "top_p": "OMITTED",
+      "top_k": "OMITTED",
+      "seed": "OMITTED",
+      "stop_sequences": "OMITTED",
+      "service_tier": "standard_only",
+      "speed": "OMITTED"
+    },
+    "transport": {
+      "streaming": false,
+      "timeout_seconds": 600,
+      "sdk_max_retries": 0,
+      "concurrency": 1
+    },
+    "retry_policy_id": "E3F-O5-RETRY-v2",
+    "provenance_policy_id": "E3F-O5-PROVENANCE-v3",
+    "run_order_algorithm": "E3F_RUN_ORDER_V1",
+    "pilot_run_order_size": 44,
+    "pilot_run_order_sha256": "993951c8750e9adb78859499cdd90b27567e3833311b24ee7938ccd23604c8d8",
+    "e3_e_sem_001_resolved": false
+  },
+  "unchanged_statement": "Unchanged by this rebinding: model id; prompt and prompt SHA-256 (bundle, system prompt, Arm G and Arm A templates); output schema and schema SHA-256; configuration SHA-256; sampling and thinking settings (generation block: max_tokens, thinking, effort, OMITTED sampling parameters, service tier, speed); transport (timeout, SDK retries, streaming, concurrency); retry policy; run-order algorithm; the 44-slot pilot ordering and its SHA-256; provenance policy; E3-E-SEM-001 unresolved. Human annotation records and the harness manifest are never sent to the model.",
+  "now_updated": [
+    "docs/engine3/ENGINE3_STAGE_F_HARNESS_MANIFEST.json pre_run_state_current records O-5 RESOLVED_FROZEN (o5_current_status), bound to the original O-5 freeze manifest, frozen configuration, and O5_POSTFREEZE_REBINDING_001. The lock-time O-5 PRE_RUN_REQUIRED is kept as o5_status_at_harness_lock and the superseded snapshot as pre_run_state_current_superseded."
+  ],
+  "pre_run_status": {
+    "O-3": "PRE_RUN_REQUIRED",
+    "O-5": "RESOLVED_FROZEN",
+    "O-6": "RESOLVED_FROZEN"
+  },
+  "pilot_readiness": false,
+  "execution_record": {
+    "live_model_executed": false,
+    "model_called": false,
+    "api_key_used": false,
+    "credential_read": false,
+    "network_calls": 0,
+    "pilot_executed": false,
+    "main_experiment_executed": false
+  },
+  "governing_limitation": {
+    "id": "E3-E-SEM-001",
+    "name": "MODEL_SEMANTIC_ANNOTATION_NOT_AUTHORITATIVE",
+    "resolved": false
+  },
+  "claim_boundary": "A hash rebinding for a record-schema and governance amendment. It calls no model, authorizes no pilot or live run, and is not evidence of annotation reliability, model quality, semantic validation, purchase prediction, sales lift, production security, or BAEC theory."
+}

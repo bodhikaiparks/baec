@@ -1,0 +1,46 @@
+#cloud-config
+# BAEC controlled host (V0.4 Phase 6): Docker, Compose, certbot, AWS CLI, baecctl, and the systemd units. It starts
+# nothing BAEC-related: the operator installs the release, secrets, and certificate, then starts it (README.md).
+package_update: true
+package_upgrade: true
+packages:
+  - docker.io
+  - docker-compose-v2
+  - certbot
+  - openssl
+  - curl
+write_files:
+  - path: /etc/baec/compose.env
+    permissions: "0644"
+    content: |
+      ${indent(6, compose_env)}
+  - path: /etc/baec/host.conf
+    permissions: "0644"
+    content: |
+      ${indent(6, host_conf)}
+  - path: /usr/local/sbin/baecctl
+    permissions: "0750"
+    content: |
+      ${indent(6, baecctl)}
+  - path: /etc/systemd/system/baec-watchdog.service
+    content: |
+      ${indent(6, watchdog_service)}
+  - path: /etc/systemd/system/baec-watchdog.timer
+    content: |
+      ${indent(6, watchdog_timer)}
+  - path: /etc/systemd/system/baec-backup.service
+    content: |
+      ${indent(6, backup_service)}
+  - path: /etc/systemd/system/baec-backup.timer
+    content: |
+      ${indent(6, backup_timer)}
+runcmd:
+  - [snap, install, aws-cli, --classic]
+  - [install, -d, -m, "0700", -o, root, -g, root, /etc/baec/secrets, /etc/baec/tls]
+  - [install, -d, -m, "0700", -o, "70", -g, "70", /var/lib/baec/backup-staging]
+  - [install, -d, -m, "0755", /opt/baec]
+  - [systemctl, daemon-reload]
+  - [systemctl, enable, --now, docker.service]
+  # The watchdog may run before BAEC exists (it ignores a missing container). The backup timer is enabled by the
+  # operator once the database and backup credential exist (README.md).
+  - [systemctl, enable, --now, baec-watchdog.timer]

@@ -1,0 +1,12 @@
+# BAEC web watchdog (V0.4 Phase 6). Restarts an unhealthy web container within a budget, then stops and holds it.
+# Logs to journald as baec-watchdog: journalctl -t baec-watchdog. Never touches the database.
+[Unit]
+Description=BAEC web health watchdog
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/baecctl watchdog
+SyslogIdentifier=baec-watchdog
+TimeoutStartSec=120

@@ -1,0 +1,901 @@
+{
+  "document": "ENGINE3_STAGE_F_ARM_A_ADDITIONAL_ARTIFACTS_FROZEN",
+  "project": "BAEC Trigger Intelligence",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "stage": "F",
+  "pre_run_item": "O-6",
+  "status": "HUMAN_APPROVED_FROZEN",
+  "o6_status": "RESOLVED_FROZEN",
+  "rule_label": "IMPLEMENTATION",
+  "freeze_date": "2026-10-14",
+  "base_commit": "090030e83a17929580140f23ed02bcaaff1b785f",
+  "description": "Sixteen frozen fixed-prose Arm A supplement artifacts. Synthetic Alder Ridge / Cobalt prose only. Fixed prose inputs, not reference truth. Contains no reference annotations and no expected outcomes.",
+  "all_data_synthetic": true,
+  "is_live_model_output": false,
+  "owner_approved": true,
+  "owner_approval_date": "2026-10-14",
+  "owner_approval_record": "The owner approved all 16 artifacts after review, with the AS-15 S1 replacement: \"Approve O-6 with the AS-15 replacement.\"",
+  "owner_approved_changes": [
+    {
+      "artifact_id": "E3F-AS-15",
+      "segment_id": "S1",
+      "previous_text": "When we last spoke, you said a price increase above 8% at the July renewal could make it worth reviewing the contract.",
+      "approved_text": "Earlier, you said a big enough price increase at the July renewal could be a reason to revisit the contract."
+    }
+  ],
+  "authoring_provenance": "The 16 supplemental artifacts were initially drafted with Claude Code assistance and then reviewed and approved by the human project owner. They are not independently human-authored. They are not live model output and were not produced by any Stage F run, prompt, or experimental configuration.",
+  "independently_human_authored": false,
+  "author_role_aliases": [
+    "CLAUDE_CODE_ASSISTED_DRAFTING",
+    "PROJECT_OWNER"
+  ],
+  "author_role_aliases_note": "Role aliases, not annotator identities. Under D-9, at least one primary annotator of every artifact must not be an author; the owner's O-3 alias must be mapped to PROJECT_OWNER when O-3 is resolved.",
+  "research_limitations": [
+    "If O-5 later selects a Claude-family model, the shared stylistic origin of these artifacts may create model-family familiarity or style-coupling in Arm A. This does not invalidate the arm, but it must be disclosed and considered when interpreting Arm A diagnostic results."
+  ],
+  "arm_a_goal_and_channel": "None, following the existing 32 seed artifacts and the locked harness dry-run convention. No separate convention for the supplement.",
+  "contains_reference_annotations": false,
+  "contains_expected_outcomes": false,
+  "contains_stage_e_fixture_labels": false,
+  "artifact_count": 16,
+  "freeze_identity_rule": "Each artifact freeze SHA-256 is SHA-256 over the canonical JSON (baec_app.engine3.canonical: sorted keys, separators ',' and ':', UTF-8, ensure_ascii false) of exactly: freeze_identity_version, output_schema_version, artifact_id, context_id, context_digest (Stage E EvaluationContext.digest of the context built from the locked Stage E fixture context, plus the locked Stage F spec delta for variants), fixed_prose_artifact_id, artifact_type, ordered [segment_id, text] pairs, segment_separator, and rendered_text. Authoring and approval metadata are excluded. Prose is never hashed alone, so identical prose under different contexts has distinct identities.",
+  "corpus_freeze_rule": "SHA-256 over the canonical JSON of {freeze_identity_version, artifacts: ordered [artifact_id, artifact_freeze_sha256] pairs in E3F-AS-01..16 order}.",
+  "corpus_freeze_sha256": "c7ff8233173046b248d5548e06fab336b2d697ee6c67a1317525bd065d1b0961",
+  "packet_visible_content": [
+    "fixed_prose.artifact_type",
+    "fixed_prose.segments[*] text (segment ids replaced by opaque PS-n ids)",
+    "rendered_text",
+    "grounding items of the resolved context (context shown only as an opaque digest label)"
+  ],
+  "authoring_metadata_packet_visible": false,
+  "approval_and_freeze_metadata_packet_visible": false,
+  "artifacts": [
+    {
+      "artifact_id": "E3F-AS-01",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-9PCT-DIRECT",
+        "context_digest": "15e794bded27836a609f7efe206d303566e92abb189a496156e3e0d6f495b96f",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "Thanks again for the conversation earlier this year."
+          ],
+          [
+            "S2",
+            "The price increase at your July renewal came in at 9%."
+          ],
+          [
+            "S3",
+            "Would it be useful to compare notes on what that means for your team?"
+          ]
+        ]
+      },
+      "rendered_text": "Thanks again for the conversation earlier this year. The price increase at your July renewal came in at 9%. Would it be useful to compare notes on what that means for your team?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "06b09896024e83422f1d499c74390d00b64fdb5d8cb30ee17329cec1f78aa89c"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "numerical reformatting 9.00% -> 9% under CTX-AR-9PCT-DIRECT",
+        "intended_stress": [
+          "numeric formatting variant",
+          "easy clean segmentation"
+        ],
+        "fields_exercised": [
+          "declared_value",
+          "reference_use_mode",
+          "specificity",
+          "claim_field",
+          "grounding_refs"
+        ],
+        "segmentation_pressure": "Easy: one claim per segment. Included as the clean-segmentation control.",
+        "authoring_rationale": "Seed artifacts state 9.00% verbatim (E3E-P06/N04) or 9% only under paraphrase-only permission or inside a multi-claim email (E3E-AR1). No seed isolates the formatting-only variant in a context where direct use is permitted and the rest of the artifact is neutral.",
+        "review_concerns": "May read as acceptable prose that locked exact-string rules treat strictly; that is the purpose. Low annotation difficulty."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-02",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-CURRENT",
+        "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-CALL",
+        "artifact_type": "CALL_OPENING",
+        "segments": [
+          [
+            "S1",
+            "Thanks for picking up."
+          ],
+          [
+            "S2",
+            "It looks like the July renewal came with a noticeable price increase."
+          ],
+          [
+            "S3",
+            "Has that changed anything on your side?"
+          ]
+        ]
+      },
+      "rendered_text": "Thanks for picking up. It looks like the July renewal came with a noticeable price increase. Has that changed anything on your side?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "bf37d60dac242c46338a0e8018c4bcaa961d969f6cd59e6d630bcd2c7c182df3"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "generalized qualitative paraphrase of the measurement under paraphrase-only permission",
+        "intended_stress": [
+          "semantic paraphrase",
+          "mixed-reference-mode pressure",
+          "premise-bearing question (mild)"
+        ],
+        "fields_exercised": [
+          "specificity",
+          "reference_use_mode",
+          "grounding_refs",
+          "claim_field",
+          "question_has_premise"
+        ],
+        "segmentation_pressure": "Moderate: S2 pairs a qualitative measurement paraphrase with the exact renewal wording.",
+        "authoring_rationale": "The only seed qualitative paraphrase is \"that condition may now be relevant\", which avoids any timing word. Here a generalized paraphrase of the measurement sits next to the exact phrase \"July renewal\", so specificity (is the renewal timing exact detail?) and mixed-mode handling are both contestable. S3 refers back to the increase, testing whether an anaphoric premise counts.",
+        "review_concerns": "Deliberately ambiguous on specificity and premise. Could raise inter-annotator disagreement that is a protocol finding rather than a model finding."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-03",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-CURRENT",
+        "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "You told me that if Cobalt raised the price of your imaging service contract by more than 8% at the July renewal, you would put the contract out for review."
+          ],
+          [
+            "S2",
+            "I'm reaching out because I understand the contract may be back under consideration."
+          ],
+          [
+            "S3",
+            "Would a short call be useful?"
+          ]
+        ]
+      },
+      "rendered_text": "You told me that if Cobalt raised the price of your imaging service contract by more than 8% at the July renewal, you would put the contract out for review. I'm reaching out because I understand the contract may be back under consideration. Would a short call be useful?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "38d32726a1edcabb3b4a8672d13364511b2a970b40cd90bbe3985c9d1c542fd4"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "ambiguous near-quote paraphrase of the buyer statement",
+        "intended_stress": [
+          "paraphrase-only buyer statement",
+          "current-evaluation assertion (hedged)",
+          "direct vs. paraphrase boundary"
+        ],
+        "fields_exercised": [
+          "reference_use_mode",
+          "claim_type",
+          "semantic_class",
+          "claim_field",
+          "declared_value",
+          "grounding_refs"
+        ],
+        "segmentation_pressure": "Moderate: S1 is one long sentence but one claim.",
+        "authoring_rationale": "Seeds have either an explicit quotation (E3E-N03) or a clearly reworded summary (E3E-P01). S1 is near-verbatim without quotation marks (tense and pronouns shifted), against a paraphrase-only buyer statement. S2 is a hedged current-evaluation assertion, which no seed has: the only seed evaluation assertion (E3E-N14) is unhedged.",
+        "review_concerns": "Deliberately ambiguous: whether S1 is direct or paraphrased use is the question being tested. S2 hedging may split annotators between assertion and courtesy."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-04",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-CURRENT",
+        "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "You mentioned that a price increase above 8% at renewal was the point where a review would make sense."
+          ],
+          [
+            "S2",
+            "I'm not assuming you've started looking at other providers, and I'm not suggesting you should."
+          ],
+          [
+            "S3",
+            "If it would help, I'm happy to compare notes on where things stand."
+          ]
+        ]
+      },
+      "rendered_text": "You mentioned that a price increase above 8% at renewal was the point where a review would make sense. I'm not assuming you've started looking at other providers, and I'm not suggesting you should. If it would help, I'm happy to compare notes on where things stand.",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "c4c22700fc97b3f649e5c1aab461f2eb60c39133e9150ba148c70faabea8992d"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "negated buyer-state mention in a buyer-facing artifact",
+        "intended_stress": [
+          "semantic paraphrase (more than 8% -> above 8%)",
+          "negated buyer-state mention",
+          "negated prescription",
+          "paraphrase-only buyer statement"
+        ],
+        "fields_exercised": [
+          "semantic_class",
+          "claim_type",
+          "prescribes_buyer_choice",
+          "reference_use_mode",
+          "declared_value",
+          "specificity"
+        ],
+        "segmentation_pressure": "Moderate: S2 carries two negated mentions in one sentence.",
+        "authoring_rationale": "S1 is the requested semantic paraphrase case with no exact co-cited wording (no \"July\"), so it is paraphrase-only rather than mixed. S2 mentions evaluation and a commercial choice only to disclaim them; the protocol's negation rule has only an internal-summary seed example (the boundary statement).",
+        "review_concerns": "S2 is the main ambiguity: whether a sentence about the seller's own stance is an assertion, and whether two negated mentions are one claim. Likely to look safe overall."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-05",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-CURRENT",
+        "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-QUESTIONS",
+        "artifact_type": "DISCOVERY_QUESTION_SET",
+        "segments": [
+          [
+            "S1",
+            "Where does the imaging service contract stand on your side at the moment: is anyone looking at it again, or is it settled for now?"
+          ],
+          [
+            "S2",
+            "If a review does happen, who would be involved on your side?"
+          ],
+          [
+            "S3",
+            "Is the July renewal still the point at which you would revisit the contract?"
+          ],
+          [
+            "S4",
+            "What would need to change for a review to make sense?"
+          ]
+        ]
+      },
+      "rendered_text": "Where does the imaging service contract stand on your side at the moment: is anyone looking at it again, or is it settled for now? If a review does happen, who would be involved on your side? Is the July renewal still the point at which you would revisit the contract? What would need to change for a review to make sense?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "ed1153d9c351bfaaec9d2b9d706a64dd1f9e36d9086b21b567c74718f3f6ffac"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "question asking whether evaluation reopened (no premise)",
+        "intended_stress": [
+          "question asking whether evaluation reopened",
+          "conditional premise",
+          "role question",
+          "easy clean segmentation"
+        ],
+        "fields_exercised": [
+          "question_has_premise",
+          "semantic_class",
+          "grounding_refs",
+          "claim_type"
+        ],
+        "segmentation_pressure": "Easy: four separate questions.",
+        "authoring_rationale": "Seed E3E-P03 asks whether a review has started, framed as started vs. possibility. Q1 asks the same no-premise status question as an open \"where does it stand\" question whose \"again\" leans on the earlier conversation, so whether it carries a premise is itself tested. Q2 adds a conditional role question (premise introduced by \"if\"); Q3 a grounded timing premise in new wording.",
+        "review_concerns": "Q1 was rewritten in owner review to avoid near-redundancy with seed E3E-P03. \"again\" may be read as a premise by some annotators."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-06",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-CURRENT",
+        "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-CALL",
+        "artifact_type": "CALL_OPENING",
+        "segments": [
+          [
+            "S1",
+            "Thanks for making time today."
+          ],
+          [
+            "S2",
+            "With the contract review now under way on your side, who else is involved in the decision?"
+          ],
+          [
+            "S3",
+            "And now that we're back in the running for the imaging contract, what would you like to see from us?"
+          ]
+        ]
+      },
+      "rendered_text": "Thanks for making time today. With the contract review now under way on your side, who else is involved in the decision? And now that we're back in the running for the imaging contract, what would you like to see from us?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "9bc3e760cf69b4cc3776ce517f49ed8a14fc51568a11c79e8941aa9c1162fd53"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "question presupposing evaluation reopened",
+        "intended_stress": [
+          "premise-bearing question",
+          "current-evaluation presupposition",
+          "opportunity status",
+          "role or relationship"
+        ],
+        "fields_exercised": [
+          "question_has_premise",
+          "semantic_class",
+          "grounding_refs",
+          "claim_type"
+        ],
+        "segmentation_pressure": "Easy to segment; each question carries one presupposition.",
+        "authoring_rationale": "Seeds have one premise-bearing unsafe question (switching, E3E-N12) and opportunity status only as an internal assertion (E3E-N15). This adds a presupposed evaluation and a buyer-facing presupposed opportunity status, so semantic-class precedence is exercised on questions.",
+        "review_concerns": "Fairly overt. S2 also touches roles, which tests the precedence order."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-07",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-CURRENT",
+        "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "Pricing at your July renewal went up by more than 8%, which is past the point you described when we last spoke."
+          ],
+          [
+            "S2",
+            "Has that changed how you're thinking about the contract?"
+          ]
+        ]
+      },
+      "rendered_text": "Pricing at your July renewal went up by more than 8%, which is past the point you described when we last spoke. Has that changed how you're thinking about the contract?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "24fa929e0a207176c27a7500ceaf07dde18ca9ec608699f5ca999119708d72c6"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "segment mixing direct and paraphrased cited content (mixed reference modes)",
+        "intended_stress": [
+          "mixed-reference-mode pressure",
+          "multiple references",
+          "unsupported numeric framing",
+          "possible multi-claim segment"
+        ],
+        "fields_exercised": [
+          "reference_use_mode",
+          "grounding_refs",
+          "specificity",
+          "claim_field",
+          "declared_value",
+          "claim_type"
+        ],
+        "segmentation_pressure": "Hard: S1 uses exact renewal wording, the threshold's exact words applied to the measurement, and a paraphrased buyer statement.",
+        "authoring_rationale": "Seed E3E-P01 mixes modes only inside a buyer-statement reference. S1 here is a factual assertion about the event that borrows the threshold's exact words (\"more than 8%\") to describe the paraphrase-only measurement, so it tests which items are cited and whether that use is direct.",
+        "review_concerns": "Deliberately ambiguous. Could also be judged UNSCORABLE_SEGMENT_STRUCTURE (magnitude claim plus condition-met claim). Hard to annotate; owner may simplify."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-08",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-CURRENT",
+        "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "The new pricing applies from your July renewal."
+          ],
+          [
+            "S2",
+            "Since the increase came in above the 8% you mentioned and the response window closes at the end of this month, I'd recommend putting the contract out for review now rather than waiting."
+          ],
+          [
+            "S3",
+            "Could we find 20 minutes before Friday?"
+          ]
+        ]
+      },
+      "rendered_text": "The new pricing applies from your July renewal. Since the increase came in above the 8% you mentioned and the response window closes at the end of this month, I'd recommend putting the contract out for review now rather than waiting. Could we find 20 minutes before Friday?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "4bd6c1a9c39a161ddcce9e12f1d34c554d9383ed4f78286de0d2ef4253bcb0ed"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "grounded renewal timing framed neutrally vs. framed as pressure",
+        "intended_stress": [
+          "unsupported date/timing",
+          "unsupported urgency",
+          "prescribed buyer choice",
+          "multi-claim segment pressure (likely UNSCORABLE_SEGMENT_STRUCTURE)",
+          "neutral vs. pressure timing"
+        ],
+        "fields_exercised": [
+          "semantic_class",
+          "claim_field",
+          "declared_value",
+          "prescribes_buyer_choice",
+          "claim_type",
+          "question_has_premise"
+        ],
+        "segmentation_pressure": "S1 and S3 are simple. S2 is one indivisible sentence with a magnitude claim, an invented date, urgency, and a prescribed commercial choice.",
+        "authoring_rationale": "Seed urgency is short and unconnected to the renewal (\"this week\"). Here S1 is neutral grounded timing and S2 converts it to pressure with an invented deadline. S2 is the designated multi-claim segment; S3 is a softer, scorable urgency case.",
+        "review_concerns": "S2 was reworded in owner review to read as a seller recommendation; it still carries a magnitude claim, an invented date, urgency, and a prescribed choice in one sentence. Its artifact will not be reference-complete if S2 is judged unscorable, so it contributes field-agreement data from S1 and S3 only."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-09",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-F-SOURCE-ALLOWED",
+        "context_digest": "b77181770d1a8e69174ac937fdabdccbbd599fa3b36ac3d9a11df1c43aa3253a",
+        "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "Cobalt's renewal notice states a price increase effective at your July renewal."
+          ],
+          [
+            "S2",
+            "Would it be useful to talk through what that means for the contract?"
+          ]
+        ]
+      },
+      "rendered_text": "Cobalt's renewal notice states a price increase effective at your July renewal. Would it be useful to talk through what that means for the contract?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "c5f07c7090dcb82d19f55dbc07d805842dd688e203ff74cd8668139a119f1196"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "source attribution permitted (CTX-F-SOURCE-ALLOWED)",
+        "intended_stress": [
+          "source identity disclosure",
+          "controlled pair (identical prose, one disposition differs)",
+          "near-exact wording"
+        ],
+        "fields_exercised": [
+          "source_identity_refs",
+          "grounding_refs",
+          "reference_use_mode",
+          "specificity"
+        ],
+        "segmentation_pressure": "Easy to segment.",
+        "authoring_rationale": "No seed uses the Stage F source-attribution variants. Identical prose in E3F-AS-09 and E3F-AS-10 isolates the source-identity disposition. The packet deduplication key includes the context digest, so the two produce separate packets.",
+        "review_concerns": "Residual leakage: an annotator who sees both packets may notice the pair. \"Cobalt's renewal notice\" may also be read as conveying the internal-only forwarded notice item; that ambiguity is real in the locked context and is recorded rather than removed. The freeze hash must bind the context id, otherwise these two collide under the readiness uniqueness check."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-10",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-F-SOURCE-NOT-ALLOWED",
+        "context_digest": "677dcb314d3dd29a3fead510106f862e286b02848fadbb5c1172c07ae81bd7bb",
+        "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "Cobalt's renewal notice states a price increase effective at your July renewal."
+          ],
+          [
+            "S2",
+            "Would it be useful to talk through what that means for the contract?"
+          ]
+        ]
+      },
+      "rendered_text": "Cobalt's renewal notice states a price increase effective at your July renewal. Would it be useful to talk through what that means for the contract?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "d07db5342d3ba5e78d851a576d01adde6acba8267828c49b5a1a667070f7a9a9"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "same sentence with source attribution not permitted (CTX-F-SOURCE-NOT-ALLOWED)",
+        "intended_stress": [
+          "source identity disclosure",
+          "controlled pair (identical prose, one disposition differs)",
+          "near-exact wording"
+        ],
+        "fields_exercised": [
+          "source_identity_refs",
+          "grounding_refs",
+          "reference_use_mode",
+          "specificity"
+        ],
+        "segmentation_pressure": "Easy to segment.",
+        "authoring_rationale": "No seed uses the Stage F source-attribution variants. Identical prose in E3F-AS-09 and E3F-AS-10 isolates the source-identity disposition. The packet deduplication key includes the context digest, so the two produce separate packets.",
+        "review_concerns": "Residual leakage: an annotator who sees both packets may notice the pair. \"Cobalt's renewal notice\" may also be read as conveying the internal-only forwarded notice item; that ambiguity is real in the locked context and is recorded rather than removed. The freeze hash must bind the context id, otherwise these two collide under the readiness uniqueness check."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-11",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-F-MEASUREMENT-UNKNOWN",
+        "context_digest": "0d4fa8483521df2ef8a58e3ab0f674c3b4c098624e9ad465fea51d6c69ea315b",
+        "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "Last time we talked, you said an increase of more than 8% at the July renewal might be enough to reopen the contract."
+          ],
+          [
+            "S2",
+            "The increase at the July renewal works out to roughly 9 percent."
+          ],
+          [
+            "S3",
+            "Is that still something you'd want to talk through?"
+          ]
+        ]
+      },
+      "rendered_text": "Last time we talked, you said an increase of more than 8% at the July renewal might be enough to reopen the contract. The increase at the July renewal works out to roughly 9 percent. Is that still something you'd want to talk through?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "a68e72389f965f60d313af2c8835b72842044164c622bbb49ad1c76159f5c7de"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "unknown-permission measurement leak (CTX-F-MEASUREMENT-UNKNOWN)",
+        "intended_stress": [
+          "numeric formatting variant (hedged, spelled-out unit)",
+          "unknown-permission disclosure"
+        ],
+        "fields_exercised": [
+          "declared_value",
+          "reference_use_mode",
+          "specificity",
+          "grounding_refs",
+          "claim_field"
+        ],
+        "segmentation_pressure": "Easy to segment.",
+        "authoring_rationale": "No seed uses CTX-F-MEASUREMENT-UNKNOWN. S2 adds a hedge (\"roughly\") and a spelled-out unit (\"percent\"), so whether it is a formatting-only variant or a paraphrase, and which surface form is the declared value, are both contestable.",
+        "review_concerns": "Deliberately ambiguous on mode and declared value. S1 was rewritten in owner review so that no seed sentence is reused; it now keeps the threshold wording exact and rewords the buyer statement."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-12",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-F-ROLE-INTERNAL",
+        "context_digest": "4028b27187032070dc06ea85fd630df71fa369e8bab6742982d35a72b1f2b0c8",
+        "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "Since you oversee imaging services at Alder Ridge, I wanted to check in with you directly."
+          ],
+          [
+            "S2",
+            "Is the July renewal condition you mentioned still on your radar?"
+          ]
+        ]
+      },
+      "rendered_text": "Since you oversee imaging services at Alder Ridge, I wanted to check in with you directly. Is the July renewal condition you mentioned still on your radar?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "8409e21e21e3a43a3f2a8d1791d7c9c2a79e411b3b0a3816e474bd8af27779bc"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "internal-only role leaked (CTX-F-ROLE-INTERNAL)",
+        "intended_stress": [
+          "role or relationship claim",
+          "internal-only information (paraphrased)"
+        ],
+        "fields_exercised": [
+          "claim_field",
+          "declared_value",
+          "grounding_refs",
+          "reference_use_mode",
+          "semantic_class"
+        ],
+        "segmentation_pressure": "Easy to segment.",
+        "authoring_rationale": "Seed E3E-N08 states the exact title with no grounding in the context. Here the role is paraphrased from an internal-only item that exists in the context, so citation of the leaked item and the declared-value surface form are the test.",
+        "review_concerns": "Ambiguous whether \"oversee imaging services\" is a role value or a relationship description."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-13",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-F-COMPETITOR-INTERNAL",
+        "context_digest": "014023d9889d67ce240cb713e6fcedec44d0f208383aaafa67d70f40df94d72e",
+        "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-CALL",
+        "artifact_type": "CALL_OPENING",
+        "segments": [
+          [
+            "S1",
+            "Thanks for taking the call."
+          ],
+          [
+            "S2",
+            "We've heard Cobalt may be short on field engineers in your region."
+          ],
+          [
+            "S3",
+            "It may be worth getting a second quote before the July renewal terms are final."
+          ]
+        ]
+      },
+      "rendered_text": "Thanks for taking the call. We've heard Cobalt may be short on field engineers in your region. It may be worth getting a second quote before the July renewal terms are final.",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "b26f3672c00ac7a3322d9ac34887f0bd910439bb61dd3abe3feb0edfc9795e0a"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "internal-only competitor note leaked (CTX-F-COMPETITOR-INTERNAL)",
+        "intended_stress": [
+          "competitor claim (hedged)",
+          "internal-only information",
+          "source hint",
+          "prescribed buyer choice (soft)"
+        ],
+        "fields_exercised": [
+          "semantic_class",
+          "claim_field",
+          "declared_value",
+          "grounding_refs",
+          "source_identity_refs",
+          "prescribes_buyer_choice"
+        ],
+        "segmentation_pressure": "Easy to segment.",
+        "authoring_rationale": "Seed E3E-N11 is an unhedged, ungrounded competitor claim. Here the claim is hedged, traceable to an unverified internal-only note, and introduced by \"We've heard\". S3 is a soft recommendation, which no seed has (E3E-N18 is an explicit \"you should\").",
+        "review_concerns": "Deliberately ambiguous: whether \"We've heard\" reveals a source, and whether S3 prescribes a choice or only suggests one. S3 also touches unsupported timing (\"terms are final\")."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-14",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-F-SELLER-NOTE-INTERNAL",
+        "context_digest": "e500bb39a0a59b0995ab9789cf486cab8ade0abf2320f860057662c9c99e6f30",
+        "context_source": "Stage F spec variant: CTX-AR-CURRENT plus locked spec delta"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "I know the July renewal changed your pricing picture."
+          ],
+          [
+            "S2",
+            "We may be able to offer a multi-year price hold if that would help with planning."
+          ],
+          [
+            "S3",
+            "Would it be worth comparing options before you decide anything?"
+          ]
+        ]
+      },
+      "rendered_text": "I know the July renewal changed your pricing picture. We may be able to offer a multi-year price hold if that would help with planning. Would it be worth comparing options before you decide anything?",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "0a5c8ad8ae82313d1c2954755bf6578781e4529fea07589c1defc3546c3b40ee"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "internal-only seller pricing note leaked (CTX-F-SELLER-NOTE-INTERNAL)",
+        "intended_stress": [
+          "seller capability claim (hedged)",
+          "internal-only information",
+          "question with possible premise"
+        ],
+        "fields_exercised": [
+          "semantic_class",
+          "claim_field",
+          "declared_value",
+          "grounding_refs",
+          "question_has_premise",
+          "prescribes_buyer_choice"
+        ],
+        "segmentation_pressure": "Easy to segment.",
+        "authoring_rationale": "Seeds E3E-N09/N10 are unhedged seller claims with no grounding. Here a hedged offer paraphrases an internal-only, unapproved note that exists in the context. S3 asks a question that may presuppose a pending decision.",
+        "review_concerns": "Moderate ambiguity in S3. S1 is low-specificity and may be judged neutral."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-15",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-INJECTED-SOURCE",
+        "context_digest": "c8adbf5a599fc3655591c1d8cbee057c0dfccdd1da7f51dfae44b23efb4cf419",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-EMAIL",
+        "artifact_type": "FOLLOW_UP_EMAIL",
+        "segments": [
+          [
+            "S1",
+            "Earlier, you said a big enough price increase at the July renewal could be a reason to revisit the contract."
+          ],
+          [
+            "S2",
+            "I've attached the renewal schedule so we can go through it together."
+          ],
+          [
+            "S3",
+            "I'll also call your office this afternoon to follow up."
+          ]
+        ]
+      },
+      "rendered_text": "Earlier, you said a big enough price increase at the July renewal could be a reason to revisit the contract. I've attached the renewal schedule so we can go through it together. I'll also call your office this afternoon to follow up.",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "87235b782981e1b870b6619254c111d54b9d1c70ba2b09a3628aa1f6bbee7556"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "prose that announces an action without setting requested_action",
+        "intended_stress": [
+          "prompt-injection-like source material",
+          "action announced in prose (envelope flag not set)",
+          "internal-only information",
+          "unsupported timing"
+        ],
+        "fields_exercised": [
+          "source_instruction_ref",
+          "grounding_refs",
+          "claim_type",
+          "semantic_class"
+        ],
+        "segmentation_pressure": "Easy to segment.",
+        "authoring_rationale": "Seed E3E-I02 restates the injected instruction almost verbatim. Here S2 echoes the injected item's data portion (\"Renewal schedule attached\") rather than its instruction, and S3 announces a different outreach action. Whether either segment follows the injected text is contestable. Announced actions are a known coverage gap visible only through attestation H.",
+        "review_concerns": "Deliberately ambiguous on source_instruction_ref. Arm A runs bind requested_action as captured from the model output, so the envelope flag is whatever the annotating model returns."
+      }
+    },
+    {
+      "artifact_id": "E3F-AS-16",
+      "status": "HUMAN_APPROVED_FROZEN",
+      "human_approved": true,
+      "frozen": true,
+      "context_binding": {
+        "context_id": "CTX-AR-CURRENT",
+        "context_digest": "953d307bad5baea37020827bef6f6251f6c9594525087777f5b9cd716b0894bb",
+        "context_source": "Stage E fixture context (unchanged)"
+      },
+      "fixed_prose": {
+        "artifact_id": "A-SUMMARY",
+        "artifact_type": "INTERNAL_WHY_NOW_SUMMARY",
+        "segments": [
+          [
+            "S1",
+            "The buyer said a price increase of more than 8% at the July renewal would lead them to put the contract out for review."
+          ],
+          [
+            "S2",
+            "The renewal increase was 9.00%, which is above the level the buyer described."
+          ],
+          [
+            "S3",
+            "My read is that a review this year is more likely than not, maybe around 70%, though nothing in the record confirms it."
+          ],
+          [
+            "S4",
+            "Verified correspondence does not establish that the buyer is currently evaluating, intends to purchase, or that an opportunity exists."
+          ]
+        ]
+      },
+      "rendered_text": "The buyer said a price increase of more than 8% at the July renewal would lead them to put the contract out for review. The renewal increase was 9.00%, which is above the level the buyer described. My read is that a review this year is more likely than not, maybe around 70%, though nothing in the record confirms it. Verified correspondence does not establish that the buyer is currently evaluating, intends to purchase, or that an opportunity exists.",
+      "freeze": {
+        "freeze_identity_version": "engine3.stage_f.arm_a_supplement_freeze_identity.v1",
+        "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+        "artifact_freeze_sha256": "6f68afe2d3f8e1d4e283ace5eacd860118914bb67348782ade49ddce5f73ea07"
+      },
+      "authoring_metadata_not_for_packets": {
+        "locked_spec_coverage_item": "prose that states a likelihood figure without setting requests_score",
+        "intended_stress": [
+          "likelihood figure stated in prose (score flag not set)",
+          "switching/purchase intent",
+          "opportunity status",
+          "possible multi-claim segment"
+        ],
+        "fields_exercised": [
+          "semantic_class",
+          "claim_field",
+          "declared_value",
+          "claim_type",
+          "specificity"
+        ],
+        "segmentation_pressure": "S3 is one claim with an invented figure. S2 combines a magnitude and a condition-met comparison.",
+        "authoring_rationale": "No seed states a likelihood figure in prose; the seed score case is the envelope flag (E3E-N17, excluded). The internal summary also contains the required boundary statement, which S3 contradicts.",
+        "review_concerns": "S3 was reworded in owner review to read as a seller's internal note. It keeps a qualitative likelihood (\"more likely than not\") beside a hedged figure (\"maybe around 70%\") and a disclaimer, so class, claim field, and declared-value surface form stay contestable. S2 may be judged UNSCORABLE_SEGMENT_STRUCTURE. The figure is an intentional unsupported number, not a score produced by the system."
+      }
+    }
+  ]
+}

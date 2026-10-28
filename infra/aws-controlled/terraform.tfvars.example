@@ -1,0 +1,15 @@
+# Copy to terraform.tfvars (gitignored) and fill in. No secret belongs in this file.
+region             = "us-east-1"
+availability_zones = ["us-east-1a", "us-east-1b"]
+
+# Supplied by the operator; never invented. One A record for it is printed as the output dns_record_required.
+public_hostname = "baec.example.invalid"
+
+# The operator's own public address(es) as /32 for the controlled deployment.
+https_ingress_cidrs = ["203.0.113.10/32"]
+
+# Ubuntu Server 24.04 LTS arm64 in the region:
+#   aws ssm get-parameter --name /aws/service/canonical/ubuntu/server/24.04/stable/current/arm64/hvm/ebs-gp3/ami-id
+host_ami_id = "ami-00000000000000000"
+
+# Defaults: t4g.medium host, db.t4g.micro PostgreSQL 16, release e626634 with its approved image IDs.

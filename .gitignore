@@ -1,0 +1,39 @@
+# Secrets: never commit real keys. .env.example (placeholders only) is allowed.
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.venv-postgres/
+venv/
+
+# Runtime databases are generated from seed data, never committed
+*.db
+*.sqlite
+*.sqlite3
+
+# macOS and editors
+.DS_Store
+.vscode/
+.idea/
+
+# V0.4 Phase 5: per-machine test TLS material and production deployment secrets are never committed
+infra/postgres-test/certs/
+deploy/secrets/
+
+# V0.4 Phase 6: Terraform working files, state, plans, and operator variables are never committed
+infra/aws-controlled/.terraform/
+infra/aws-controlled/*.tfstate
+infra/aws-controlled/*.tfstate.*
+infra/aws-controlled/*.tfplan
+infra/aws-controlled/*.tfvars
+!infra/aws-controlled/terraform.tfvars.example
+infra/aws-controlled/crash.log
+
+# Local synthetic demo (scripts/start_demo.sh): server PID, log, and SQLite data
+.demo/

@@ -1,0 +1,21 @@
+# Configuration for the LinkedIn product demo only. Read when Streamlit is launched from demo_linkedin/.
+# No secrets belong here.
+
+# Bind to this machine only. This also skips Streamlit's external-IP lookup in headless mode.
+[server]
+address = "localhost"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[theme]
+base = "light"
+primaryColor = "#1B2A41"
+backgroundColor = "#FAFAF8"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#111418"
+borderColor = "#E4E4E0"

@@ -1,0 +1,25 @@
+# Production image build context (deploy/Dockerfile; V0.4 Phase 5). Allowlist: everything is excluded unless named
+# below, so no .env, secret, certificate, local database, git history, or test can enter an image.
+*
+
+!baec_app/
+!baec_console/
+!deploy/requirements.lock
+!deploy/streamlit/config.toml
+
+# Never in an image, even inside the allowed directories
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.data/
+**/.streamlit/
+**/.env
+**/.env.*
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/.DS_Store
+baec_console/tests/
+baec_console/tests_postgres/
+baec_app/mcp/
+baec_app/mcp_write/

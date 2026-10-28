@@ -1,0 +1,273 @@
+{
+  "document": "ENGINE3_STAGE_F_AUTONOMOUS_REFERENCE_MANIFEST",
+  "project": "BAEC Trigger Intelligence",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "stage": "F-AR",
+  "track": "Stage F-AR — Autonomous Reference",
+  "relation_to_human_stage_f": "PARALLEL_TRACK_DOES_NOT_MODIFY_OR_SUPERSEDE",
+  "status": "DESIGNED_OFFLINE_NOT_EXECUTED",
+  "owner_review": "PENDING",
+  "date": "2026-10-15",
+  "refinement": "pre-commit governance refinement 001 (reserved term, adjudicator blinding, qualification governance, exposure)",
+  "base_commit": "ab4f3dbf0d124391dc974d60a019a456078107e5",
+  "rule_label": "PROPOSED (protocol and claim boundary); IMPLEMENTATION (offline code)",
+  "protocol": "docs/engine3/ENGINE3_STAGE_F_AUTONOMOUS_REFERENCE_PROTOCOL.md",
+  "claim_boundary": "docs/engine3/ENGINE3_STAGE_F_AUTONOMOUS_REFERENCE_CLAIM_BOUNDARY.md",
+  "verifier": "scripts/verify_engine3_stage_f_autonomous_reference.py",
+  "code_location": "experiments/engine3_stage_f_ar (outside the importable baec_app production package)",
+  "governing_claim": "Stage F autonomous-reference execution measures the generating model's semantic annotations and Stage D outcomes relative to a blinded, independently generated autonomous reviewer consensus. Autonomous consensus annotations are not human reference labels, human ground truth, or evidence of human semantic reliability.",
+  "reference_labels": [
+    "AUTONOMOUS_CONSENSUS_REFERENCE",
+    "AUTONOMOUS_ADJUDICATED_REFERENCE"
+  ],
+  "forbidden_labels": [
+    "HUMAN_REFERENCE",
+    "human gold standard",
+    "ground truth",
+    "human annotation accuracy",
+    "human inter-rater reliability"
+  ],
+  "human_pilot_statement": "Stage F-AR does not execute, constitute, substitute for, or satisfy the Stage F human-reference pilot. The term pilot remains reserved for the locked human-reference track. O-3 remains PRE_RUN_REQUIRED and human pilot_ready remains false.",
+  "ar_batches": {
+    "AR_44_INITIAL_AUTONOMOUS_EXECUTION_BATCH": "AR-44 INITIAL AUTONOMOUS EXECUTION BATCH: the locked 44-slot material (22 Arm G scenarios x 2, run order E3F_RUN_ORDER_V1) used by Stage F-AR; operational only; never used for any AR decision rule",
+    "AR_FULL_RUN": "the 220 Arm G proposals and 240 Arm A annotation runs, used by Stage F-AR",
+    "OFFLINE_DRY_RUN": "handwritten offline tests only"
+  },
+  "locked_harness_run_kind_mapping": "The locked harness binds generator runs with its own run-kind enum, which cannot be renamed; its identifier for the 44-slot material maps to AR_44_INITIAL_AUTONOMOUS_EXECUTION_BATCH and never describes a Stage F-AR run.",
+  "ar_execution_changes_human_track_readiness": false,
+  "reviewer_provenance_values": {
+    "AR_44_INITIAL_AUTONOMOUS_EXECUTION_BATCH": "AUTONOMOUS_SYNTHETIC_REFERENCE",
+    "AR_FULL_RUN": "AUTONOMOUS_SYNTHETIC_REFERENCE",
+    "OFFLINE_DRY_RUN": "OFFLINE_HANDWRITTEN_AUTONOMOUS_DRY_RUN"
+  },
+  "generator_provenance_unchanged": "LIVE_SYNTHETIC_EXPERIMENT",
+  "result_namespace": "engine3_stage_f_autonomous_reference",
+  "panel_roles": [
+    "REVIEWER_A",
+    "REVIEWER_B",
+    "AUTONOMOUS_ADJUDICATOR"
+  ],
+  "panel_rules": {
+    "reviewer_a_and_b_different_model_families": "REQUIRED",
+    "distinct_from_generator_family": "PREFERRED; otherwise disclosed under AR-F",
+    "adjudicator_separately_configured": "REQUIRED",
+    "adjudicator_invoked_only_on_ab_disagreement": "REQUIRED",
+    "adjudicator_output": "complete explicit annotation, not a choice of Review X or Review Y",
+    "generator_family_o5": "Claude Sonnet"
+  },
+  "adjudicator_visible_request": {
+    "contains": [
+      "exact blinded AnnotationPacket",
+      "frozen operational guide",
+      "adjudicator prompt bundle",
+      "Review X: anonymized parsed annotation payload",
+      "Review Y: anonymized parsed annotation payload",
+      "(packet segment id, item) pairs on which Review X and Review Y disagree"
+    ],
+    "payload_fields_per_segment": [
+      "packet_segment_id",
+      "status",
+      "fields",
+      "formatting_variant",
+      "mixed_reference_modes"
+    ],
+    "never_exposes": [
+      "Reviewer A/B identity",
+      "reviewer family",
+      "reviewer model id",
+      "reviewer configuration hash",
+      "provider identity",
+      "record hashes",
+      "which review originated from Reviewer A or Reviewer B",
+      "generator identity",
+      "generator annotations",
+      "Stage D result",
+      "reviewer free-text notes"
+    ],
+    "x_y_order_rule": "Review X and Review Y are ordered by the SHA-256 of each payload's canonical content, independent of reviewer role",
+    "bound_outside_visible_request": "exact Reviewer A and Reviewer B record hashes and full reviewer provenance (request metadata and the adjudicator record)"
+  },
+  "reviewer_model_ids_selected": false,
+  "reviewer_output_schema_version": "engine3.stage_f_ar.reviewer_output.v1",
+  "review_request_schema_version": "engine3.stage_f_ar.review_request.v1",
+  "consensus_logic": [
+    "Reviewer A and Reviewer B annotate independently; both records are written before comparison",
+    "exact agreement on status, reviewer adjudication flag, all eleven fields (both SCORABLE), and both flags -> AUTONOMOUS_CONSENSUS_REFERENCE; adjudicator not invoked",
+    "any governed disagreement -> Autonomous Adjudicator invoked with both recorded annotations as anonymized Review X and Review Y; A and B record hashes bound outside the visible request",
+    "adjudicator produces a complete annotation; result AUTONOMOUS_ADJUDICATED_REFERENCE",
+    "raw and parsed A and B outputs, adjudicator output, final reference, disagreements, and all hashes preserved"
+  ],
+  "human_track": {
+    "O-3": "PRE_RUN_REQUIRED",
+    "pilot_ready": false,
+    "unchanged": true
+  },
+  "autonomous_reference_ready": false,
+  "autonomous_blockers": {
+    "AR-PRE-1": "PRE_RUN_REQUIRED",
+    "AR-PRE-2": "PRE_RUN_REQUIRED",
+    "AR-PRE-3": "PRE_RUN_REQUIRED",
+    "AR-PRE-4": "PRE_RUN_REQUIRED",
+    "AR-PRE-5": "PRE_RUN_REQUIRED",
+    "AR-PRE-6": "PRE_RUN_REQUIRED"
+  },
+  "autonomous_blocker_descriptions": {
+    "AR-PRE-1": "reviewer model and configuration freeze",
+    "AR-PRE-2": "autonomous reviewer prompt, output schema, and retry / malformed-output policy freeze",
+    "AR-PRE-3": "reviewer-family correlation assessment, owner-reviewed, bound to the exact panel",
+    "AR-PRE-4": "qualification diagnostic and its frozen decision rules: qualification governance frozen first, then qualification on the frozen calibration corpus, bound to the exact panel, every attempt preserved",
+    "AR-PRE-5": "autonomous run-order freeze, bound to the exact panel",
+    "AR-PRE-6": "explicit owner authorization to execute Stage F-AR"
+  },
+  "o3_is_autonomous_blocker": false,
+  "decision_rules": [
+    "AR-A",
+    "AR-B",
+    "AR-C",
+    "AR-D",
+    "AR-E",
+    "AR-F",
+    "AR-G"
+  ],
+  "decision_rule_thresholds": "none frozen; AR-C reports every item without a cut-off",
+  "human_decision_rules_a_to_g_modified": false,
+  "metrics": [
+    "ab_exact_agreement_by_item",
+    "ab_disagreement_rate_by_item",
+    "adjudication_rate",
+    "generator_vs_autonomous_reference_exact_agreement_by_field",
+    "generator_vs_autonomous_reference_status_agreement",
+    "d_generator_vs_d_autonomous_outcome_table",
+    "autonomous_relative_potential_false_pass_count",
+    "autonomous_relative_potential_false_refusal_count",
+    "disagreement_families",
+    "coverage_and_unscorable_rate",
+    "identical_prose_annotation_sensitivity"
+  ],
+  "composite_score": null,
+  "permitted_claims": [
+    "The generator agreed with the blinded autonomous consensus on X% of scorable field judgments.",
+    "Y Stage D outcomes differed when the generator's annotations were replaced with the autonomous adjudicated annotation.",
+    "Reviewer A and Reviewer B disagreed on Z% of scorable field judgments.",
+    "The Autonomous Adjudicator was invoked for W of N reviewed packets."
+  ],
+  "prohibited_claims": [
+    "The model was X% accurate relative to humans.",
+    "The autonomous reference is ground truth.",
+    "The system achieved human-level semantic reliability.",
+    "The experiment establishes annotation accuracy.",
+    "Zero autonomous false passes proves safety."
+  ],
+  "experiment_compatibility": {
+    "ar_44_initial_autonomous_execution_batch_arm_g_proposals": 44,
+    "ar_full_run_arm_g_proposals": 220,
+    "ar_full_run_arm_a_annotation_runs": 240,
+    "locked_material_modified": false,
+    "ar_44_batch_used_for_ar_rules": false
+  },
+  "calibration_use": "reviewer qualification diagnostic only; not an evaluation result, not a continuously reusable tuning set, not human ground truth; answer key never given to reviewers",
+  "qualification_governance": {
+    "status": "NOT_FROZEN",
+    "frozen_rules_sha256": null,
+    "thresholds": null,
+    "must_freeze_before_qualification": [
+      "qualification metrics",
+      "qualification acceptance/refusal criteria",
+      "what constitutes structural failure",
+      "what constitutes semantic disagreement for qualification",
+      "whether qualification can disqualify a configuration",
+      "rules for rerunning qualification"
+    ],
+    "no_iterative_tuning": "No reviewer prompt, model, or configuration may be iteratively tuned against calibration results and then treated as the same setup.",
+    "material_changes_requiring_new_configuration_version_and_new_qualification": [
+      "reviewer model",
+      "model version",
+      "prompt",
+      "output schema",
+      "sampling",
+      "annotation instructions",
+      "adjudication instructions"
+    ],
+    "configuration_version_identity": "configuration_sha256; qualification binds the exact panel hash",
+    "prior_attempts": "every prior qualification attempt preserved and named by hash",
+    "ar_pre_4": "unresolved while not frozen"
+  },
+  "o3_exposure": {
+    "statement": "All Stage F-AR annotations, disagreements, adjudications and comparison results are labelled evaluation-derived material for O-3 exposure purposes.",
+    "rule_source": "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_ELIGIBILITY_ADDENDUM_002.md (unchanged)",
+    "prospective_candidates": "Prospective future human Primary A, Primary B, or Adjudicator candidates must not be shown Stage F-AR labelled outputs before their eligibility is determined.",
+    "repository_access_alone_is_exposure": false,
+    "actual_viewing_of_labelled_ar_content_is_exposure": true
+  },
+  "execution_record": {
+    "live_model_executed": false,
+    "live_model_authorized": false,
+    "api_key_used": false,
+    "network_calls": 0,
+    "ar_44_initial_autonomous_execution_batch_executed": false,
+    "ar_full_run_executed": false,
+    "qualification_executed": false,
+    "autonomous_results_exist": false,
+    "outreach_authorized": false
+  },
+  "governance": {
+    "o5_bound_files_modified": false,
+    "new_amendment_or_rebinding_required": false,
+    "note": "No O-5-bound, harness-bound, design, calibration, or human-protocol file is modified; Stage F-AR files sit outside every locked coverage glob. No amendment or rebinding was needed."
+  },
+  "locked_inputs_sha256": {
+    "docs/engine3/ENGINE3_STAGE_D_IMPLEMENTATION_MANIFEST.json": "559418edfd75f2dbe4fc818858ff9c8c2d3aa0943d15124e927d4ac6d1a858e1",
+    "docs/engine3/ENGINE3_STAGE_E_IMPLEMENTATION_MANIFEST.json": "c9c403ef59558145779390c598fbeaa6dd6b0a01e242d1b66eed4f31bfe55580",
+    "docs/engine3/ENGINE3_STAGE_F_SEMANTIC_RELIABILITY_EXPERIMENT_DESIGN.md": "d710f42ad9d4e9ba6f3a9a2cad128fb337d4767b61d489e3a94c263bac87ce40",
+    "docs/engine3/ENGINE3_STAGE_F_EXPERIMENT_SPEC.json": "321c19c598575ec111ff241714820dea64ff93515bd4b9b055efa613b502c829",
+    "docs/engine3/ENGINE3_STAGE_F_DESIGN_MANIFEST.json": "d098b6268e8e736a3333ac483f6eda94671fe1ce943ac1cd6a45c21c6511eda4",
+    "docs/engine3/ENGINE3_STAGE_F_HARNESS_MANIFEST.json": "2b46815abbad41b08d0f5e0fb597234aa87456167bc12b0f9a7c1f6ae18aa098",
+    "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_ANNOTATION_PROTOCOL.md": "cba979c91cdcc96f419b0f3758cadd651f3427064a7f66ebebd23929c623b5a4",
+    "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_OPERATIONAL_GUIDE.md": "fb4f0510254649dadfc68c06bb76bd1dfab73e2d33bc0db325faf791e61b9011",
+    "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_OPERATIONAL_GUIDE_FREEZE_MANIFEST.json": "56952f30343a8844883e20b4d60bef1e3e07af8a4dafebd5a937870505cd2029",
+    "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_CORPUS.json": "83e5843d10a575792379fc4f1e6b3f0570ff8f951d272889478380b03a317c46",
+    "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_FREEZE_MANIFEST.json": "a88600bb392f9d853b07c8948ee41ce8af597f5a3025697c56dc5e6e0fefef97",
+    "docs/engine3/ENGINE3_STAGE_F_O5_MODEL_CONFIGURATION_FROZEN.json": "e74c4a46fd771c12e48ab78f492026f97250a2d0a90ee49158ee544fb6c86237",
+    "docs/engine3/ENGINE3_STAGE_F_O5_FREEZE_MANIFEST.json": "4a28ed081ab4b5a9899ad3888cb695f7e366491302ff37a66134897f912355e3",
+    "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_003.json": "ce82c4067cbc8956e7ba2506ac3799556aaa017ab310f83264392a67201b80cf",
+    "docs/engine3/ENGINE3_STAGE_F_ARM_A_ADDITIONAL_ARTIFACTS_FROZEN.json": "9211996f730a575a1e393eb52065740fbf824095f4c9afd7c1032cbe9242876f",
+    "docs/engine3/ENGINE3_STAGE_F_ARM_A_FREEZE_MANIFEST.json": "2d477ff6b05433b64e76aeb7efd3695146cf92fc347b2bf40f6f1a677d402967",
+    "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_ELIGIBILITY_ADDENDUM_002.md": "9490a7213625a3e2e13cae1b98b57c47223ac60e56e69ff8f51af4f1ce72f5bd"
+  },
+  "ar_files_sha256": {
+    "docs/engine3/ENGINE3_STAGE_F_AUTONOMOUS_REFERENCE_CLAIM_BOUNDARY.md": "16213ae465815c6d24300ad0972dc26375cac6736bd43d80c654d9093d4c4873",
+    "docs/engine3/ENGINE3_STAGE_F_AUTONOMOUS_REFERENCE_PROTOCOL.md": "ed4507c20a437926dc2687206e769eceb171756ce999d6a1651384cf558f9960",
+    "experiments/engine3_stage_f_ar/__init__.py": "3d142b8b0f4551c369d4e555990bec3f4f2d510777a6340b4c1b3f55316cec6a",
+    "experiments/engine3_stage_f_ar/analysis.py": "446850d9ef48629a765273920392b53be24f24ba8d9a4c9fdde2ed66ac9664ba",
+    "experiments/engine3_stage_f_ar/panel.py": "5420e7d9c559887b4be3ee4ce8edf167a136879425cd29c65125934e24219249",
+    "experiments/engine3_stage_f_ar/review.py": "761c311b9c751c589d6b8081f8d09ce815c4b22bce0c4888ecdea3be7e5122b9",
+    "scripts/verify_engine3_stage_f_autonomous_reference.py": "58a4589b79fdd7196abd963ae849da574166fb370a0c98eb5786c17702f5c251",
+    "tests/engine3/stage_f_ar_adapter.py": "e681f8030a7e56e0c541bd13a4620d32f0550d0815adec5c03721859ff052aa9",
+    "tests/engine3/test_engine3_autonomous_reference_analysis.py": "6854faa6e901897f9a3c3f1463e18fa1898738154ae3bd946dce22776c202cf2",
+    "tests/engine3/test_engine3_autonomous_reference_governance.py": "17f83a26f95b44371c1097aba3018488344a108e4eaf67c7a6b6a8f3bba0b3d0",
+    "tests/engine3/test_engine3_autonomous_reference_review.py": "e799598e300e71213fb434f3b182c10c83a5a863753ff65b6d7b86d0acb1d7d6"
+  },
+  "claim_boundary_summary": "Offline design and code only, tested with handwritten synthetic records. Nothing executed. Results, once produced, are relative to a blinded autonomous reviewer consensus only; not human reference labels, ground truth, human semantic reliability, safety, semantic validation, purchase prediction, sales lift, production security, or evidence for BAEC theory.",
+  "test_result": {
+    "stage_f_ar_tests_passed": 111,
+    "tests_engine3_passed": 779,
+    "full_repository": {
+      "passed": 7576,
+      "deselected": 2,
+      "failed": 0
+    },
+    "locked_engine1_engine2_public_tests_passed": 183,
+    "engine2_release_verifier_full_clean_tree_equivalent": "23 of 23 checks passed",
+    "engine3_verifiers_passed": [
+      "verify_engine3_stage_d",
+      "verify_engine3_stage_e",
+      "verify_engine3_stage_f_design",
+      "verify_engine3_stage_f_harness",
+      "verify_engine3_stage_f_o5_freeze",
+      "verify_engine3_stage_f_operational_guide",
+      "verify_engine3_stage_f_calibration",
+      "verify_engine3_stage_f_autonomous_reference"
+    ],
+    "note": "Software tests over handwritten synthetic records. Not evidence about any model, annotator, or BAEC theory."
+  }
+}

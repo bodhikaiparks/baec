@@ -1,0 +1,462 @@
+{
+  "project": "BAEC Trigger Intelligence",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "stage": "F",
+  "component": "experimental harness",
+  "status": "LOCKED_OFFLINE_HARNESS_NOT_EXECUTED",
+  "lock_date": "2026-10-14",
+  "harness_amendment_001_applied": true,
+  "harness_amendment_001_date": "2026-10-15",
+  "harness_amendment_002_applied": true,
+  "harness_amendment_002_date": "2026-10-15",
+  "harness_amendment_003_applied": true,
+  "harness_amendment_003_date": "2026-10-15",
+  "harness_amendment_004_applied": true,
+  "harness_amendment_004_date": "2026-10-15",
+  "date": "2026-10-14",
+  "base_commit": "c81d00343d96683514dd38f43d11a6ebae6d104e",
+  "rule_label": "IMPLEMENTATION",
+  "stage_f_design_status": "LOCKED_DESIGN_NO_LIVE_EXECUTION",
+  "stage_f_design_manifest_sha256": "d098b6268e8e736a3333ac483f6eda94671fe1ce943ac1cd6a45c21c6511eda4",
+  "live_model_executed": false,
+  "live_model_authorized": false,
+  "api_key_used": false,
+  "external_model_sdk_used": false,
+  "network_calls": 0,
+  "pilot_executed": false,
+  "main_experiment_executed": false,
+  "experiment_results_exist": false,
+  "outreach_authorized": false,
+  "stage_a_to_f_locked_files_modified": false,
+  "stage_a_to_f_locked_files_modified_note": "Refers to Stage A-E artifacts and the Stage F design artifacts, which are unchanged. The harness's own readiness.py was changed after the harness lock by HARNESS_AMENDMENT_001 (see harness_amendments). The packet guide's example values in annotation.py were changed after the harness lock by HARNESS_AMENDMENT_002 (see harness_amendments); the Stage F design, spec, and protocol are unchanged. The human reference record types in annotation.py were changed after the harness lock by HARNESS_AMENDMENT_003 (three provenance hashes; see harness_amendments).",
+  "engine1_modified": false,
+  "engine2_modified": false,
+  "governing_limitation": {
+    "id": "E3-E-SEM-001",
+    "name": "MODEL_SEMANTIC_ANNOTATION_NOT_AUTHORITATIVE",
+    "resolved": false
+  },
+  "harness_location": "experiments/engine3_stage_f (outside the importable baec_app production package)",
+  "experiment_provenance_values": {
+    "PILOT": "LIVE_SYNTHETIC_EXPERIMENT",
+    "FULL_RUN": "LIVE_SYNTHETIC_EXPERIMENT",
+    "DRY_RUN": "OFFLINE_HANDWRITTEN_DRY_RUN"
+  },
+  "output_schema_version": "engine3.stage_f.experimental_proposal_output.v1",
+  "planned_size": {
+    "arm_g_proposals": 220,
+    "pilot_proposals": 44,
+    "arm_a_annotation_runs": 240
+  },
+  "model_controlled_fields": [
+    "claim_type",
+    "semantic_class",
+    "grounding_refs",
+    "reference_use_mode",
+    "source_identity_refs",
+    "claim_field",
+    "declared_value",
+    "specificity",
+    "question_has_premise",
+    "source_instruction_ref",
+    "prescribes_buyer_choice"
+  ],
+  "dry_run": {
+    "case_count": 12,
+    "arm_g_cases": 11,
+    "arm_a_cases": 1,
+    "packet_count": 12,
+    "inputs": "tests/engine3/fixtures/ENGINE3_STAGE_F_DRY_RUN_INPUTS.json",
+    "oracle": "tests/engine3/fixtures/ENGINE3_STAGE_F_DRY_RUN_ORACLE.json",
+    "is_model_output": false
+  },
+  "pre_run_required": [
+    {
+      "id": "O-3",
+      "status": "PRE_RUN_REQUIRED",
+      "resolve_before": "any pilot"
+    },
+    {
+      "id": "O-5",
+      "status": "PRE_RUN_REQUIRED",
+      "resolve_before": "any pilot (frozen)"
+    },
+    {
+      "id": "O-6",
+      "status": "PRE_RUN_REQUIRED",
+      "resolve_before": "any live evaluation"
+    }
+  ],
+  "pre_run_required_label": "Lock-time state (2026-10-14). Historical record; not rewritten.",
+  "o6_status_at_harness_lock": "PRE_RUN_REQUIRED",
+  "o6_current_status": "RESOLVED_FROZEN",
+  "o5_status_at_harness_lock": "PRE_RUN_REQUIRED",
+  "o5_current_status": "RESOLVED_FROZEN",
+  "pre_run_state_current": {
+    "as_of": "2026-10-15",
+    "updated_by": "HARNESS_AMENDMENT_004",
+    "status": {
+      "O-3": "PRE_RUN_REQUIRED",
+      "O-5": "RESOLVED_FROZEN",
+      "O-6": "RESOLVED_FROZEN"
+    },
+    "o6_freeze_manifest": "docs/engine3/ENGINE3_STAGE_F_ARM_A_FREEZE_MANIFEST.json",
+    "o6_freeze_manifest_sha256": "2d477ff6b05433b64e76aeb7efd3695146cf92fc347b2bf40f6f1a677d402967",
+    "o6_frozen_file": "docs/engine3/ENGINE3_STAGE_F_ARM_A_ADDITIONAL_ARTIFACTS_FROZEN.json",
+    "o6_frozen_file_sha256": "9211996f730a575a1e393eb52065740fbf824095f4c9afd7c1032cbe9242876f",
+    "o5": {
+      "freeze_manifest": "docs/engine3/ENGINE3_STAGE_F_O5_FREEZE_MANIFEST.json",
+      "freeze_manifest_sha256": "4a28ed081ab4b5a9899ad3888cb695f7e366491302ff37a66134897f912355e3",
+      "frozen_configuration": "docs/engine3/ENGINE3_STAGE_F_O5_MODEL_CONFIGURATION_FROZEN.json",
+      "frozen_configuration_sha256": "e74c4a46fd771c12e48ab78f492026f97250a2d0a90ee49158ee544fb6c86237",
+      "configuration_sha256": "5ec4f582d2a05e8fe2768e9030e8eadf1315c1cced89d5acc0de1916e28e7f21",
+      "postfreeze_rebinding_001": "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_001.json",
+      "postfreeze_rebinding_001_sha256": "76119f1bcfc0096c2abf595d2e21002ab7bcbb5aa2a1d1efee7161cb6e0f9ba4",
+      "postfreeze_rebinding_002": "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_002.json",
+      "postfreeze_rebinding_002_note": "Binds this manifest's SHA-256, so it is named here by path only. The O-5 verifier checks it exactly."
+    },
+    "o3": {
+      "eligibility_addendum_001": "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_ELIGIBILITY_ADDENDUM.md",
+      "eligibility_addendum_001_sha256": "b66e57b5c546346c031913981091cce21c6b00863b633b62143cdedfad43632f",
+      "eligibility_addendum_002": "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_ELIGIBILITY_ADDENDUM_002.md",
+      "eligibility_addendum_002_sha256": "9490a7213625a3e2e13cae1b98b57c47223ac60e56e69ff8f51af4f1ce72f5bd",
+      "exposure_rule": "LABELLED_EVALUATION_DERIVED_EXAMPLES_FROM_ANY_PROJECT_ARTIFACT",
+      "exceptions_approved": [],
+      "annotator_identities_supplied": false
+    },
+    "o3_candidate_record_status": "O3_CANDIDATE_STAFFING_REQUIRED",
+    "annotation_record_provenance_hashes": "RESOLVED",
+    "calibration_contamination_audit": "RESOLVED_FROZEN",
+    "calibration": {
+      "freeze_manifest": "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_FREEZE_MANIFEST.json",
+      "freeze_manifest_sha256": "a88600bb392f9d853b07c8948ee41ce8af597f5a3025697c56dc5e6e0fefef97",
+      "corpus": "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_CORPUS.json",
+      "corpus_sha256": "83e5843d10a575792379fc4f1e6b3f0570ff8f951d272889478380b03a317c46",
+      "guide": "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_GUIDE.md",
+      "guide_sha256": "5a1d83cbc0082b0a29c2f042854135efb6a8e0d0d2e8877f2d1a5d9a8a591584",
+      "audit": "scripts/verify_engine3_stage_f_calibration.py"
+    },
+    "pilot_readiness": false,
+    "pilot_readiness_blockers": {
+      "O-3": "PRE_RUN_REQUIRED"
+    },
+    "note": "O-6 was resolved after the harness lock by the Arm A freeze, and O-5 by the O-5 freeze; HARNESS_AMENDMENT_003 records O-5 here. HARNESS_AMENDMENT_004 records the calibration blocker RESOLVED_FROZEN, bound to the calibration freeze records. The O-5, O-6, and calibration files are not modified by the harness or its amendments."
+  },
+  "pre_run_state_current_superseded": [
+    {
+      "superseded_by": "HARNESS_AMENDMENT_003",
+      "as_of": "2026-10-15",
+      "status": {
+        "O-3": "PRE_RUN_REQUIRED",
+        "O-5": "PRE_RUN_REQUIRED",
+        "O-6": "RESOLVED_FROZEN"
+      },
+      "note": "Current-state snapshot written by HARNESS_AMENDMENT_001. Its O-5 entry was stale from the O-5 freeze (726a67a) until HARNESS_AMENDMENT_003. Kept as history, not rewritten."
+    },
+    {
+      "superseded_by": "HARNESS_AMENDMENT_004",
+      "as_of": "2026-10-15",
+      "status": {
+        "O-3": "PRE_RUN_REQUIRED",
+        "O-5": "RESOLVED_FROZEN",
+        "O-6": "RESOLVED_FROZEN"
+      },
+      "calibration_contamination_audit": "OPEN",
+      "pilot_readiness": false,
+      "pilot_readiness_blockers": {
+        "O-3": "PRE_RUN_REQUIRED",
+        "CALIBRATION_CORPUS_CONTAMINATION_AUDIT_REQUIRED": "OPEN"
+      },
+      "note": "Current-state snapshot written by HARNESS_AMENDMENT_003, when no calibration corpus existed. Kept as history, not rewritten."
+    }
+  ],
+  "pre_run_records_supplied": false,
+  "decision_rule_reporting_statuses": [
+    "FIRED",
+    "NOT_FIRED",
+    "INSUFFICIENT_INSTANCES",
+    "NOT_EVALUABLE"
+  ],
+  "decision_rule_reporting_statuses_are_engine3_states": false,
+  "zero_denominator_rules_d_e": "NOT_EVALUABLE with numerator 0, denominator 0, rate null; never reported as 0%",
+  "owner_approved_implementation_choices": [
+    "disagreement only on formatting_variant or mixed_reference_modes goes to adjudication",
+    "rule C may fire from any confirmed false pass in that arm even with fewer than 30 instances",
+    "OFFLINE_HANDWRITTEN_DRY_RUN is experiment-only provenance, distinct from LIVE_SYNTHETIC_EXPERIMENT and PRERECORDED_SYNTHETIC"
+  ],
+  "harness_amendments": [
+    {
+      "id": "HARNESS_AMENDMENT_001",
+      "applied": true,
+      "date": "2026-10-15",
+      "owner_approved": true,
+      "owner_decision": "Option B",
+      "scope": "readiness author-independence and reviewer-distinctness validation, plus a manifest clarification of lock-time versus current O-6 status",
+      "files_modified": [
+        "experiments/engine3_stage_f/readiness.py"
+      ],
+      "records_and_tests_updated": [
+        "tests/engine3/test_engine3_stage_f_readiness.py",
+        "tests/engine3/test_engine3_stage_f_harness_manifest.py",
+        "scripts/verify_engine3_stage_f_harness.py",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_MANIFEST.json"
+      ],
+      "unchanged": [
+        "Stage F design and design manifest",
+        "decision thresholds A-G",
+        "Arm G / Arm A definitions and sizes",
+        "annotation protocol semantics",
+        "comparison semantics",
+        "decision-rule semantics",
+        "O-6 frozen corpus and freeze manifest",
+        "live-execution boundaries"
+      ],
+      "record": "docs/engine3/ENGINE3_STAGE_F_HARNESS_AMENDMENT_001.md",
+      "record_sha256": "a2350ca991716b545c213b41cc1f8a56710370299a7f6c55f0ba481462977536",
+      "rule_before": "an artifact failed author independence only when both primary aliases were among its author aliases (exact string)",
+      "rule_after": "an artifact fails author independence when either primary alias is among its author aliases, after strip and casefold; no substring or fuzzy matching; empty primary aliases make author independence not checkable; the adjudicator is not checked against authors",
+      "distinctness_before": "Primary A, Primary B, and adjudicator aliases distinct by exact string",
+      "distinctness_after": "Primary A, Primary B, and adjudicator aliases distinct after strip and casefold; stored aliases unchanged",
+      "manifest_clarification": "pre_run_required kept as the lock-time record; o6_current_status and pre_run_state_current added, bound to the O-6 freeze manifest by SHA-256"
+    },
+    {
+      "id": "HARNESS_AMENDMENT_002",
+      "applied": true,
+      "date": "2026-10-15",
+      "owner_approved": true,
+      "owner_decision": "approved human-reference decontamination (E3F-ISSUE-HR-001)",
+      "scope": "replace evaluation-derived example values in the packet guide (ANNOTATION_GUIDE) only; rule text unchanged",
+      "files_modified": [
+        "experiments/engine3_stage_f/annotation.py"
+      ],
+      "records_and_tests_updated": [
+        "tests/engine3/test_engine3_stage_f_annotation.py",
+        "tests/engine3/test_engine3_stage_f_harness_manifest.py",
+        "scripts/verify_engine3_stage_f_harness.py",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_MANIFEST.json"
+      ],
+      "example_substitutions": {
+        "9.00% -> 9%": "$46.00 -> $46",
+        "more than 8% -> above 8%": "over $40 -> higher than $40"
+      },
+      "packet_guide_paths_changed": [
+        "specificity_convention.90",
+        "reference_use_convention.formatting_only_numeric_variant",
+        "reference_use_convention.semantically_equivalent_rewording"
+      ],
+      "experiment_rules_changed": false,
+      "only_instructional_examples_changed": true,
+      "unchanged": [
+        "field and enum meanings",
+        "annotation-status meanings",
+        "specificity convention 0/10/90 and all packet-guide rule text",
+        "Stage D behaviour, comparison semantics, decision rules A-G and thresholds",
+        "Arm G / Arm A definitions, sizes, and corpora (O-6 frozen corpus and freeze manifest)",
+        "O-5 model configuration, prompt, schema, and run order",
+        "packet structure, packet ids, blinding",
+        "Stage F design, spec, and historical human-reference protocol",
+        "live-execution boundaries",
+        "pre_run_state_current (its O-5 entry is still not updated; outside this amendment's scope)"
+      ],
+      "pre_amendment_sha256": {
+        "experiments/engine3_stage_f/annotation.py": "07f169b72d35872bf06bb1a06eb486974b5807bfbff66f61be62b1ef2a53e2fd",
+        "tests/engine3/test_engine3_stage_f_annotation.py": "8966bef36c84113ac77b7be148c6ab76eba85ac9350c67c3819aa05a84ac79b3",
+        "tests/engine3/test_engine3_stage_f_harness_manifest.py": "9e7d62503eca140804dc5d2a835810abe1c48a3d3a89881803fef3b1b4a30efd",
+        "scripts/verify_engine3_stage_f_harness.py": "ff8dd103084fbf7e260cb798e3865b4b4a29d6da340b045730e04e9a08847220",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md": "d95d628948c9ff9468a5c9b677eddee987af24e49fe055f33bffd2c0dd440786"
+      },
+      "harness_manifest_pre_amendment_sha256": "c16de526b2ddaa6160ed79f0140cf71e35519dabec45d2d196d47e4331233800",
+      "record": "docs/engine3/ENGINE3_STAGE_F_HARNESS_AMENDMENT_002.md",
+      "record_sha256": "76d20bce96d4ac2a1617e3a71c4cf96b278570e71da648fb1423f17dc76e2d87",
+      "o5_rebinding_record": "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_001.json"
+    },
+    {
+      "id": "HARNESS_AMENDMENT_003",
+      "applied": true,
+      "date": "2026-10-15",
+      "owner_approved": true,
+      "owner_decision": "approved closure of three governance gaps before any human annotation",
+      "scope": [
+        "annotation-record provenance completeness",
+        "historical/current O-5 status separation",
+        "broader annotator-exposure governance"
+      ],
+      "files_modified": [
+        "experiments/engine3_stage_f/annotation.py"
+      ],
+      "records_and_tests_updated": [
+        "tests/engine3/stage_f_adapter.py",
+        "tests/engine3/test_engine3_stage_f_annotation.py",
+        "tests/engine3/test_engine3_stage_f_harness_manifest.py",
+        "scripts/verify_engine3_stage_f_harness.py",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_MANIFEST.json"
+      ],
+      "outside_harness_updated": [
+        "scripts/verify_engine3_stage_f_o5_freeze.py",
+        "tests/engine3/test_engine3_o5_postfreeze_rebinding.py"
+      ],
+      "records_created": [
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_AMENDMENT_003.md",
+        "docs/engine3/ENGINE3_STAGE_F_O3_ANNOTATOR_ELIGIBILITY_ADDENDUM_002.md",
+        "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_002.json"
+      ],
+      "record_fields_added": [
+        "locked_protocol_sha256",
+        "operational_guide_sha256",
+        "annotation_packet_sha256"
+      ],
+      "record_fields_removed": [
+        "protocol_version_sha256"
+      ],
+      "locked_protocol_sha256": "cba979c91cdcc96f419b0f3758cadd651f3427064a7f66ebebd23929c623b5a4",
+      "operational_guide_sha256": "fb4f0510254649dadfc68c06bb76bd1dfab73e2d33bc0db325faf791e61b9011",
+      "annotation_packet_hash_rule": "SHA-256 of the UTF-8 bytes of AnnotationPacket.to_json() (canonical JSON of the exact blinded packet, guide included); model annotations and run metadata never enter a packet",
+      "experiment_rules_changed": false,
+      "unchanged": [
+        "Stage F research question",
+        "Arm G or Arm A corpus",
+        "semantic annotation definitions",
+        "decision-rule thresholds A-G",
+        "model configuration",
+        "prompt",
+        "schema",
+        "retry policy",
+        "run order",
+        "O-6 corpus",
+        "Stage D behavior",
+        "E3-E-SEM-001 status",
+        "packet guide, packet structure, packet ids, blinding",
+        "readiness.py",
+        "historical protocol, operational guide, first O-3 addendum, contamination resolution record",
+        "O-5 frozen configuration, O-5 freeze manifest, O5_POSTFREEZE_REBINDING_001"
+      ],
+      "pre_amendment_sha256": {
+        "experiments/engine3_stage_f/annotation.py": "951b4fb34a5bdfd01a3e8966db457e23296014b5f8e0791b280958798b1a5a01",
+        "tests/engine3/stage_f_adapter.py": "a030631228755de648671bc9d45b47df7d33479d07c111ec581bc169ea7623d7",
+        "tests/engine3/test_engine3_stage_f_annotation.py": "c63a3aa14a760775d5a658eb368a1879ca2994bb6e8c358b417ea74714728b32",
+        "tests/engine3/test_engine3_stage_f_harness_manifest.py": "69e9d8bec729324ca28be2023a6e6e0b140733fc361b3f6341adc03d3eaf4864",
+        "scripts/verify_engine3_stage_f_harness.py": "cc6d57e7351ba3d15c5919843fc7fa0ae810511445ef70959fc73855c3f84e61",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md": "b1d7445aeb0c5e2a15f7cac873e49780afda00e1b4a339a3eab6be5ce8bff6a6"
+      },
+      "harness_manifest_pre_amendment_sha256": "c19780e7adf7464e6f8ee9c5cd96e9f06f551e4e395bf4fb495e7aadcac4a934",
+      "record": "docs/engine3/ENGINE3_STAGE_F_HARNESS_AMENDMENT_003.md",
+      "record_sha256": "48060bf60e323964a61fe1d012edc562dd0b67e2c934dbef8db1864c12c4991e",
+      "o5_rebinding_record": "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_002.json"
+    },
+    {
+      "id": "HARNESS_AMENDMENT_004",
+      "applied": true,
+      "date": "2026-10-15",
+      "owner_approved": "APPROVED",
+      "approval_provenance": "The calibration key was model-drafted and subsequently reviewed and approved by the human project owner with model-assisted review. This approval is not an independent human annotation or independent adjudication.",
+      "owner_decision": "owner instruction: freeze an offline calibration corpus and record the calibration blocker RESOLVED_FROZEN only if its contamination audit passes",
+      "scope": [
+        "record CALIBRATION_CORPUS_CONTAMINATION_AUDIT_REQUIRED RESOLVED_FROZEN"
+      ],
+      "files_modified": [],
+      "records_and_tests_updated": [
+        "tests/engine3/test_engine3_stage_f_harness_manifest.py",
+        "scripts/verify_engine3_stage_f_harness.py",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_MANIFEST.json"
+      ],
+      "outside_harness_updated": [
+        "scripts/verify_engine3_stage_f_o5_freeze.py",
+        "tests/engine3/test_engine3_o5_postfreeze_rebinding.py"
+      ],
+      "records_created": [
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_AMENDMENT_004.md",
+        "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_003.json",
+        "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_CORPUS.json",
+        "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_GUIDE.md",
+        "docs/engine3/ENGINE3_STAGE_F_HUMAN_CALIBRATION_FREEZE_MANIFEST.json",
+        "scripts/verify_engine3_stage_f_calibration.py",
+        "tests/engine3/test_engine3_human_calibration_corpus.py"
+      ],
+      "experiment_rules_changed": false,
+      "unchanged": [
+        "Stage F research question",
+        "Arm G or Arm A corpus",
+        "semantic annotation definitions",
+        "decision-rule thresholds A-G",
+        "model configuration",
+        "prompt",
+        "schema",
+        "retry policy",
+        "run order",
+        "O-6 corpus",
+        "Stage D behavior",
+        "E3-E-SEM-001 status",
+        "annotation.py, packet guide, packet structure, packet ids, blinding",
+        "readiness.py",
+        "historical protocol, operational guide, both O-3 addenda, contamination resolution record",
+        "O-5 frozen configuration, O-5 freeze manifest, O5_POSTFREEZE_REBINDING_001, O5_POSTFREEZE_REBINDING_002"
+      ],
+      "pre_amendment_sha256": {
+        "tests/engine3/test_engine3_stage_f_harness_manifest.py": "b87ac85f55866ac17702e6bd0ec18e6483551c73b81507da2f28acbbfcc63872",
+        "scripts/verify_engine3_stage_f_harness.py": "2c0123fb46cbf71cc5295d6720c24dc84d5de4cf02b8082bd3e69f59a36c084d",
+        "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md": "270c82fb9a523c598e6b0d9c5394aba8f2f3e221d674787fc6818e2d80e15441"
+      },
+      "harness_manifest_pre_amendment_sha256": "245f2cabd2ad22e847e937cc089c0ecb2f19086aa1e1b6788cfaec3e232868d1",
+      "record": "docs/engine3/ENGINE3_STAGE_F_HARNESS_AMENDMENT_004.md",
+      "record_sha256": "26db52bee5e9d552458d61d3e1b6cdce059cefc838cd1c47413bc37ff7a3d941",
+      "o5_rebinding_record": "docs/engine3/ENGINE3_STAGE_F_O5_POSTFREEZE_REBINDING_003.json"
+    }
+  ],
+  "verifier": "scripts/verify_engine3_stage_f_harness.py",
+  "harness_files": {
+    "docs/engine3/ENGINE3_STAGE_F_HARNESS_IMPLEMENTATION_REPORT.md": "fca5fc37d693be55e06e9a524e5173b1fb122ecd65675421df14bcc5efe3dedf",
+    "experiments/engine3_stage_f/__init__.py": "0d105d9be0dabd2a57696d914da4c735e311892badb02daac2f71a04c7b97a7c",
+    "experiments/engine3_stage_f/annotation.py": "247ee4b00787393fbb47dbd7f564d6667bc398db669a93a73906b2b2bd926210",
+    "experiments/engine3_stage_f/comparison.py": "d46398d4aa960d043a105bea93b8fd68db8c5cd365c1939b651a30d0b925a0d9",
+    "experiments/engine3_stage_f/contexts.py": "9e9cd6ca412ced6a1424b43ac7ddbe16403fe6c47274c7e9b87508682ceb62fc",
+    "experiments/engine3_stage_f/decision_rules.py": "c27d3ac078a23d40b4e32936a92a65c323a46678c08da525b24aa5c869fece69",
+    "experiments/engine3_stage_f/envelope.py": "def9962c255b7a1358e3d15a0037811f85f59aa4ba075859d06b029186d648ca",
+    "experiments/engine3_stage_f/readiness.py": "b20a46808f05586c1413cb1b2a2303e27424300f2bfde69c7fa039ae50606d8c",
+    "scripts/verify_engine3_stage_f_harness.py": "df028084a69e26448adbc804f3483e073120af047a9f5cdc5988b820d036c055",
+    "tests/engine3/fixtures/ENGINE3_STAGE_F_DRY_RUN_INPUTS.json": "111b9ad0d970ebbbc1bcd4b7053e22f0f86f714fea048eab6180af0e9d345da6",
+    "tests/engine3/fixtures/ENGINE3_STAGE_F_DRY_RUN_ORACLE.json": "93a4f9eef526b5f12457980955792652b335e97de30c3e2342ef5873da6433fb",
+    "tests/engine3/stage_f_adapter.py": "76a84c2bad3f2be8ebc58be8e73050fcd3c4f6f4a763603ca97e63d332953bff",
+    "tests/engine3/test_engine3_stage_f_annotation.py": "d40e31d4ce37755496903ed2c1d3bf772bdd8476fa96307aea7e3b78424eb79d",
+    "tests/engine3/test_engine3_stage_f_decision_rules.py": "2c5ab6debead60f3131b4b1448bff1d438ea01dec093fbe70f33a2a91504f0c5",
+    "tests/engine3/test_engine3_stage_f_dry_run.py": "b0f3ee56c2a5bea43bb85ce894a5840efebf1f1bfbd1feb87bb2c2bdb9c3a76c",
+    "tests/engine3/test_engine3_stage_f_envelope.py": "f0c098fb7a66cb3496ea45e08bfce9bd23e1868ff1834c4d108f6f2971f2f502",
+    "tests/engine3/test_engine3_stage_f_harness_manifest.py": "a7b6360ae22be7c5535dc5c807ee339fce5b737d4ff5fbf6ed8d2b2ff10d1e45",
+    "tests/engine3/test_engine3_stage_f_readiness.py": "393ee3742acbeec94511f8f1f082083c0078763b5123ad72b49905a950652f09",
+    "tests/engine3/test_engine3_stage_f_static_audit.py": "4f124001cbf55e27a25bc763d280afc104aa15955c7df8b8b0cf9dd6f6926914"
+  },
+  "claim_boundary": "The Stage F harness is locked offline and tested only with handwritten synthetic dry-run inputs. It has not been executed against any model. It does not resolve E3-E-SEM-001, validates no model, and authorizes no live run, pilot, or outreach. Not evidence of semantic validation, purchase prediction, sales lift, production security, or BAEC theory.",
+  "test_result": {
+    "stage_f_harness_tests_passed": 355,
+    "tests_engine3_passed": 668,
+    "full_repository": {
+      "passed": 7465,
+      "deselected": 2,
+      "failed": 0
+    },
+    "locked_engine1_engine2_public_tests_passed": 183,
+    "after_harness_amendment_003": {
+      "stage_f_harness_tests_passed": 351,
+      "tests_engine3_passed": 621,
+      "full_repository_passed": 7418
+    },
+    "after_harness_amendment_002": {
+      "stage_f_harness_tests_passed": 300,
+      "tests_engine3_passed": 558,
+      "full_repository_passed": 7355
+    },
+    "after_harness_amendment_001": {
+      "stage_f_harness_tests_passed": 285,
+      "tests_engine3_passed": 519,
+      "full_repository_passed": 7316
+    },
+    "at_original_lock": {
+      "stage_f_harness_tests_passed": 253,
+      "tests_engine3_passed": 487,
+      "full_repository_passed": 7284
+    }
+  }
+}

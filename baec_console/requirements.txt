@@ -1,0 +1,2 @@
+# BAEC Console V1 runs on the repository's existing environment; it adds no new dependency.
+streamlit==1.65.0

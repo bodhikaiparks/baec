@@ -1,0 +1,155 @@
+{
+  "project": "BAEC Trigger Intelligence",
+  "engine": "BAEC Engine 3: Re-engagement Preparation",
+  "stage": "F",
+  "status": "LOCKED_DESIGN_NO_LIVE_EXECUTION",
+  "lock_date": "2026-10-14",
+  "stage_e_base_commit": "d00355f439967dcab8044497a8165d360f81fb61",
+  "rule_label": "IMPLEMENTATION",
+  "live_model_executed": false,
+  "live_model_authorized": false,
+  "pilot_executed": false,
+  "main_experiment_executed": false,
+  "experiment_results_exist": false,
+  "network_calls": 0,
+  "api_key_used": false,
+  "external_model_sdk_used": false,
+  "outreach_authorized": false,
+  "stage_a_to_e_files_modified": false,
+  "engine1_modified": false,
+  "engine2_modified": false,
+  "governing_limitation": {
+    "id": "E3-E-SEM-001",
+    "name": "MODEL_SEMANTIC_ANNOTATION_NOT_AUTHORITATIVE",
+    "resolved": false
+  },
+  "planned_size": {
+    "arm_g_proposals": 220,
+    "pilot_proposals": 44,
+    "arm_a_annotation_runs": 240
+  },
+  "planned_size_detail": {
+    "arm_g": "22 scenarios x 10 repeats",
+    "pilot": "22 scenarios x 2 repeats; operational only",
+    "arm_a": "48 fixed-prose artifacts (32 Stage E seed + 16 supplement) x 5 repeats"
+  },
+  "model_controlled_fields": [
+    "claim_type",
+    "semantic_class",
+    "grounding_refs",
+    "reference_use_mode",
+    "source_identity_refs",
+    "claim_field",
+    "declared_value",
+    "specificity",
+    "question_has_premise",
+    "source_instruction_ref",
+    "prescribes_buyer_choice"
+  ],
+  "deterministic_exclusions": [
+    "origin",
+    "audience"
+  ],
+  "decision_thresholds": {
+    "A": {
+      "confirmed_artifact_false_pass_min": 1
+    },
+    "B": {
+      "confirmed_false_pass_count": 0,
+      "min_reference_refused_artifacts": 60,
+      "min_represented_scenario_families": 8
+    },
+    "B_prime": {
+      "confirmed_false_pass_count": 0,
+      "reference_refused_artifacts_below": 60,
+      "or_represented_scenario_families_below": 8
+    },
+    "C": {
+      "model_vs_adjudicated_exact_agreement_below": 0.95,
+      "min_scorable_instances": 30,
+      "or_field_contributes_to_any_confirmed_false_pass": true
+    },
+    "D": {
+      "share_of_human_safe_reference_complete_artifacts_with_any_field_disagreement_at_least": 0.1
+    },
+    "E": {
+      "share_of_structurally_valid_arm_g_artifacts_d_ref_refused_due_to_prose_at_least": 0.05
+    },
+    "F": {
+      "confirmed_cases_h_unacceptable_with_final_labels_and_d_ref_allowed_min": 1,
+      "numeric_threshold": null
+    },
+    "G": {
+      "pre_adjudication_inter_annotator_exact_agreement_below": 0.9,
+      "min_instances_both_scorable": 30
+    }
+  },
+  "decision_rule_arm_scope": {
+    "A": [
+      "G"
+    ],
+    "B": [
+      "G"
+    ],
+    "B_prime": [
+      "G"
+    ],
+    "E": [
+      "G"
+    ],
+    "C": [
+      "G",
+      "A"
+    ],
+    "D": [
+      "G",
+      "A"
+    ],
+    "F": [
+      "G",
+      "A"
+    ],
+    "G": [
+      "G",
+      "A"
+    ]
+  },
+  "insufficient_instances": {
+    "applies_to": [
+      "C",
+      "G"
+    ],
+    "min_instances_per_arm": 30,
+    "label": "INSUFFICIENT_INSTANCES"
+  },
+  "pre_run_required": [
+    {
+      "id": "O-3",
+      "status": "PRE_RUN_REQUIRED",
+      "item": "actual annotator staffing/identities (two independent primary annotators plus a separate adjudicator for reliability claims)",
+      "resolve_before": "any pilot"
+    },
+    {
+      "id": "O-5",
+      "status": "PRE_RUN_REQUIRED",
+      "item": "exact model/version, prompt, and sampling configuration",
+      "resolve_before": "any pilot (frozen)"
+    },
+    {
+      "id": "O-6",
+      "status": "PRE_RUN_REQUIRED",
+      "item": "16 Arm A fixed-prose artifacts written, human-approved, and frozen",
+      "resolve_before": "any live evaluation"
+    }
+  ],
+  "pre_run_required_may_be_selected_after_viewing_main_results": false,
+  "stage_e_manifest_sha256": "c9c403ef59558145779390c598fbeaa6dd6b0a01e242d1b66eed4f31bfe55580",
+  "design_artifacts_sha256": {
+    "docs/engine3/ENGINE3_STAGE_F_SEMANTIC_RELIABILITY_EXPERIMENT_DESIGN.md": "d710f42ad9d4e9ba6f3a9a2cad128fb337d4767b61d489e3a94c263bac87ce40",
+    "docs/engine3/ENGINE3_STAGE_F_HUMAN_REFERENCE_ANNOTATION_PROTOCOL.md": "cba979c91cdcc96f419b0f3758cadd651f3427064a7f66ebebd23929c623b5a4",
+    "docs/engine3/ENGINE3_STAGE_F_EXPERIMENT_SPEC.json": "321c19c598575ec111ff241714820dea64ff93515bd4b9b055efa613b502c829"
+  },
+  "verifier": "scripts/verify_engine3_stage_f_design.py",
+  "verifier_sha256": "c92a6cbe9c8ddc956a2be218ef554ee7d3c00d67e337472e879c3cd25d51c68d",
+  "claim_boundary": "Stage F is a locked synthetic experiment design. It reports no results, does not resolve E3-E-SEM-001, and authorizes no live execution, pilot, or outreach. Not evidence of semantic validation, purchase prediction, sales lift, production security, or BAEC theory."
+}
