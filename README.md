@@ -9,8 +9,8 @@ happened, asks a person to verify whether the evidence really corresponds, and t
 conversation. The salesperson makes every decision that matters.
 
 ```bash
-git clone <this repository>
-cd <this repository>
+git clone https://github.com/bodhikaiparks/baec.git
+cd baec
 ./scripts/start_demo.sh        # then open http://localhost:8501
 ```
 
