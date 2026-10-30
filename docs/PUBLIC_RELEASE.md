@@ -101,7 +101,7 @@ deployment files here are architecture. Using them requires separate hardening, 
 
 ## Known limitations
 
-- Screenshots and a demo video have not been captured yet.
+- A demo video has not been captured yet.
 - Tested on macOS (Python 3.14, SQLite 3.50) and on Debian Linux (Python 3.12 and 3.14, SQLite 3.46). The MCP stdio
   tests need `ps` (procps), which minimal Linux images leave out. The demo scripts are bash and do not run natively
   on Windows.

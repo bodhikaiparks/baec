@@ -143,17 +143,31 @@ cd baec_console && BAEC_DEPLOYMENT_MODE=development ../.venv/bin/python -m strea
 
 ## Screenshots
 
-Screenshots have not been captured yet (capture checklist: [`docs/SCREENSHOTS.md`](docs/SCREENSHOTS.md)). Planned
-files:
+All six images come from the local synthetic demo (Riverside Outpatient Surgery Center, Morgan Lee). No real data.
 
-| File | Shows |
-|---|---|
-| `docs/images/01-today.png` | Today page and CRM overview |
-| `docs/images/02-ai-intake.png` | Morgan Lee's call after Claude analysis, with the possible BAEC condition |
-| `docs/images/03-engine1.png` | Engine 1 condition preview: the four criteria, threshold, timing, and human confirmation |
-| `docs/images/04-engine2.png` | The observation evidence and the human correspondence review |
-| `docs/images/05-prepare.png` | Why Now, email draft, call opening, and discovery questions |
-| `docs/images/06-timeline.png` | The completed account timeline, showing the full progression |
+**1. Account and workflow overview**
+
+![Account and workflow overview](docs/images/01-account-overview.png)
+
+**2. Claude-assisted interaction intake**
+
+![Claude-assisted interaction intake](docs/images/02-ai-intake.png)
+
+**3. Engine 1 condition review**
+
+![Engine 1 condition review](docs/images/03-engine1.png)
+
+**4. Engine 2 evidence verification**
+
+![Engine 2 evidence verification](docs/images/04-engine2.png)
+
+**5. Engine 3 preparation**
+
+![Engine 3 preparation](docs/images/05-prepare.png)
+
+**6. Complete BAEC timeline**
+
+![Complete BAEC timeline](docs/images/06-timeline.png)
 
 Hosted read-only demos from the earlier research release: https://baec-trigger-intelligence.streamlit.app ·
 https://baec-engine1.streamlit.app · https://baec-engine2.streamlit.app · https://baec-engine3.streamlit.app

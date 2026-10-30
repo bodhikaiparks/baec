@@ -19,7 +19,7 @@ Riverside Outpatient Surgery Center scenario. No real data.
 
 | # | File | Setup | Must be visible |
 |---|---|---|---|
-| 1 | `docs/images/01-today.png` | Load **completed example**. On the Riverside account's Overview, add a task due today (for example `Review April renewal pricing with Morgan Lee`), then open **Today** | The Today counters, with the task under *Tasks that need attention*; the sidebar navigation |
+| 1 | `docs/images/01-account-overview.png` | Load **completed example**, then open the Riverside account's **Overview** | The account state, the Remember → Monitor → Recognize → Prepare progress, the buyer condition, and the sidebar navigation |
 | 2 | `docs/images/02-ai-intake.png` | Load **start from call notes**. In Overview → Log interaction, choose Morgan Lee and Call, paste the notes from `DEMO_WALKTHROUGH.md` step 1, then click **Analyze with AI** | The **Possible buyer-articulated condition** notice; the exact buyer statement; **Save & review BAEC condition →** and **Save to CRM only**. The key field shows dots only |
 | 3 | `docs/images/03-engine1.png` | Click **Save & review BAEC condition →** (Remember opens with the preview) | The four criteria with their evidence; threshold *by at least 7%*; timing *at the April renewal*; the **Confirm buyer-articulated condition** button, not yet clicked |
 | 4 | `docs/images/04-engine2.png` | Confirm, start monitoring, and add both observations (steps 5–6). Open **Recognize** and answer the checks without submitting yet | The corrected notice (USD 128,400) as the evidence under review, and the correspondence checks with their answers. If the superseded 9% notice should also appear, take this from **Monitor** instead |
@@ -35,5 +35,5 @@ the ones you clicked.
 - [ ] Open each PNG and check it for a key, your real name or email, other tabs, bookmarks, notifications, or a
       filesystem path.
 - [ ] Add the files under `docs/images/`, then in `README.md` replace the "Screenshots have not been captured yet"
-      table with the images (for example `![Today](docs/images/01-today.png)`).
+      table with the images (for example `![Account and workflow overview](docs/images/01-account-overview.png)`).
 - [ ] Run `.venv/bin/python -m pytest -q tests/test_public_demo.py` (it checks the README).

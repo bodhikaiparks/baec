@@ -36,7 +36,7 @@ authors_are_noreply() {
 
 screenshots_present() {
   local name
-  for name in 01-today 02-ai-intake 03-engine1 04-engine2 05-prepare 06-timeline; do
+  for name in 01-account-overview 02-ai-intake 03-engine1 04-engine2 05-prepare 06-timeline; do
     [ -s "docs/images/$name.png" ] || return 1
   done
 }
