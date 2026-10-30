@@ -14,7 +14,7 @@ cd <this repository>
 ./scripts/start_demo.sh        # then open http://localhost:8501
 ```
 
-The demo runs locally on synthetic data. It needs no AWS account, no database server, and no API key.
+The demo runs locally on synthetic data with no AWS account or database server required. An Anthropic API key is optional and only needed for Claude-assisted interaction intake.
 
 ---
 
